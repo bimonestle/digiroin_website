@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="357" height="348" viewBox="0 0 357 348">
+    <defs>
+        <path id="a" d="M22.857 22.857v-8.57c8.027 2.564 13.977 4.515 17.848 5.854 5.064-3.125 5.01-5.855 5.01-5.855V0H0v14.286c0 4.734 10.233 8.571 22.857 8.571z"/>
+        <path id="c" d="M0 14.287l17.848 5.854V5.42L0 0z"/>
+        <path id="e" d="M22.857 17.143v-8.57c8.027 2.564 13.977 4.515 17.848 5.854 5.064-3.126 5.01-5.856 5.01-5.856C45.714 3.838 35.48 0 22.856 0S0 3.838 0 8.571c0 4.734 10.233 8.572 22.857 8.572z"/>
+        <linearGradient id="g" x1="4.881%" y1="47.728%" y2="53.192%">
+            <stop offset="0%" stop-color="#888"/>
+            <stop offset="100%" stop-color="#4286F5"/>
+        </linearGradient>
+        <linearGradient id="h" x1="4.881%" y1="47.527%" y2="53.475%">
+            <stop offset="0%" stop-color="#888"/>
+            <stop offset="100%" stop-color="#4286F5"/>
+        </linearGradient>
+        <linearGradient id="i" x1="53.219%" x2="46.781%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="#A28FFD"/>
+            <stop offset="100%" stop-color="#4286F5"/>
+        </linearGradient>
+        <linearGradient id="j" x1="94.397%" x2="5.603%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="#A28FFD"/>
+            <stop offset="100%" stop-color="#4286F5"/>
+        </linearGradient>
+        <linearGradient id="k" x1="100%" x2="0%" y1="53.581%" y2="46.419%">
+            <stop offset="0%" stop-color="#A28FFD"/>
+            <stop offset="100%" stop-color="#4286F5"/>
+        </linearGradient>
+        <linearGradient id="l" x1="100%" x2="0%" y1="0%" y2="0%">
+            <stop offset="0%" stop-color="#A28FFD"/>
+            <stop offset="100%" stop-color="#888"/>
+        </linearGradient>
+        <linearGradient id="m" x1="100%" x2="0%" y1="0%" y2="0%">
+            <stop offset="0%" stop-color="#A28FFD"/>
+            <stop offset="100%" stop-color="#888"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(143 139)">
+            <circle cx="35" cy="35" r="35" stroke="#A28FFD" stroke-linecap="round" stroke-width="3"/>
+            <g transform="translate(12 29)">
+                <mask id="b" fill="#fff">
+                    <use xlink:href="#a"/>
+                </mask>
+                <use fill="#CFC5FF" fill-rule="nonzero" xlink:href="#a"/>
+                <path fill="#E3DEFF" fill-rule="nonzero" d="M-.571 11.528c1.578.418 2.857-.522 2.857-2.1S1.006 6.232-.571 5.814c-1.578-.419-2.858.521-2.858 2.1 0 1.577 1.28 3.196 2.858 3.614zM13.143 23.014c.947.176 1.714-.219 1.714-.882s-.767-1.343-1.714-1.519c-.947-.176-1.714.22-1.714.882 0 .663.767 1.343 1.714 1.52zM10.857 17.3c.947.176 1.714-.22 1.714-.882 0-.663-.767-1.343-1.714-1.52-.947-.175-1.714.22-1.714.883s.767 1.343 1.714 1.519zM23.429 18.404c1.578.338 2.857-.42 2.857-1.693 0-1.273-1.28-2.579-2.857-2.916-1.578-.338-2.858.42-2.858 1.693 0 1.273 1.28 2.579 2.858 2.916z" mask="url(#b)"/>
+            </g>
+            <g transform="translate(34.857 29)">
+                <mask id="d" fill="#fff">
+                    <use xlink:href="#c"/>
+                </mask>
+                <use fill="#BCAEFF" fill-rule="nonzero" xlink:href="#c"/>
+                <path fill="#E3DEFF" fill-rule="nonzero" d="M11.429 19.547c1.893.338 3.428-.42 3.428-1.694 0-1.273-1.535-2.578-3.428-2.916C9.535 14.6 8 15.358 8 16.631s1.535 2.579 3.429 2.916zM6.857 10.462C7.488 10.557 8 10.344 8 9.986s-.512-.726-1.143-.82c-.631-.096-1.143.118-1.143.476s.512.725 1.143.82z" mask="url(#d)"/>
+            </g>
+            <path fill="#E3DEFF" fill-rule="nonzero" d="M33.143 35.976c1.578.337 2.857-.421 2.857-1.694s-1.28-2.579-2.857-2.916c-1.578-.338-2.857.42-2.857 1.694 0 1.273 1.279 2.578 2.857 2.916zM52.678 42.745c1.572-1.174 1.31-2.61 1.31-3.884 0-1.273.099-1.861-1.31-.718-1.894-.338-2.964.5-2.964 1.774 0 1.273 1.07 2.49 2.964 2.828z"/>
+            <g transform="translate(12 21)">
+                <mask id="f" fill="#fff">
+                    <use xlink:href="#e"/>
+                </mask>
+                <use fill="#A28FFD" fill-rule="nonzero" xlink:href="#e"/>
+                <path fill="#E3DEFF" fill-rule="nonzero" d="M7.813 3.547c1.872.338 3.456-.42 3.54-1.694.082-1.273-1.368-2.578-3.24-2.916C6.244-1.4 4.659-.642 4.576.631 4.492 1.904 5.942 3.21 7.813 3.547zM17.007 9.3c1.24.176 2.291-.22 2.346-.882.055-.663-.906-1.343-2.147-1.52-1.24-.175-2.292.22-2.347.883-.055.663.907 1.343 2.148 1.519zM24.956 4.71c1.872.256 3.456-.32 3.54-1.289.082-.968-1.368-1.96-3.24-2.217-1.87-.257-3.455.32-3.538 1.288-.083.968 1.367 1.96 3.238 2.217zM34.701 1.963c.926.176 1.755.26 1.796-.402.04-.663-.676-1.343-1.602-1.52-.926-.175-1.71.22-1.75.883-.042.663.63.864 1.556 1.04z" mask="url(#f)"/>
+            </g>
+            <path fill="#E3DEFF" fill-rule="nonzero" d="M55.284 33.571c0 1.28 1.702 1.065 1.743.402.041-.663 0-1.329 0-2.523-.925-.176-2.699.097-2.74.76-.04.663.071 1.186.997 1.361zM25.714 39.404c1.263.338 2.286-.42 2.286-1.693-.655-1.306-2.057-1.488-2.742-1.488-.684 0-2.732-.366-1.83.777 0 1.273 1.024 2.067 2.286 2.404zM40.571 33.69c1.263.338 1.856-.428 1.856-1.701 1.31-.435.86-1.733-.402-2.07-1.262-.338-3.384.224-3.737.764-.353.54 1.021 2.67 2.283 3.007z"/>
+        </g>
+        <g transform="translate(179 277)">
+            <circle cx="35" cy="35" r="35" fill="#4286F5" fill-rule="nonzero" stroke="#4286F5" stroke-linecap="round" stroke-width="2"/>
+            <text fill="#FFF" font-family="ProximaNova-Semibold, Proxima Nova" font-size="13" font-weight="500">
+                <tspan x="18.659" y="23">Subs-</tspan> <tspan x="13.14" y="39">cription</tspan> <tspan x="17.079" y="55">Wallet</tspan>
+            </text>
+        </g>
+        <g transform="translate(246 242)">
+            <circle cx="35" cy="35" r="35" fill="#4286F5" fill-rule="nonzero" stroke="#4286F5" stroke-linecap="round" stroke-width="2"/>
+            <text fill="#FFF" font-family="ProximaNova-Semibold, Proxima Nova" font-size="13" font-weight="500">
+                <tspan x="20.096" y="23">Point</tspan> <tspan x="11.06" y="39">Redeem</tspan> <tspan x="17.079" y="55">Wallet</tspan>
+            </text>
+        </g>
+        <g transform="translate(286 177)">
+            <circle cx="35" cy="35" r="35" fill="#4286F5" fill-rule="nonzero" stroke="#4286F5" stroke-linecap="round" stroke-width="2"/>
+            <text fill="#FFF" font-family="ProximaNova-Semibold, Proxima Nova" font-size="13" font-weight="500">
+                <tspan x="14.343" y="31">Refund</tspan> <tspan x="17.079" y="47">Wallet</tspan>
+            </text>
+        </g>
+        <g transform="translate(286 101)">
+            <circle cx="35" cy="35" r="35" fill="#4286F5" fill-rule="nonzero" stroke="#4286F5" stroke-linecap="round" stroke-width="2"/>
+            <text fill="#FFF" font-family="ProximaNova-Semibold, Proxima Nova" font-size="13" font-weight="500">
+                <tspan x="10.163" y="31">Upgrade</tspan> <tspan x="17.579" y="47">Wallet</tspan>
+            </text>
+        </g>
+        <g transform="translate(246 36)">
+            <circle cx="35" cy="35" r="35" fill="#4286F5" fill-rule="nonzero" stroke="#4286F5" stroke-linecap="round" stroke-width="2"/>
+            <text fill="#FFF" font-family="ProximaNova-Semibold, Proxima Nova" font-size="13" font-weight="500">
+                <tspan x="12.178" y="31">Trade in</tspan> <tspan x="17.579" y="47">Wallet</tspan>
+            </text>
+        </g>
+        <g transform="translate(179 1)">
+            <circle cx="35" cy="35" r="35" fill="#4286F5" fill-rule="nonzero" stroke="#4286F5" stroke-linecap="round" stroke-width="2"/>
+            <text fill="#FFF" font-family="ProximaNova-Semibold, Proxima Nova" font-size="13" font-weight="500">
+                <tspan x="17.599" y="32">Barter</tspan> <tspan x="17.579" y="48">Wallet</tspan>
+            </text>
+        </g>
+        <g>
+            <g transform="translate(36 238)">
+                <circle cx="35" cy="35" r="35" stroke="#888" stroke-linecap="round" stroke-width="2"/>
+                <circle cx="43" cy="44" r="35" stroke="#888" stroke-linecap="round" stroke-width="2"/>
+                <text fill="#888" font-family="ProximaNova-Regular, Proxima Nova" font-size="13">
+                    <tspan x="25.644" y="33">Join</tspan> <tspan x="13.976" y="49">Account</tspan>
+                </text>
+            </g>
+            <g transform="translate(1 139)">
+                <circle cx="35" cy="35" r="35" stroke="#888" stroke-linecap="round" stroke-width="2"/>
+                <text fill="#888" font-family="ProximaNova-Regular, Proxima Nova" font-size="13">
+                    <tspan x="8.194" y="35">Merchant</tspan> <tspan x="30.912" y="51">B</tspan>
+                </text>
+            </g>
+            <g transform="translate(40 36)">
+                <circle cx="35" cy="35" r="35" stroke="#888" stroke-linecap="round" stroke-width="2"/>
+                <text fill="#888" font-family="ProximaNova-Regular, Proxima Nova" font-size="13">
+                    <tspan x="8.194" y="35">Merchant</tspan> <tspan x="30.723" y="51">A</tspan>
+                </text>
+            </g>
+        </g>
+        <g>
+            <path stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M0 0c17.161 11.315 39.551 16.972 67.17 16.972" transform="translate(109.73 301.695)"/>
+            <path fill="#4286F5" d="M179.345 319.69l-7.895 3.61a1 1 0 0 1-1.415-.945l.271-7.76a1 1 0 0 1 1.478-.843l7.623 4.15a1 1 0 0 1-.062 1.789z"/>
+            <path fill="#888" d="M102.958 48.787l4.527-7.406a1 1 0 0 1 1.701-.009l4.114 6.584a1 1 0 0 1-.753 1.526l-8.641.822a1 1 0 0 1-.948-1.517z"/>
+            <path stroke="url(#h)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M80.921.288C56.554-1.477 32.074 4.88 7.481 19.36" transform="translate(98.079 28.712)"/>
+            <path stroke="url(#i)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M0 6.723l16 66" transform="rotate(180 101.5 141.138)"/>
+            <path fill="#4286F5" d="M204.543 278.162l1.888-8.473a1 1 0 0 0-1.218-1.188l-7.533 1.878a1 1 0 0 0-.518 1.621l5.645 6.594a1 1 0 0 0 1.736-.432z"/>
+            <path stroke="url(#j)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M.223 8.5L49 59.723" transform="rotate(180 126.5 130.138)"/>
+            <path fill="#4286F5" d="M255.998 253.825l-2.6-8.281a1 1 0 0 0-1.65-.42l-5.584 5.393a1 1 0 0 0 .362 1.663l8.186 2.888a1 1 0 0 0 1.286-1.243z"/>
+            <path stroke="url(#k)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M.264 7.5L71 25.764" transform="rotate(180 142 103.118)"/>
+            <path fill="#4286F5" d="M287.552 198.833l-6.494-5.76a1 1 0 0 0-1.63.49l-2.01 7.5a1 1 0 0 0 1.167 1.238l8.504-1.74a1 1 0 0 0 .463-1.728z"/>
+            <path stroke="url(#k)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M.264 7.5L71 25.764" transform="matrix(-1 0 0 1 284 140.236)"/>
+            <path fill="#4286F5" d="M287.552 147.64l-6.494 5.759a1 1 0 0 1-1.63-.49l-2.01-7.5a1 1 0 0 1 1.167-1.238l8.504 1.74a1 1 0 0 1 .463 1.729z"/>
+            <g>
+                <path stroke="url(#j)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M.223 8.5L49 59.723" transform="matrix(-1 0 0 1 253 90.277)"/>
+                <path fill="#4286F5" d="M255.998 96.729l-2.6 8.281a1 1 0 0 1-1.65.42l-5.584-5.393a1 1 0 0 1 .362-1.663l8.186-2.888a1 1 0 0 1 1.286 1.243z"/>
+            </g>
+            <g>
+                <path stroke="url(#i)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M0 6.723l16 66" transform="matrix(-1 0 0 1 203 66.277)"/>
+                <path fill="#4286F5" d="M204.543 70.392l1.888 8.473a1 1 0 0 1-1.218 1.188l-7.533-1.879a1 1 0 0 1-.518-1.62l5.645-6.594a1 1 0 0 1 1.736.432z"/>
+            </g>
+            <g>
+                <path stroke="url(#l)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M0 5.5h68" transform="translate(72 168)"/>
+                <path fill="#A28FFD" d="M142.211 174.394l-7.764 3.882a1 1 0 0 1-1.447-.894v-7.764a1 1 0 0 1 1.447-.894l7.764 3.882a1 1 0 0 1 0 1.788z"/>
+            </g>
+            <g>
+                <path stroke="url(#m)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M0 5.935l53 54" transform="matrix(1 0 0 -1 101 260.722)"/>
+                <path fill="#A28FFD" d="M155.035 200.786l-2.745 8.235a1 1 0 0 1-1.656.391l-5.49-5.49a1 1 0 0 1 .391-1.655l8.235-2.745a1 1 0 0 1 1.265 1.264z"/>
+            </g>
+            <g>
+                <path stroke="url(#m)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M0 5.935l53 54" transform="translate(101 88.835)"/>
+                <path fill="#A28FFD" d="M155.035 148.77l-2.745-8.235a1 1 0 0 0-1.656-.39l-5.49 5.49a1 1 0 0 0 .391 1.655l8.235 2.745a1 1 0 0 0 1.265-1.265z"/>
+            </g>
+        </g>
+    </g>
+</svg>

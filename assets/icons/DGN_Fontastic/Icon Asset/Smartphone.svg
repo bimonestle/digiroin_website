@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="21px" viewBox="0 0 13 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Smartphone</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fontastic" transform="translate(-458.000000, -199.000000)">
+            <g id="Icon/Smartphone" transform="translate(452.000000, 198.000000)">
+                <g id="Group">
+                    <rect id="Rectangle-Copy-12" x="0" y="0" width="24" height="24"></rect>
+                </g>
+                <g id="Page-1" transform="translate(6.000000, 1.000000)" fill="#222222">
+                    <g id="Group-5">
+                        <path d="M1,21 C0.44771525,21 0,20.5522847 0,20 L0,1.81971429 C0,1.26742954 0.44771525,0.819714286 1,0.819714286 L11.7424167,0.819714286 C12.2947014,0.819714286 12.7424167,1.26742954 12.7424167,1.81971429 L12.7424167,20 C12.7424167,20.5522847 12.2947014,21 11.7424167,21 L1,21 Z M2,19 L10.7424167,19 L10.7424167,2.81971429 L2,2.81971429 L2,19 Z" id="Stroke-2" fill-rule="nonzero"></path>
+                        <path d="M4.58086667,18.3650619 C4.02858192,18.3650619 3.58086667,17.9173467 3.58086667,17.3650619 C3.58086667,16.8127772 4.02858192,16.3650619 4.58086667,16.3650619 L8.16136667,16.3650619 C8.71365142,16.3650619 9.16136667,16.8127772 9.16136667,17.3650619 C9.16136667,17.9173467 8.71365142,18.3650619 8.16136667,18.3650619 L4.58086667,18.3650619 Z" id="Stroke-4" fill-rule="nonzero"></path>
+                        <polygon id="Path" points="2 6.4 2 4.4 10.7399998 4.4 10.7399998 6.4"></polygon>
+                        <polygon id="Path" points="2 15.6 2 13.6 10.7399998 13.6 10.7399998 15.6"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

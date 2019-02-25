@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Stop</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fontastic" transform="translate(-793.000000, -791.000000)">
+            <g id="Icon/Stop" transform="translate(788.000000, 786.000000)">
+                <g id="Group-8">
+                    <g id="Group-7">
+                        <rect id="Rectangle-Copy-18" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M6,18.038 L17.038,18.038 C17.5902847,18.038 18.038,17.5902847 18.038,17.038 L18.038,6 C18.038,5.44771525 17.5902847,5 17.038,5 L6,5 C5.44771525,5 5,5.44771525 5,6 L5,17.038 C5,17.5902847 5.44771525,18.038 6,18.038 Z" id="Fill-6-Copy" fill="#222222"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

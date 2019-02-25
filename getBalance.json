@@ -1,0 +1,12 @@
+{
+    "method": "GET",
+    "url": "https://wallet.digiro.in/api/balance/:akun",
+    "httpVersion": "HTTP/1.1",
+    
+    "headers": [
+      { "name": "Accept", "value": "application/json" },
+      { "name": "Content-Type", "value": "application/json" },
+      { "name": "Authorization", "value": "Basic 628xxxxxxxxx token_xxxxxx" }
+    ]
+  }
+  

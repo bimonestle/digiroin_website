@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Digiroin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/img/favicon-01.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/icons/DGN_Fontastic/digiroin-font-icon/font-icon.css" />
+    <link rel="stylesheet" href="node_modules/json-pretty-html/style.css">
+
+    <!-- Smooth Scroll -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+</head>
+<body>
+    <div id="wrapper" class="wrapper">
+        <main id="home" class="page-container main-page grids">
+            <header class="header col-row area">
+                <div class="menu-container">
+                    <a href="index.html">
+                        <img src="assets/img/digiroin_plain_logo.svg" alt="digiroin logo" srcset="">
+                    </a>
+                    <nav class="menu">
+                        <a href="#how-it-works" class="discover-lk">How It Works</a>
+                        <a href="#developer" class="features-lk">Developer</a>
+                        <a href="#features" class="docs-lk">Features</a>
+                        <a href="#plan-section" class="plan-lk">Plan</a>
+                        <a href="pricing_page.html" class="pricing-lk">Pricing</a>
+                        <!-- <a href="signin_page.html" class="sign-lk">Sign In / Sign Up</a> -->
+                        <a href="#dasboard" id="dashboard-nav" class="signed">Dashboard<i class="icon-arrow"></i></a>
+                        <div id="drop-menu" class="drop-menu">
+                            <div class="menu">
+                                <a href="#logout" id="logout">Log Out</a>
+                            </div>
+                        </div>
+                        <div class="dot main"></div>
+                        <!-- <div class="dot features docs"></div> -->
+                    </nav>
+                </div>
+            </header>
+            <div class="menu-mobile area">
+                <nav class="menu">
+                    <a href="#how-it-works" class="discover-lk">How It Works</a>
+                    <a href="#developer" class="features-lk">Developer</a>
+                    <a href="#features" class="docs-lk">Features</a>
+                    <a href="#plan-section" class="plan-lk">Plan</a>
+                    <a href="pricing_page.html" class="pricing-lk">Pricing</a>
+                    <!-- <a href="signin_page.html" class="sign-lk">Sign In / Sign Up</a> -->
+                    <a href="#dasboard" id="dashboard-nav" class="signed">Dashboard<i class="icon-arrow"></i></a>
+                    <div id="drop-menu" class="drop-menu">
+                        <div class="menu">
+                            <a href="#logout" id="logout">Log Out</a>
+                        </div>
+                    </div>
+                    <div class="dot main"></div>
+                    <!-- <div class="dot features docs"></div> -->
+                </nav>
+            </div>
+            <div class="main-title col-row area">
+                <p class="main-title">Your platform is hopelessly broken. Can blockchain fix it?</p>
+                <p class="small-title">Re-route and settle user transactions with our tidy API documentation</p>
+            </div>
+            <div class="sub-title col-row area">
+                <p>The holy grail of ecommerce strategy is abundance stock and the goal of a digital business strategy is network effect. Network effect means more than just integration to the merchant on stock and data when it's digital. Integration means going beyond the structures of database, and literally forging engagement, breezing relationships. It requires that you as a merchants could actually SETTLE vendor, supplier, partners, to act as advisers, trainers, and mentors to your customers … not just put their logo on digital placement, or getting endorsement and reviews. Consider a coffee shop, there, a coffee addict can ask your barista for home living interior via an app and vice versa the barista could learn how to make a good app and tidy API from you, if you're in the mood to SWAP it as well.</p>
+            </div>
+            <div class="cr-acc col-row area">
+                <!-- <a href="signup_page.html" class="create">CREATE ACCOUNT</a> -->
+                <a href="#how-it-works" class="create">Get Started</a>
+            </div>
+            <div class="main-img col-row area">
+                <img src="assets/img/clothes.png" alt="Main Image">
+            </div>
+            <div id="how-it-works" class="how-it-works area">
+                <p class="section-title developer-guide">HOW IT WORKS</p>
+                <p class="section-sub-title">We manage risk of doing business with perfect strangers.</p>
+            </div>
+
+            <div class="ngin-btn side-ngin how-it-works col-row area">
+                <!-- <div class="circle"></div> -->
+                <div class="line"></div>
+                <!-- <div class="line blue"></div> -->
+                <!-- <div class="line blue transfer paid trx"></div> -->
+                <div class="instructions cashin diagram-links active" onclick="openDiagram(event, 'cashout-diagram')">
+                    <div class="circle-grey active one">
+                        <span class="number">1</span>
+                    </div>
+                    <span class="instruction active">CASH OUT</span>
+                </div>
+                <div class="instructions kyc diagram-links" onclick="openDiagram(event, 'cashin-diagram')">
+                    <div class="circle-grey two">
+                        <span class="number">2</span>
+                    </div>
+                    <span class="instruction">CASH IN</span>
+                </div>
+                <div class="instructions cashout diagram-links" onclick="openDiagram(event, 'o2o-diagram')">
+                    <div class="circle-grey tri">
+                        <span class="number">3</span>
+                    </div>
+                    <span class="instruction">O2O</span>
+                </div>
+            </div>
+
+            <!-- API BOX / BLACK BOX -->
+            <div class="main-ngin how-it-works col-row area">
+                <div class="legends-container">
+                    <div id="cashout-legend" class="legends">
+                        <div class="legend grey">
+                            <span class="circle grey"></span>
+                            <span class="legend-text">B2B Micromarket Agreements</span>
+                        </div>
+                        <div class="legend purple">
+                            <span class="circle purple"></span>
+                            <span class="legend-text">API Cash Out</span>
+                        </div>
+                        <div class="legend blue">
+                            <span class="circle blue"></span>
+                            <span class="legend-text">Use Case</span>
+                        </div>
+                    </div>
+                    <div id="cashin-legend" class="legends" style="display:none;">
+                        <div class="legend grey">
+                            <span class="circle grey"></span>
+                            <span class="legend-text">B2B Micromarket Agreements</span>
+                        </div>
+                        <div class="legend purple">
+                            <span class="circle purple"></span>
+                            <span class="legend-text">API Cash In / Top Up</span>
+                        </div>
+                        <div class="legend blue">
+                            <span class="circle blue"></span>
+                            <span class="legend-text">Use Case</span>
+                        </div>
+                    </div>
+                    <div id="o2o-legend" class="legends" style="display:none;">
+                        <div class="legend grey">
+                            <span class="circle grey"></span>
+                            <span class="legend-text">B2B Micromarket Agreements</span>
+                        </div>
+                        <div class="legend purple">
+                            <span class="circle purple"></span>
+                            <span class="legend-text">API Cashless</span>
+                        </div>
+                        <div class="legend blue">
+                            <span class="circle blue"></span>
+                            <span class="legend-text">Use Case</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="diagram-container">
+                    <div id="cashout-diagram" class="apibox content guide area api-diagram" style="width:100%; height: 572px;">
+                        <img src="assets/img/cash-out-diagram.svg" alt="cashout_diagaram.svg">
+                        <div class="diagram-text container">
+                            <p class="diagram-title">Cash Out</p>
+                            <p class="diagram-par">Do people really need food festival, bazaar, and another cup of artisan kopi gula aren, combo of three or a bigger martabak? Really? Until a customer visit a merchant and ask, "I'd like to tradein my time, my writing, for yours, your coffee, banana, clothes, film". See… When we don't have enough of business model to make human to exchange everything possible, then everything stuck into waste. So we build a programmable CashOut API, to connect everything on everyone earnings to be possible to exchange and settle.</p>
+                        </div>
+                    </div>
+    
+                    <div id="cashin-diagram" class="apibox content guide area api-diagram" style="width:100%; height: 572px; display: none;">
+                        <img src="assets/img/cash-in-diagram.svg" alt="cashin_diagaram.svg">
+                        <div class="diagram-text container">
+                            <p class="diagram-title">Cash In</p>
+                            <p class="diagram-par">It's a mystery why so many keep their money parked in big banks that send them the untouchable hitman, a debt collectors through. Move your money to a better bank, a bank that hasn't needed a bailout, or a totally new kind of bank, like digiroin. Onboarding costs are low and the benefits are clear without hidden fees and conflict of interest. Want a stylish studio apartment? Vouch a barista class. Want designer streetwear outfit? Subscribe to salad bowl. Every choice you make with your money reflects your true investment for goodwill.</p>
+                        </div>
+                    </div>
+    
+                    <div id="o2o-diagram" class="apibox content guide area api-diagram" style="width:100%; height: 572px; display: none;">
+                        <img src="assets/img/o-2-o-diagram.svg" alt="o2o.svg">
+                        <div class="diagram-text container">
+                            <p class="diagram-title">Online To Offline</p>
+                            <p class="diagram-par">What is the cashless things, yo fintech pundits? Asked the skeptics who rejoice in their customers desires. Is it not this: To exhibit one's transaction history in order to infiltrate at one's privacy? Or is it this: To love those who take your orders in a store, and give goodwill to others when it is going to harm your businesses? There are people for whom cash is a dominant motivation, and who are primarily self-interested and opportunistic to switch on and off between cash to cashless exchange and transaction, and generally not comfortable with all digital surveillance on transaction data privacy. So we introduce goodwill banking: Interchangeable of fairness over appropriation of short-term profit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="developer" class="try-sub col-row area scrollspy">
+                <p class="section-title developer-guide">DEVELOPER GUIDE</p>
+                <p class="section-sub-title">Digiroin designed an easy to use APIs for partners to design their functionality based on their product to users. Partners are able to scale their business without the needs of looking back for payment options.</p>
+            </div>
+            <div class="try-title col-row area">
+                <div class="try-container">
+                        <p>Try It Now!</p>
+                        <div class="line"></div>
+                </div>
+            </div>
+            <div class="ngin-btn side-ngin developer-guide col-row area">
+                <!-- <div class="circle"></div> -->
+                <div class="line"></div>
+                <!-- <div class="line blue"></div> -->
+                <!-- <div class="line blue transfer paid trx"></div> -->
+                <div class="instructions create-token api-links active" onclick="openApiBox(event, 'api-createToken')">
+                    <div class="circle-grey one active">
+                        <span class="number active">1</span>
+                    </div>
+                    <span class="instruction active">CREATE TOKEN</span>
+                </div>
+                <div class="instructions open-acc api-links" onclick="openApiBox(event, 'api-openAccount')">
+                    <div class="circle-grey two">
+                        <span class="number">2</span>
+                    </div>
+                    <span class="instruction">OPEN ACCOUNT</span>
+                </div>
+                <div class="instructions cashin api-links" onclick="openApiBox(event, 'api-openCashin')">
+                    <div class="circle-grey tri">
+                        <span class="number">3</span>
+                    </div>
+                    <span class="instruction">CASH IN</span>
+                </div>
+                <div class="instructions check-balance api-links" onclick="openApiBox(event, 'api-getBalance')">
+                    <div class="circle-grey four">
+                        <span class="number">4</span>
+                    </div>
+                    <span class="instruction">CHECK BALANCE</span>
+                </div>
+                <div class="instructions transfer-giro api-links" onclick="openApiBox(event, 'api-transferGiro')">
+                    <div class="circle-grey five">
+                        <span class="number">5</span>
+                    </div>
+                    <span class="instruction">TRANSFER GIRO TO GIRO</span>
+                </div>
+                <div class="instructions hist-trx api-links" onclick="openApiBox(event, 'api-historyTrx')">
+                    <div class="circle-grey six">
+                        <span class="number">6</span>
+                    </div>
+                    <span class="instruction">HISTORY TRX</span>
+                </div>
+                <div class="instructions kyc api-links" onclick="openApiBox(event, 'api-openKYC')">
+                    <div class="circle-grey seven">
+                        <span class="number">7</span>
+                    </div>
+                    <span class="instruction">KYC</span>
+                </div>
+                <div class="instructions cashout api-links" onclick="openApiBox(event, 'api-openCashout')">
+                    <div class="circle-grey eight">
+                        <span class="number">8</span>
+                    </div>
+                    <span class="instruction">CASH OUT</span>
+                </div>
+                <div class="instructions stats api-links" onclick="openApiBox(event, 'api-openStats')">
+                    <div class="circle-grey nine">
+                        <span class="number">9</span>
+                    </div>
+                    <span class="instruction">STATS</span>
+                </div>
+            </div>
+
+            <div class="ngin-btn top-ngin instructions-mobile-container area">
+                <div class="instructions-mobile">
+                    <div class="instructions create-token">
+                        <span class="instruction active">CREATE TOKEN</span>
+                    </div>
+                    <div class="instructions open-acc">
+                        <span class="instruction">OPEN ACCOUNT</span>
+                    </div>
+                    <div class="instructions cashin">
+                        <span class="instruction">CASH IN</span>
+                    </div>
+                    <div class="instructions check-balance">
+                        <span class="instruction">CHECK BALANCE</span>
+                    </div>
+                    <div class="instructions transfer-giro">
+                        <span class="instruction">TRANSFER GIRO TO GIRO</span>
+                    </div>
+                    <div class="instructions hist-trx">
+                        <span class="instruction">HISTORY TRX</span>
+                    </div>
+                    <div class="instructions kyc">
+                        <span class="instruction">KYC</span>
+                    </div>
+                    <div class="instructions cashout">
+                        <span class="instruction">CASH OUT</span>
+                    </div>
+                    <div class="instructions stats">
+                        <span class="instruction">STATS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API BOX / BLACK BOX -->
+            <div class="main-ngin developer-guide col-row area">
+                <iframe id="api-createToken" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/createToken.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless></iframe>
+                <iframe id="api-openAccount" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/openAccount.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
+                <div id="api-openCashin" class="apibox api-box content guide area" style="width:100%; height: 572px; display: none;">
+                    <h1>Cash In</h1>
+                    <pre>Giro akun anda adalah nomer VA anda yang terdaftar maka kode yang dapat dipakai untuk identifikasi perusahaan adalah</pre>
+                    <pre class=""><b>CIMB: 9989</b></pre>
+                    <pre class=""><b>PERMATA: 8751</b></pre>
+                    <pre>============================================================</pre>
+                    <pre class=""><b>ISI GIRO LEWAT CIMB NIAGA</b></pre>
+                    <pre class=""><b>Pengisian Saldo Via ATM CIMB Niaga</b></pre>
+                    <pre>• Masukkan kartu ATM dan PIN kartu CIMB Anda.</pre>
+                    <pre>
+• Pilih menu TRANSFER >
+Rekening CIMB Niaga/Rekening Ponsel Lain >
+Rekening CIMB Niaga Lain.
+                    </pre>
+                    <pre>• Masukkan jumlah top up yang diinginkan.</pre>
+                    <pre>
+Masukkan kode perusahaan untuk DIGIRO : 9989
+Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor rekening penerima.
+                    </pre>
+                    <pre>• Masukkan kartu ATM dan PIN kartu CIMB Anda.</pre>
+                    <pre class=""><b>Pengisian Saldo Via GO-MOBILE</b></pre>
+                    <pre>• Login ke Go-Mobile.</pre>
+                    <pre>• Pilih menu TRANSFER > Rekening Ponsel/CIMB Niaga.</pre>
+                    <pre>• Pilih rekening sumber Anda : CASA atau Rekening Ponsel.</pre>
+                    <pre>• Pilih rekening tujuan : CASA.</pre>
+                    <pre>
+• Masukkan kode perusahaan untuk DIGIRO : 9989
+Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor rekening penerima
+                    </pre>
+                    <pre>• Masukkan jumlah top up yang diinginkan.</pre>
+                    <pre>• Ikuti instruksi untuk menyelesaikan transaksi.</pre>
+                    <pre class=""><b>Pengisian Saldo Via CIMB CLICKS</b></pre>
+                    <pre>• Login ke CIMB Clicks.</pre>
+                    <pre>• Pilih Menu TRANSFER dan pilih rekening sumber dana Anda pada bagian “transfer from”.</pre>
+                    <pre>• Masukkan jumlah top up yang diinginkan.</pre>
+                    <pre>• Pada bagian “transfer to” pilih Other Account (CIMB Niaga/Rekening Ponsel) kemudian klik NEXT.</pre>
+                    <pre>• Pilih BANK CIMB NIAGA.</pre>
+                    <pre>
+• Masukkan kode perusahaan untuk DIGIRO : 9989
+Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor rekening penerima
+                    </pre>
+                    <pre>• Ikuti instruksi untuk menyelesaikan transaksi.</pre>
+                    <pre class=""><b>Pengisian Saldo Via REKENING PONSEL CIMB NIAGA</b></pre>
+                    <pre>• Pilih menu REKENING PONSEL pada ATM CIMB Niaga.</pre>
+                    <pre>• Masukkan nomor Rekening Ponsel, PIN Rekening Ponsel dan passcode.</pre>
+                    <pre>
+• Pilih menu TRANSFER >
+Rekening CIMB Niaga/Rekening Ponsel Lain >
+Rekening CIMB Niaga Lain.
+                    </pre>
+                    <pre>• Masukkan jumlah top up yang diinginkan</pre>
+                    <pre>
+• Masukkan kode perusahaan untuk DIGIRO : 9989
+Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor rekening penerima
+                    </pre>
+                    <pre>• Ikuti instruksi untuk menyelesaikan transaksi</pre>
+                    <pre>============================================================</pre>
+                    <pre class=""><b>TOP UP DIGIRO VIA BANK PERMATA</b></pre>
+                    <pre class=""><b>Pengisian Saldo Via ATM Pertama Bank</b></pre>
+                    <pre>• Masukkan kartu ATM dan PIN Permata Anda.</pre>
+                    <pre>• Masuk ke menu TRANSFER > TRANSFER KE REKENING PERMATABANK.</pre>
+                    <pre>
+• Masukkan kode perusahaan untuk DIGIRO : 8751
+Kemudian diikuti nomor Giro Anda yang terdaftar pada DIGIRO (Contoh : 8751 2200XXXXXX).
+                    </pre>
+                    <pre>• Masukkan jumlah top up yang diinginkan.</pre>
+                    <pre>• Ikuti instruksi untuk menyelesaikan transaksi.</pre>
+                    <pre class=""><b>Pengisian Saldo Via MOBILE BANKING (PermataMobile)</b></pre>
+                    <pre>• Login ke PermataMobile.</pre>
+                    <pre>• Pilih TRANSFER > ANTAR REKENING PERMATABANK.</pre>
+                    <pre>
+• Masukkan kode perusahaan untuk DIGIRO : 8751
+Kemudian diikuti nomor Giro Anda yang terdaftar pada DIGIRO (Contoh : 8751 2200XXXXXX).
+                    </pre>
+                    <pre>• Masukkan jumlah top up yang diinginkan.</pre>
+                    <pre>• Ikuti instruksi untuk menyelesaikan transaksi.</pre>
+                    <pre class=""><b>Pengisian Saldo Via Internet Banking (PermataNet)</b></pre>
+                    <pre>• Login ke PermataNet.</pre>
+                    <pre>• Pilih TRANSFER > REKENING PERMATABANK LAIN.</pre>
+                    <pre>
+• Masukkan kode perusahaan untuk DIGIRO : 8751
+Kemudian diikuti nomor Giro Anda yang terdaftar pada DIGIRO (Contoh : 8751 2200XXXXXX).
+                    </pre>
+                    <pre>• Masukkan jumlah top up yang diinginkan</pre>
+                    <pre>• Ikuti instruksi untuk menyelesaikan transaksi.</pre>
+                    <pre>============================================================</pre>
+                    <pre class=""><b>TOP UP DIGIRO VIA ATM PRIMA</b></pre>
+                    <pre class=""><b>Pengisian Saldo Via ATM Bank Lain</b></pre>
+                    <pre>• Masukkan kartu ATM dan PIN Anda pada ATM bank tersebut.</pre>
+                    <pre>• Pilih menu TRANSFER > REKENING TRANSFER KE BANK LAIN</pre>
+                    <pre>• Masukkan kode Bank CIMB Niaga : 022.</pre>
+                    <pre>
+• Masukkan kode perusahaan untuk DIGIRO : 9989
+kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor rekening penerima.
+                    </pre>
+                    <pre>• Masukkan jumlah top up yang diinginkan.</pre>
+                    <pre>• Ikuti instruksi untuk menyelesaikan transaksi.</pre>
+                    <pre class=""><b>Pengisian Saldo Via Internet Banking Lain</b></pre>
+                    <pre>• Login ke aplikasi internet banking Anda.</pre>
+                    <pre>• Pilih TRANSFER ONLINE ANTAR BANK > CIMB NIAGA / MASUKKAN KODE BANK 022.</pre>
+                    <pre>
+• Masukkan kode perusahaan untuk DIGIRO : 9989
+Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor rekening penerima.
+                    </pre>
+                    <pre>• Masukkan jumlah top up yang diinginkan.</pre>
+                    <pre>• Ikuti instruksi untuk menyelesaikan transaksi.</pre>
+                </div>
+                <iframe id="api-getBalance" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/getBalance.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
+                <iframe id="api-transferGiro" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/transferGiro.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
+                <iframe id="api-historyTrx" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/historyTrx.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
+                <div id="api-openKYC" class="apibox api-box content guide area" style="width:100%; height: 572px; display: none;">
+                    <h1>KYC</h1>
+                    <pre>Untuk melakukan KYC, ada beberapa hal yang perlu di perhatikan:</pre>
+                    <pre>• Layanan free user hanya bisa Main akun (Akun utama) yang dapat melakukan Cashout, maka yang dibutuhkan hanya Main akun (Akun utama) untuk melakukan KyC</pre>
+                    <pre>• Untuk KyC dapat segera langsung mengirim data diri dengan format sebagai berikut:
+• Subject berupa Giro Akun
+• KTP sebagai lampiran
+                    </pre>
+                    <pre>• Dengan begitu Main akun (Akun utama) dapat lakukan cashout segera</pre>
+                </div>
+                <div id="api-openCashout" class="apibox api-box content guide area" style="width:100%; height: 572px; display: none;">
+                    <h1>Cash Out</h1>
+                    <pre>Untuk melakukan Cash Out / tarik dana, ada beberapa hal yang perlu diperhatikan:</pre>
+                    <pre>• Main akun (Akun utama) dapat lakukan Cash out apabila sudah melakukan KyC dan sudah di approve</pre>
+                    <pre>• Pastikan nama Main akun (Akun utama) di akun bank dan nama di KTP anda sama Dengan approval dari Digiroin ini maka Main akun (Akun utama) sudah dapat melakukan Cash Out</pre>
+                </div>
+                <iframe id="api-openStats" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/stat.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>          
+            </div>
+
+            <div id="features" class="feat-title col-row area scrollspy">
+                <div class="feat-container">
+                    <p class="section-title">FEATURES</p>
+                </div>
+            </div>
+            <div class="build-img col-row area">
+                <img src="assets/img/day-night.png" alt="day-night.png">
+            </div>
+            <div class="build-pg col-row area">
+                <div class="pg">
+                    <img class="bill-on" src="assets/img/bill-on.svg" alt="bill on">
+                    <p class="title">START YOUR OWN BUSINESS WITH YOUR OWN PAYMENT</p>
+                    <div class="line"></div>
+                    <p class="body-text">Making the choice between money and meaning. No matter how convenience your full-time job may be, finding the right side business with the right partner and eventually becoming fully entrepreneur is even more meaningful than sexy bonus and pretty allowances.</p>
+                </div>
+            </div>
+            <div class="bg-middle area"></div>
+            <div class="monitor-pg col-row area">
+                <div class="pg">
+                    <img class="product" src="assets/img/product.svg" alt="icon product">
+                    <p class="title">ZERO TO HERO PLATFORM. HUSTLER MINDED</p>
+                    <div class="line"></div>
+                    <p class="body-text">Interactions between merchants always on who will be the consumer and producer. while using Digiroin, merchants are able to provide goodwill as capital not interest factor like Bank, without consider fund as a burden.</p>
+                </div>
+            </div>
+            <div class="monitor-img col-row area">
+                <img src="assets/img/build-illustration.png" alt="Build Illustration">
+            </div>
+            <div class="growth-img col-row area">
+                <img class="product" src="assets/img/grow-illustration.svg" alt="Swap Illustration">
+            </div>
+            <div class="growth-pg col-row area">
+                <div class="pg">
+                    <img class="bill-on" src="assets/img/swap-ok.svg" alt="Icon Swap">
+                    <p class="title">SWAP</p>
+                    <div class="line"></div>
+                    <p class="body-text">Creating smart contracts for swapping offers between merchants. Merchants are able to create exchange with other merchants, this will be written in the blockchain. Creating limitations, deals, promotions are now possible with Digiroin.</p>
+                </div>
+            </div>
+            <div id="plan-section" class="plan-title col-row area scrollspy">
+                <div class="plan-container">
+                    <p class="section-title">PLAN</p>
+                </div>
+            </div>
+            <div class="startup-box col-row area">
+                <div class="cta-box">
+                    <div class="top-color"></div>
+                    <p class="title">Free Account | <span>For Test</span></p>
+                    <ul>
+                        <li>Free to use without integration with Digiroin team</li>
+                        <li>Create account in one click</li>
+                        <li>Integration in 5 minutes</li>
+                        <li>Up to 50 users</li>
+                        <li>Balance maximum 10 Million IDR, or 200 ribu per user</li>
+                    </ul>
+                    <a href="#how-it-works" class="cta-btn">Start Now</a>
+                </div>
+            </div>
+            <div class="enterprise-box col-row area">
+                <div class="cta-box">
+                    <div class="top-color"></div>
+                    <p class="title">Enterprise | <span>For Scale</span></p>
+                    <ul>
+                        <li>Integrated dashboard managing accounts of customer</li>
+                        <li>User embedded with GIRO account</li>
+                        <li>Unlimited users & balance</li>
+                        <li>Available cash in, in merchants registered with Digiroin</li>
+                        <li>Available for cashout, in merchants registered with Digiroin</li>
+                    </ul>
+                    <a href="#subscribe-now" class="cta-btn">Subscribe</a>
+                </div>
+            </div>
+
+            <div class="subscribe email-container col-row area">
+                <p id="subscribe-now" class="title">Subscribe NOW!</p>
+                <div class="subscribe-flex container">
+                    <p class="wording">You will be among the first to hear about our Enterprise features. As a special treat, enjoy 50% off for min 6 month service. Simply by adding your email below</p>
+                    <!-- Begin Mailchimp Signup Form -->
+                    <div id="mc_embed_signup" class="subscribe-email-box">
+                        <form action="https://digiro.us20.list-manage.com/subscribe/post?u=cc70e74e5678cd8bee6b088f2&amp;id=b4414e8427" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <div class="round-wrap">
+                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="youremail@mail.com">
+                                    <i class="font-icon icon-arrowback" id="arrowIconSubscribe"></i>
+                                </div>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                    <input type="text" name="b_cc70e74e5678cd8bee6b088f2_b4414e8427" tabindex="-1" value="">
+                                </div>
+                                <!-- <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button subscribe"> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="supported col-row area">
+                <p>Supported By:</p>
+            </div>
+            <div class="pos-img col-row area">
+                <img src="assets/img/pos-logo.png" alt="Pos Logo">
+            </div>
+            <div class="pos-pg col-row area">
+                <p>DIGIROIN supported by POS INDONESIA in escalating GIROPOS as one of the backbone for Indonesian financial inclusion, give the people options of financial services and also to help the government as a whole to be the strategic development in financial literations. POS INDONESIA has been a long time player for helping Indonesian people for sending money as well as a storage of money. DIGIROIN acknowledge to help POS INDONESIA to revitalize the GIROPOS to become relevant to today’s digital world.</p>
+            </div>
+            <footer class="footer col-row area">
+                <div class="logo-footer">
+                    <img src="assets/img/logogram.svg" alt="Logo Footer.svg">
+                </div>
+                <div class="product-footer container">
+                    <h3>Product</h3>
+                    <div class="product-footer footer-links container">
+                        <p class="use-case">
+                            <a href="https://medium.com/digiroin/tagged/use-cases">Use Case</a>
+                        </p>
+                        <p class="product-update">
+                            <a href="https://medium.com/digiroin/tagged/product-updates">Product Updates</a>
+                        </p>
+                        <p class="tnc">
+                            <a href="tnc_page.html">Terms and Conditions</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="resources-footer container">
+                    <h3>Resources</h3>
+                    <div class="resources-footer footer-links container">
+                        <p class="blog">
+                            <a href="https://medium.com/digiroin">Blog</a>
+                        </p>
+                        <p class="documentation">
+                            <a href="https://medium.com/digiroin/tagged/documentation">Documentation</a>
+                        </p>
+                        <p class="faq">
+                            <a href="faq_page.html">FAQ</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-us container">
+                    <h3>
+                        <a href="mailto:cs@digiro.in?Subject=Digiroin%20Support">Contact Us</a>
+                    </h3>
+                    <div class="socmed">
+                        <a href="https://www.instagram.com/digiroin/?hl=en">
+                            <img src="assets/img/Socmed/instagram.png" alt="instagram">
+                        </a>
+                        <a href="https://twitter.com/digiroin">
+                            <img src="assets/img/Socmed/twitter.png" alt="twitter">
+                        </a>
+                        <a href="https://dribbble.com/DIGIROIN">
+                            <img src="assets/img/Socmed/dribbble.png" alt="dribbble">
+                        </a>
+                        <a href="https://medium.com/digiroin">
+                            <img src="assets/img/Socmed/medium.png" alt="medium">
+                        </a>
+                    </div>
+                    <p class="copyright">© 2018 Digiro.in. All Rights Reserved</p>
+                </div>
+            </footer>
+        </main>
+        <div class="bg-bottom"></div>
+        <div class="bg-footer col-row area"></div>
+    </div>
+    
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="node_modules/json-pretty-html/dist/bundle.js"></script>
+    
+    <script>
+        var smoothScroll = new SmoothScroll('a[href*="#"]', {
+            topOnEmptyHash: true,
+            easing: 'easeInOutCubic',
+            updateURL: false, // Update the URL on scroll
+            popstate: true, // Animate scrolling with the forward/backward browser buttons (requires updateURL to be true)
+
+            // Custom Events
+            emitEvents: true // Emit custom events
+        });
+    </script>
+</body>
+</html>

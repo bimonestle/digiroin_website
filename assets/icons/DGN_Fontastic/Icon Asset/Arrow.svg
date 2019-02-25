@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="16px" viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fontastic" transform="translate(-459.000000, -790.000000)">
+            <g id="Icon/Arrow" transform="translate(451.000000, 786.000000)">
+                <g id="Group-2">
+                    <rect id="Rectangle-Copy-21" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M8.34149539,5.75257669 C7.92585876,5.38889464 7.88374125,4.75713202 8.24742331,4.34149539 C8.61110536,3.92585876 9.24286798,3.88374125 9.65850461,4.24742331 L17.6585046,11.2474233 C18.1138318,11.6458346 18.1138318,12.3541654 17.6585046,12.7525767 L9.65850461,19.7525767 C9.24286798,20.1162587 8.61110536,20.0741412 8.24742331,19.6585046 C7.88374125,19.242868 7.92585876,18.6111054 8.34149539,18.2474233 L15.4814077,12 L8.34149539,5.75257669 Z" id="Path-2-Copy" fill="#222222" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

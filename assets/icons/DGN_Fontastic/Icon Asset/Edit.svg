@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="19px" viewBox="0 0 14 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Edit</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fontastic" transform="translate(-793.000000, -201.000000)">
+            <g id="Icon/Edit" transform="translate(787.000000, 198.000000)">
+                <g id="Group-2-Copy">
+                    <g id="Group">
+                        <g id="Group-4" fill="#D8D8D8" fill-opacity="0">
+                            <rect id="Rectangle-Copy-10" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                        <path d="M8.52979552,18.864977 L11.3731774,17.5762974 L17.6039681,7.10891918 C17.8001308,6.77937698 17.6849034,6.36227974 17.3175701,6.15657998 L15.6963902,5.24874959 C15.2934295,5.02309917 14.7739422,5.1581078 14.5563898,5.52358357 L8.32537468,15.9913389 L8.52979552,18.864977 Z M16.673572,3.50372362 L18.294752,4.41155402 C19.6377814,5.16362534 20.0979373,6.82928642 19.3225389,8.13191217 L12.7706181,19.1387708 L6.73869107,21.872565 L6.28589838,15.5074492 L12.8378191,4.50059058 C13.6132175,3.19796484 15.3305426,2.7516523 16.673572,3.50372362 Z M9.42932499,14.1366665 L8.49045243,15.7074599 L11.4924216,17.3885064 L12.4254748,15.8144542 L9.42932499,14.1366665 Z M14.3836398,5.81065753 L13.4497321,7.38423121 L16.4425384,9.06014666 L17.3812161,7.48924408 L14.3836398,5.81065753 Z" id="Rectangle" fill="#222222" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

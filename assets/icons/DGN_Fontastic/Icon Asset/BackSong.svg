@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="9px" viewBox="0 0 12 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/BackSong</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fontastic" transform="translate(-877.000000, -889.000000)">
+            <g id="Icon/Backsong" transform="translate(871.000000, 882.000000)">
+                <g id="Backward">
+                    <rect id="Rectangle_1486" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M7,16 L8,16 C8.55228475,16 9,15.5522847 9,15 L9,8 C9,7.44771525 8.55228475,7 8,7 L7,7 C6.44771525,7 6,7.44771525 6,8 L6,15 C6,15.5522847 6.44771525,16 7,16 Z" id="Fill-8" fill="#222222"></path>
+                    <path d="M10.4931533,12.3642597 L16.4970769,15.8577263 C16.9744338,16.1354831 17.5865744,15.9736752 17.8643311,15.4963183 C17.9531889,15.3436061 18,15.1700777 18,14.9933952 L18,8.0071625 C18,7.45487775 17.5522847,7.0071625 17,7.0071625 C16.823347,7.0071625 16.6498466,7.05395797 16.4971522,7.14278752 L10.4932286,10.6355536 C10.0158475,10.9132688 9.85398627,11.5253952 10.1317014,12.0027764 C10.2188325,12.1525512 10.3433861,12.2771156 10.4931533,12.3642597 Z" id="Fill-4" fill="#222222"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

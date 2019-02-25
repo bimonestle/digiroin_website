@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="805" height="158" viewBox="0 0 805 158">
+    <defs>
+        <rect id="b" width="223" height="150" rx="10"/>
+        <filter id="a" width="106.3%" height="109.3%" x="-3.1%" y="-3.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+        <rect id="d" width="223" height="150" rx="10"/>
+        <filter id="c" width="106.3%" height="109.3%" x="-3.1%" y="-3.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+        <rect id="f" width="223" height="150" rx="10"/>
+        <filter id="e" width="106.3%" height="109.3%" x="-3.1%" y="-3.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+            <g transform="translate(4 2)">
+                <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+                <use fill="#FFF" xlink:href="#b"/>
+            </g>
+            <path fill="#4286F5" d="M14 2h203c5.523 0 10 4.477 10 10v3.759H4V12C4 6.477 8.477 2 14 2z"/>
+        </g>
+        <text fill="#888" font-family="ProximaNova-Regular, Proxima Nova" font-size="16" transform="translate(4 2)">
+            <tspan x="17.092" y="50">Pembeli membuka layanan </tspan> <tspan x="21.724" y="69">GIRO dengan mengakses </tspan> <tspan x="21.644" y="88">web Merchants, langsung </tspan> <tspan x="35.884" y="107">mendapatkan VA dari </tspan> <tspan x="25.78" y="126">bank yang bekerja sama</tspan>
+        </text>
+        <g fill-rule="nonzero">
+            <g transform="translate(291 2)">
+                <use fill="#000" filter="url(#c)" xlink:href="#d"/>
+                <use fill="#FFF" xlink:href="#d"/>
+            </g>
+            <path fill="#4286F5" d="M301 2h203c5.523 0 10 4.477 10 10v3.759H291V12c0-5.523 4.477-10 10-10z"/>
+        </g>
+        <text fill="#888" font-family="ProximaNova-Regular, Proxima Nova" font-size="16" transform="translate(291 2)">
+            <tspan x="31.956" y="62">Pembeli membayar VA </tspan> <tspan x="22.836" y="81">dengan akun yang sudah </tspan> <tspan x="78.804" y="100">diberikan</tspan>
+        </text>
+        <g fill-rule="nonzero">
+            <g transform="translate(578 2)">
+                <use fill="#000" filter="url(#e)" xlink:href="#f"/>
+                <use fill="#FFF" xlink:href="#f"/>
+            </g>
+            <path fill="#4286F5" d="M588 2h203c5.523 0 10 4.477 10 10v3.759H578V12c0-5.523 4.477-10 10-10z"/>
+        </g>
+        <text fill="#888" font-family="ProximaNova-Regular, Proxima Nova" font-size="16" transform="translate(578 2)">
+            <tspan x="32.564" y="59">Pembeli bisa langsung </tspan> <tspan x="24.092" y="78">membayar dan merchant </tspan> <tspan x="32.62" y="97">mendapatkan callback </tspan> <tspan x="21.78" y="116">apabila sudah dibayarkan</tspan>
+        </text>
+        <g fill="#4286F5" fill-rule="nonzero">
+            <path d="M244 74h17v6h-17a3 3 0 1 1 0-6z"/>
+            <path d="M274.422 78.789l-13.528 6.764a2 2 0 0 1-2.894-1.79V70.237a2 2 0 0 1 2.894-1.789l13.528 6.764a2 2 0 0 1 0 3.578z"/>
+        </g>
+        <g fill="#4286F5" fill-rule="nonzero">
+            <path d="M531 74h17v6h-17a3 3 0 1 1 0-6z"/>
+            <path d="M561.422 78.789l-13.528 6.764a2 2 0 0 1-2.894-1.79V70.237a2 2 0 0 1 2.894-1.789l13.528 6.764a2 2 0 0 1 0 3.578z"/>
+        </g>
+    </g>
+</svg>

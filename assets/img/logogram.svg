@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="26px" viewBox="0 0 18 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill-1_3_</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="83.3508508%" y1="-8.33026952%" x2="33.3312391%" y2="91.7467727%" id="linearGradient-1">
+            <stop stop-color="#A677FB" offset="0%"></stop>
+            <stop stop-color="#4286F5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="WEB_B2B_FIX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Web---V4ULT_4_Home" transform="translate(-240.000000, -4971.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Footer" transform="translate(0.000000, 4923.000000)">
+                <path d="M240,69.8615719 L240,59.9405992 L246.115086,63.3066435 L246.115086,73.1567521 L240,69.8615719 Z M248.316517,55.050977 L257.995826,48 L257.995826,65.4325662 L248.316517,73.1567521 L248.316517,55.050977 Z" id="Fill-1_3_"></path>
+            </g>
+        </g>
+    </g>
+</svg>

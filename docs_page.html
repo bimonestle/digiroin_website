@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Digiroin | Docs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/img/favicon-01.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/icons/DGN_Fontastic/digiroin-font-icon/font-icon.css" />
+    <link rel="stylesheet" href="node_modules/json-pretty-html/style.css">
+
+    <!-- Smooth Scroll -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+</head>
+<body>
+    <div id="wrapper-docs-page" class="wrapper">
+        <main class="page-container documentations grids">
+            <header class="header col-row area">
+                <div class="menu-container">
+                    <a href="index.html">
+                        <img src="assets/img/logo.svg" alt="digiroin logo" srcset="">
+                    </a>
+                    <nav class="menu">
+                        <a href="docs_page.html" class="docs-lk active">Docs</a>
+                        <a href="pricing_page.html" class="features-lk">Pricing</a>
+                        <a href="mailto:cs@digiro.in?Subject=Digiroin%20Support" class="contact-lk">Contact Us</a>
+                        <!-- <a href="signin_page.html" class="sign-lk">Sign In / Sign Up</a> -->
+                        <a href="#dasboard" id="dashboard-nav" class="signed">Dashboard<i class="icon-arrow"></i></a>
+                        <div id="drop-menu" class="drop-menu">
+                            <div class="menu">
+                                <a href="#logout" id="logout">Log Out</a>
+                            </div>
+                        </div>
+                        <div class="dot"></div>
+                        <!-- <div class="dot features docs"></div> -->
+                    </nav>
+                </div>
+            </header>
+            <div class="menu-mobile area">
+                <nav class="menu">
+                    <a href="docs_page.html" class="docs-lk">Docs</a>
+                    <a href="pricing_page.html" class="features-lk">Pricing</a>
+                    <a href="mailto:cs@digiro.in?Subject=Digiroin%20Support" class="contact-lk">Contact Us</a>
+                    <!-- <a href="signin_page.html" class="sign-lk">Sign In / Sign Up</a> -->
+                    <a href="#dasboard" id="dashboard-nav" class="signed">Dashboard<i class="icon-arrow"></i></a>
+                    <div id="drop-menu" class="drop-menu">
+                        <div class="menu">
+                            <a href="#logout" id="logout">Log Out</a>
+                        </div>
+                    </div>
+                    <div class="dot main"></div>
+                    <!-- <div class="dot features docs"></div> -->
+                </nav>
+            </div>
+
+            <!-- SIDE BAR -->
+            <div class="sidebar container area">
+                <div class="sidebar-inner">
+                    <div class="lists">
+                        <ul class="menu-root">
+                            <li>
+                                <a class="" href="#new-token">
+                                    <p class="title">Membuat Akses Token Baru</p>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a class="" href="#reset-token">
+                                    <p class="title">Mereset Akses Token</p>
+                                </a>
+                            </li> -->
+                            <li>
+                                <a class="" href="#create-VA">
+                                    <p class="title">Pembuatan VA</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="#get-balance">
+                                    <p class="title">Get Balance</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="#api-transfer">
+                                    <p class="title">Transfer</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="#get-trx-acc">
+                                    <p class="title">Get Transactions From Account</p>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a class="" href="#get-trx-by-id">
+                                    <p class="title">Get Transactions By Transaction ID</p>
+                                </a>
+                            </li> -->
+                            <li>
+                                <a class="" href="#stats">
+                                    <p class="title">Stats</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottombar container mobile area">
+                <nav class="docs-menu bottombar-inner">
+                    <a class="" href="#new-token">
+                        <p class="title">Membuat Akses Token Baru</p>
+                    </a>
+                    <!-- <a class="" href="#reset-token">
+                        <p class="title">Mereset Akses Token</p>
+                    </a> -->
+                    <a class="" href="#create-VA">
+                        <p class="title">Pembuatan VA</p>
+                    </a>
+                    <a class="" href="#get-balance">
+                        <p class="title">Get Balance</p>
+                    </a>
+                    <a class="" href="#api-transfer">
+                        <p class="title">Transfer</p>
+                    </a>
+                    <a class="" href="#get-trx-acc">
+                        <p class="title">Get Transactions From Account</p>
+                    </a>
+                    <!-- <a class="" href="#get-trx-by-id">
+                        <p class="title">Get Transactions By Transaction ID</p>
+                    </a> -->
+                    <a class="" href="#stats">
+                        <p class="title">Stats</p>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="content guide area">
+                <h1>Documentations</h1>
+
+                <!-- CREATE NEW AKSES TOKEN -->
+                <h3 id="new-token" class="content title scrollspy">Membuat Akses Token Baru</h3>
+                <pre class="pre-top">Endpoint ini digunakan untuk membuat akses token baru. Token ini digunakan sebagai password dan username adalah nomor hp yang didaftarkan.</pre>
+                <pre class=""><b>Request:</b></pre>
+                <pre class="">
+Method: GET
+Authentication: No
+Endpoint: https://wallet.digiro.in/api/newToken/:phone
+                </pre>
+                <pre>============================================================</pre>
+                <pre class=""><b>Responses:</b></pre>
+                <pre class="">
+Code: <b>201</b>
+Description: Success / OK
+Response body:
+{
+    "message": ok
+    "status": 201,
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>400</b>
+Description: Bad Request
+Response body:
+{
+    "status": 400,
+    "timestamp": 157616251,
+    "result": "&lt;error message&gt;"
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>500</b>
+Description: Internal Server Error
+Response body:
+{
+    "status": 500,
+    "timestamp": 157616251,
+    "result": "Can't generate API access token"
+}
+                </pre>
+
+                <!-- Reset Token Access -->
+                <!-- <h3 id="reset-token" class="content title scrollspy">Mereset Akses Token</h3>
+                <pre class="pre-top">Endpoint ini digunakan untuk mereset akses token jika pengguna lupa atau kehilangan akses token yang lama.</pre>
+                <pre class=""><b>Request:</b></pre>
+                <pre class="">
+Method: PATCH
+Authentication: No
+Endpoint: http://auth.digiro.in/api/resetToken/:phone
+                </pre>
+                <pre>============================================================</pre>
+                <pre class=""><b>Responses:</b></pre>
+                <pre class="">
+Code: <b>200</b>
+Description: Success / OK
+Response body:
+{
+    "status": 200,
+    "timestamp": 157616251,
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>400</b>
+Description: Bad Request
+Response body:
+{
+    "status": 400,
+    "timestamp": 157616251,
+    "result": "&lt;error message&gt;"
+}
+                </pre> -->
+
+                <!-- PEMBUATAN VA -->
+                <h3 id="create-VA" class="content title scrollspy">Pembuatan VA</h3>
+                <pre class="pre-top">Endpoint ini digunakan untuk pembuatan VA baru.</pre>
+                <pre class=""><b>Request:</b></pre>
+                <pre class="">
+Method: POST
+Authentication: HTTP Auth
+Endpoint: <a href="https://wallet.digiro.in">https://wallet.digiro.in</a>/api/giro
+Req body:
+{
+    "phone": "62xxxxxxxxxx"
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class=""><b>Responses:</b></pre>
+                <pre class="">
+Code: <b>201</b>
+Description: Success / OK
+Response body:
+{
+    "devid": "33XXXX",
+    "message": "0x3F351dA40F10F689EF3fE46f414aA2C633XXXXXX:220030XXXX",
+    "status": 201,
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>400</b>
+Description: Bad Request
+Response body:
+{
+    "status": 400,
+    "timestamp": 157616251,
+    "result": "&lt;error message&gt;"
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>401</b>
+Description: Unauthorized
+Response body:
+{
+    "status": 401,
+    "timestamp": 157616251
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>409</b>
+Description: Conflict
+Response body:
+{
+    "status": 409,
+    "timestamp": "Phone number already registered"
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>500</b>
+Description: Internal Server Error
+Response body:
+{
+    "status": 500,
+    "timestamp": "&lt;error message&gt;"
+}
+                </pre>
+
+                <!-- Get Balance -->
+                <h3 id="get-balance" class="content title scrollspy">Get Balance</h3>
+                <pre class="pre-top">Endpoint ini digunakan untuk pengecekan saldo.</pre>
+                <pre class=""><b>Request:</b></pre>
+                <pre class="">
+Method: GET
+Authentication: HTTP Auth
+Endpoint: <a href="https://wallet.digiro.in">https://wallet.digiro.in</a>/balance/:akun
+                </pre>
+                <pre>============================================================</pre>
+                <pre class=""><b>Responses:</b></pre>
+                <pre class="">
+Code: <b>200</b>
+Description: Success / OK
+Response body:
+{
+    "result": "1000000"
+    "status": 200,
+    "timestamp": 1545881553
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>401</b>
+Description: Unauthorized
+Response body:
+{
+    "status": 401
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>403</b>
+Description: Forbidden
+Response body:
+{
+    "status": 403
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>404</b>
+Description: Not Found
+Response body:
+{
+    "status": 404
+}
+                </pre>
+                <pre>============================================================</pre>
+
+                <!-- Transfer -->
+                <h3 id="api-transfer" class="content title scrollspy">Transfer</h3>
+                <pre class="pre-top">Endpoint ini digunakan untuk melakukan transfer dana.</pre>
+                <pre class=""><b>Request:</b></pre>
+                <pre class="">
+Method: POST
+Authentication: HTTP Auth
+Endpoint: <a href="https://wallet.digiro.in">https://wallet.digiro.in</a>/api/transfer
+Reqbody:
+{
+    "from":"220030XXXX",
+    "to":"220030XXXX",
+    "amount": 100000,
+    "external_id":""
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class=""><b>Responses:</b></pre>
+                <pre class="">
+Code: <b>200</b>
+Description: Success / OK
+Response body:
+{
+    "devid": "33XXXX",
+    "status": 200,
+    "trx_id": "0x7c154b2b056a4b6bf117451171873ac6b04f14939eeeff5a78bb7dXXXXXXXXXX",
+    "status": "PENDING",
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>400</b>
+Description: Bad Request
+Response body:
+{
+    "status": 400,
+    "timestamp": 157616251,
+    "message": "&lt;error message&gt;",
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>401</b>
+Description: Forbidden
+Response body:
+{
+    "status": 401,
+    "timestamp": 157616251,
+    "message": "&lt;error message&gt;",
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>404</b>
+Description: Not Found
+Response body:
+{
+    "status": 404,
+    "timestamp": 157616251,
+    "message": "&lt;error message&gt;",
+}
+                </pre>
+                <pre>============================================================</pre>
+
+                <!-- Get Transactions From Account -->
+                <h3 id="get-trx-acc" class="content title scrollspy">Get Transactions From Account</h3>
+                <pre class="pre-top">Endpoint ini digunakan untuk pengecekan history transaksi dari sebuah akun.</pre>
+                <pre class=""><b>Request:</b></pre>
+                <pre class="">
+Method: GET
+Authentication: HTTP Auth
+Endpoint: <a href="https://wallet.digiro.in">https://wallet.digiro.in</a>/api/trx/:akun
+                </pre>
+
+                <pre>============================================================</pre>
+                <pre class=""><b>Responses:</b></pre>
+                <pre class="">
+Code: <b>200</b>
+Description: Success / OK
+Response body:
+{
+    "result": [
+        {
+            "request": {
+                "amount": 1000000,
+                "from_address": "0x4F0678471EA4b5ac8F2996aD780aDa07CaXXXXX",
+                "from_giro": "220030XXXX",
+                "to_address": "0x9C841AbB0F08f8cbCc1Df07296F3826C5bXXXXXX",
+                "to_giro": "220030XXXX",
+                "type": "transfer"
+            },
+            "status": 200,
+            "timestamp": 1547623040,
+            "tx": "0xf35c32af58bee5fd2302adb5501e21538d2e724dbe578c8519bd012a29XXXXXX"
+        }    
+    ],
+    "status": 200
+}
+
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>401</b>
+Description: Unauthorized
+Response body:
+{
+    "status": 401
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>403</b>
+Description: Forbidden
+Response body:
+{
+    "status": 403
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>404</b>
+Description: Not Found
+Response body:
+{
+    "status": 404
+}
+                </pre>
+                <pre>============================================================</pre>
+
+                <!-- Get Transactions By Transaction ID -->
+                <!-- <h3 id="get-trx-by-id" class="content title scrollspy">Get Transactions By Transaction ID</h3>
+                <pre class="pre-top">Endpoint ini digunakan untuk pengecekan transaksi menggunakan transaksi ID.</pre>
+                <pre class=""><b>Request:</b></pre>
+                <pre class="">
+Method: GET
+Authentication: HTTP Auth
+Endpoint: <a href="https://wallet.digiro.in">https://wallet.digiro.in</a>/api/getTrx/:trx
+                </pre>
+
+                <pre>============================================================</pre>
+                <pre class=""><b>Responses:</b></pre>
+                <pre class="">
+Code: <b>200</b>
+Description: Success / OK
+Response body:
+{
+    "status": 200,
+    "timestamp": 157616251,
+    "result": []
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>401</b>
+Description: Unauthorized
+Response body:
+{
+    "status": 401
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>403</b>
+Description: Forbidden
+Response body:
+{
+    "status": 403
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>404</b>
+Description: Not Found
+Response body:
+{
+    "status": 404
+}
+                </pre>
+                <pre>============================================================</pre> -->
+
+                <!-- Stats -->
+                <h3 id="stats" class="content title scrollspy">Stat</h3>
+                <pre class="pre-top">Endpoint ini digunakan untuk melihat jumlah akun yang telah terdaftar.</pre>
+                <pre class=""><b>Request:</b></pre>
+                <pre class="">
+Method: GET
+Authentication: HTTP Auth
+Endpoint: <a href="https://wallet.digiro.in">https://wallet.digiro.in</a>/stat
+                </pre>
+
+                <pre>============================================================</pre>
+                <pre class=""><b>Responses:</b></pre>
+                <pre class="">
+Code: <b>200</b>
+Description: Success / OK
+Response body:
+{
+    "app": "dev_token",
+    "code": 200,
+    "timestamp": 1545881226,
+    "uptime": "4:2:58",
+    "version": "1.0.0"
+}
+                </pre>
+                <pre>============================================================</pre>
+                <pre class="">
+Code: <b>401</b>
+Description: Bad Request
+Response body:
+{
+    "status": 401,
+    "timestamp": 157616251,
+    "message": "&lt;error message&gt;",
+}
+                </pre>
+            </div>
+
+        </main>
+    </div>
+    <!-- <script src="assets/js/main.js"></script> -->
+    <script src="assets/js/docs.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/json-pretty-html/dist/bundle.js"></script>
+
+    <!-- Smooth Scroll -->
+    <script>
+        var smoothScroll = new SmoothScroll('.documentations .sidebar.container a[href*="#"]', {
+            topOnEmptyHash: true,
+            easing: 'easeInOutCubic',
+            updateURL: false, // Update the URL on scroll
+            popstate: true, // Animate scrolling with the forward/backward browser buttons (requires updateURL to be true)
+
+            // Custom Events
+            emitEvents: true // Emit custom events
+        });
+
+        var mobSmoothScroll = new SmoothScroll('.documentations .bottombar.container a[href*="#"]', {
+            topOnEmptyHash: true,
+            easing: 'easeInOutCubic',
+            updateURL: false, // Update the URL on scroll
+            popstate: true, // Animate scrolling with the forward/backward browser buttons (requires updateURL to be true)
+
+            // Custom Events
+            emitEvents: true // Emit custom events
+        });
+    </script>
+</body>
+</html>

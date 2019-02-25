@@ -1,0 +1,16 @@
+{
+    "method": "POST",
+    "url": "https://wallet.digiro.in/api/transfer",
+    "httpVersion": "HTTP/1.1",
+    
+    "headers": [
+      { "name": "Accept", "value": "application/json" },
+      { "name": "Content-Type", "value": "application/json" },
+      { "name": "Authorization", "value": "Basic 628xxxxxxxxx token_xxxxxx" }
+    ],
+    "postData": {
+        "mimeType": "application/json",
+        "text": "{\"from_acc\": \"yourAccount\",\"to_acc\": \"recipientAccount\",\"amount\": \"10000\",\"external_id\": \"xxx\"}"
+      }
+  }
+  
