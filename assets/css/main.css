@@ -54,10 +54,11 @@ a {
     overflow: hidden;
     align-items: center;
     padding: 1em 0;
+    padding-bottom: 0;
     background-image: url("../img/big-background.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-size: auto 93%;;
+    background-size: auto 100%;;
 }
 .pricing-wrapper,
 .faq-wrapper,
@@ -123,34 +124,6 @@ a {
 .approval.box .email {
     color: #4286f5;
 }
-.bg-middle {
-    position: absolute;
-    z-index: -10;
-    top: -39em;
-    left: -1em;
-    width: 100%;
-    height: 735px;
-    background-image: url("../img/path-middle.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.bg-bottom {
-    position: absolute;
-    z-index: -1;
-    bottom: 22.5em;
-    right: 0;
-    width: 100%;
-    height: 1019px;
-    /* background-image: url("../img/path-bottom.svg"); */
-    background-size: cover;
-    background-repeat: no-repeat;   
-}
-
-/* .page-container > header, .page-container > div, .page-container > footer {
-    border: 1px solid #222222;
-    word-wrap: break-word;
-    word-break: break-all;
-} */
 header {
     position: fixed;
     z-index: 1000;
@@ -666,15 +639,20 @@ header.scrolled {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
 }
-.main-ngin.developer-guide > iframe,
+/* .main-ngin.developer-guide > iframe,
 .main-ngin.developer-guide > div{
     border: none;
     box-shadow: none;
-}
+} */
 .main-ngin.how-it-works .legends {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    width: 70%;
+
+}
+.legends .legend.grey {
+    margin-bottom: 10px;
 }
 .legends .legend {
     display: flex;
@@ -717,23 +695,28 @@ header.scrolled {
 .apibox.api-diagram {
     display: flex;
     align-items: center;
-    justify-content: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 30px 60px;
 }
 .apibox.api-diagram > img {
     flex-grow: 1;
-    margin-left: 1.5em;
     width: 100%;
     max-width: 320px;
 }
 .apibox.api-diagram .diagram-text {
     flex-grow: 1;
-    margin: 0 1.5em;
+    margin-left: 1.5em;
+    width: 40%;
 }
 .apibox .diagram-title {
     font-size: 20px;
     color: #4286f5;
     line-height: 28px;
     margin-bottom: 10px;
+}
+.dg-title-container .icon-arrow {
+    display: none;
 }
 .apibox .diagram-par {
     color: #888888;
@@ -1093,8 +1076,13 @@ span.header {
 .footer {
     position: relative;
     display: flex;
+    flex-direction: column;
     margin-top: 95px;
-    margin-bottom: 1em;
+    margin-bottom: 42px;
+    z-index: 1;
+}
+.subscribe.email-container {
+    z-index: 1;
 }
 .socmed img {
     width: 25px;
@@ -1105,22 +1093,25 @@ span.header {
 }
 .bg-footer {
     position: absolute;
-    z-index: -2;
-    padding: 7.5em 0;
+    z-index: 0;
     bottom: 0;
     left: 0;
+    height: 431px;
     width: 100%;
     background-color: #ffffff;
     /* border-top: 1px solid #222222; */
 }
-footer.footer > div:nth-child(2),
-footer.footer > div:nth-child(3) {
+.footer-menu.container {
+    display: flex;
+}
+.footer-menu.container > div:nth-child(2),
+.footer-menu.container > div:nth-child(3) {
     margin-left: 2em;
 }
-footer.footer h3 {
+.footer-menu.container h3 {
     font-size: 16px;
 }
-footer.footer .contact-us.container h3 a {
+.footer-menu.container .contact-us.container h3 a {
     color: #222222;
     font-size: 16px;
     transition: .3s;
@@ -1129,16 +1120,16 @@ footer.footer .contact-us.container h3 a {
     -ms-transition: .3s;
     -o-transition: .3s;
 }
-footer.footer .contact-us.container h3 a:hover {
+.footer-menu.container .contact-us.container h3 a:hover {
     color: #4286f5;
 }
-footer.footer a {
+.footer-menu.container a {
     display: inline-block;
     font-size: 14px;
     color: #222222;
     line-height: 16px;
 }
-.footer .contact-us {
+.footer-menu.container .contact-us {
     margin-left: auto;
 }
 .footer-links.container {
@@ -2376,10 +2367,6 @@ p.tnc-title {
     .check-balance.area {
         grid-area: check-bal;
     }
-    .wrapper,
-    .pricing-wrapper {
-        background-size: auto 93.5%;
-    }
     .menu > a {
         color: #222222;
         margin: 0 7px;
@@ -2501,6 +2488,9 @@ p.tnc-title {
         margin-left: auto;
         width: 75%;
         line-height: 16px;
+    }
+    .bg-footer {
+        height: 480px;
     }
 
     /* PRICING PAGE */
@@ -2625,17 +2615,19 @@ p.tnc-title {
         justify-content: center;
     }
     .menu-container .menu {
-        width: 100%;
+        width: calc(100% - 2em);
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-top: 1em;
+        padding: 1em;
+        position: fixed;
+        bottom: 0;
+        background-color: #ffffff;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .wrapper, .pricing-wrapper {
-        background-size: auto 91.5%;
-    }
     .grids {
         display: grid;
         grid-template-columns: repeat(6, 15%);
@@ -2672,7 +2664,7 @@ p.tnc-title {
         ". strup strup strup strup ."
         ". entp entp entp entp ."
         ". subsc-cont subsc-cont subsc-cont subsc-cont ."
-        "footer footer footer footer footer footer";
+        ". footer footer footer footer .";
     }
     .menu-container {
         justify-content: center;
@@ -2715,6 +2707,9 @@ p.tnc-title {
     .legend .legend-text {
         font-size: 12px;
     }
+    .main-ngin.how-it-works .apibox {
+        overflow-y: hidden;
+    }
     .apibox.api-diagram {
         justify-content: flex-start;
     }
@@ -2722,6 +2717,70 @@ p.tnc-title {
         margin-left: unset;
         width: 85%;
         margin-bottom: 1em;
+        flex-grow: .5;
+    }
+    .apibox.api-diagram .diagram-text {
+        margin: 0;
+        padding: 0 1em;
+        padding-top: 2em;
+        background-color: rgba(34, 34, 34, 0.9);
+        position: absolute;
+        left: 0;
+        top: 80%;
+        height: 100%;
+        transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -ms-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -o-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    .apibox.api-diagram .diagram-text.up {
+        top: 0%;
+    }
+    .diagram-text .dg-title-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .apibox .diagram-title {
+        margin-bottom: 0;
+    }
+    .dg-title-container .icon-arrow {
+        display: inline-block;
+        transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
+        -webkit-transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
+        -moz-transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
+        -ms-transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
+        -o-transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
+
+        transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -ms-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -o-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+
+        /* animation: sizing 1.5s ease infinite;
+        -webkit-animation: sizing 1.5s ease infinite;
+        -moz-animation: sizing 1.5s ease infinite; */
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        will-change: transform;
+    }
+    /* @-moz-keyframes sizing { 100% { color: #ffffff; } }
+    @-webkit-keyframes sizing { 100% { color: #ffffff; } }
+    @keyframes sizing { 100% { color: #ffffff; } } */
+    .font-icon.icon-arrow.up {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+    }
+    .apibox .diagram-par {
+        color: #ccc;
     }
     .pos-pg p {
         font-size: 12px;
@@ -2881,9 +2940,6 @@ p.tnc-title {
     }
 
     /* PRICING PAGE */
-    .pricing-wrapper {
-        background-size: auto 76%;
-    }
     .pricing-page.grids {
         display: grid;
         grid-template-columns: repeat(6, 15%);

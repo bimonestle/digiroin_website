@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="assets/img/favicon-01.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/icons/DGN_Fontastic/digiroin-font-icon/font-icon.css" />
-    <link rel="stylesheet" href="node_modules/json-pretty-html/style.css">
 
     <!-- Smooth Scroll -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -83,19 +82,19 @@
                 <div class="line"></div>
                 <!-- <div class="line blue"></div> -->
                 <!-- <div class="line blue transfer paid trx"></div> -->
-                <div class="instructions cashin diagram-links active" onclick="openDiagram(event, 'cashout-diagram')">
+                <div class="instructions cashin diagram-links active" onclick="openDiagram(event, 'cashout-diagram', 'cashout-legend')">
                     <div class="circle-grey active one">
                         <span class="number">1</span>
                     </div>
                     <span class="instruction active">CASH OUT</span>
                 </div>
-                <div class="instructions kyc diagram-links" onclick="openDiagram(event, 'cashin-diagram')">
+                <div class="instructions kyc diagram-links" onclick="openDiagram(event, 'cashin-diagram', 'cashin-legend')">
                     <div class="circle-grey two">
                         <span class="number">2</span>
                     </div>
                     <span class="instruction">CASH IN</span>
                 </div>
-                <div class="instructions cashout diagram-links" onclick="openDiagram(event, 'o2o-diagram')">
+                <div class="instructions cashout diagram-links" onclick="openDiagram(event, 'o2o-diagram', 'o2o-legend')">
                     <div class="circle-grey tri">
                         <span class="number">3</span>
                     </div>
@@ -105,72 +104,87 @@
 
             <!-- API BOX / BLACK BOX -->
             <div class="main-ngin how-it-works col-row area">
-                <div class="legends-container">
-                    <div id="cashout-legend" class="legends">
-                        <div class="legend grey">
-                            <span class="circle grey"></span>
-                            <span class="legend-text">B2B Micromarket Agreements</span>
-                        </div>
-                        <div class="legend purple">
-                            <span class="circle purple"></span>
-                            <span class="legend-text">API Cash Out</span>
-                        </div>
-                        <div class="legend blue">
-                            <span class="circle blue"></span>
-                            <span class="legend-text">Use Case</span>
-                        </div>
-                    </div>
-                    <div id="cashin-legend" class="legends" style="display:none;">
-                        <div class="legend grey">
-                            <span class="circle grey"></span>
-                            <span class="legend-text">B2B Micromarket Agreements</span>
-                        </div>
-                        <div class="legend purple">
-                            <span class="circle purple"></span>
-                            <span class="legend-text">API Cash In / Top Up</span>
-                        </div>
-                        <div class="legend blue">
-                            <span class="circle blue"></span>
-                            <span class="legend-text">Use Case</span>
-                        </div>
-                    </div>
-                    <div id="o2o-legend" class="legends" style="display:none;">
-                        <div class="legend grey">
-                            <span class="circle grey"></span>
-                            <span class="legend-text">B2B Micromarket Agreements</span>
-                        </div>
-                        <div class="legend purple">
-                            <span class="circle purple"></span>
-                            <span class="legend-text">API Cashless</span>
-                        </div>
-                        <div class="legend blue">
-                            <span class="circle blue"></span>
-                            <span class="legend-text">Use Case</span>
-                        </div>
-                    </div>
-                </div>
                 <div class="diagram-container">
-                    <div id="cashout-diagram" class="apibox content guide area api-diagram" style="width:100%; height: 572px;">
+                    <div id="cashout-diagram" class="apibox area api-diagram" style="width:100%; height: 572px;">
                         <img src="assets/img/cash-out-diagram.svg" alt="cashout_diagaram.svg">
                         <div class="diagram-text container">
-                            <p class="diagram-title">Cash Out</p>
+                            <div class="dg-title-container">
+                                <p class="diagram-title">Cash Out</p>
+                                <i class="font-icon icon-arrow sld-btn"></i>
+                            </div>
                             <p class="diagram-par">Do people really need food festival, bazaar, and another cup of artisan kopi gula aren, combo of three or a bigger martabak? Really? Until a customer visit a merchant and ask, "I'd like to tradein my time, my writing, for yours, your coffee, banana, clothes, film". See… When we don't have enough of business model to make human to exchange everything possible, then everything stuck into waste. So we build a programmable CashOut API, to connect everything on everyone earnings to be possible to exchange and settle.</p>
                         </div>
-                    </div>
-    
-                    <div id="cashin-diagram" class="apibox content guide area api-diagram" style="width:100%; height: 572px; display: none;">
-                        <img src="assets/img/cash-in-diagram.svg" alt="cashin_diagaram.svg">
-                        <div class="diagram-text container">
-                            <p class="diagram-title">Cash In</p>
-                            <p class="diagram-par">It's a mystery why so many keep their money parked in big banks that send them the untouchable hitman, a debt collectors through. Move your money to a better bank, a bank that hasn't needed a bailout, or a totally new kind of bank, like digiroin. Onboarding costs are low and the benefits are clear without hidden fees and conflict of interest. Want a stylish studio apartment? Vouch a barista class. Want designer streetwear outfit? Subscribe to salad bowl. Every choice you make with your money reflects your true investment for goodwill.</p>
+                        
+                        <div class="legends-container">
+                            <div id="cashout-legend" class="legends">
+                                <div class="legend grey">
+                                    <span class="circle grey"></span>
+                                    <span class="legend-text">B2B Micromarket Agreements</span>
+                                </div>
+                                <div class="legend purple">
+                                    <span class="circle purple"></span>
+                                    <span class="legend-text">API Cash Out</span>
+                                </div>
+                                <div class="legend blue">
+                                    <span class="circle blue"></span>
+                                    <span class="legend-text">Use Case</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
     
-                    <div id="o2o-diagram" class="apibox content guide area api-diagram" style="width:100%; height: 572px; display: none;">
+                    <div id="cashin-diagram" class="apibox area api-diagram" style="width:100%; height: 572px; display: none;">
+                        <img src="assets/img/cash-in-diagram.svg" alt="cashin_diagaram.svg">
+                        <div class="diagram-text container">
+                            <div class="dg-title-container">
+                                <p class="diagram-title">Cash In</p>
+                                <i class="font-icon icon-arrow sld-btn"></i>
+                            </div>
+                            <p class="diagram-par">It's a mystery why so many keep their money parked in big banks that send them the untouchable hitman, a debt collectors through. Move your money to a better bank, a bank that hasn't needed a bailout, or a totally new kind of bank, like digiroin. Onboarding costs are low and the benefits are clear without hidden fees and conflict of interest. Want a stylish studio apartment? Vouch a barista class. Want designer streetwear outfit? Subscribe to salad bowl. Every choice you make with your money reflects your true investment for goodwill.</p>
+                        </div>
+                        
+                        <div class="legends-container">
+                            <div id="cashin-legend" class="legends" style="display:none;">
+                                <div class="legend grey">
+                                    <span class="circle grey"></span>
+                                    <span class="legend-text">B2B Micromarket Agreements</span>
+                                </div>
+                                <div class="legend purple">
+                                    <span class="circle purple"></span>
+                                    <span class="legend-text">API Cash In / Top Up</span>
+                                </div>
+                                <div class="legend blue">
+                                    <span class="circle blue"></span>
+                                    <span class="legend-text">Use Case</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div id="o2o-diagram" class="apibox area api-diagram" style="width:100%; height: 572px; display: none;">
                         <img src="assets/img/o-2-o-diagram.svg" alt="o2o.svg">
                         <div class="diagram-text container">
-                            <p class="diagram-title">Online To Offline</p>
+                            <div class="dg-title-container">
+                                <p class="diagram-title">Online To Offline</p>
+                                <i class="font-icon icon-arrow sld-btn"></i>
+                            </div>
                             <p class="diagram-par">What is the cashless things, yo fintech pundits? Asked the skeptics who rejoice in their customers desires. Is it not this: To exhibit one's transaction history in order to infiltrate at one's privacy? Or is it this: To love those who take your orders in a store, and give goodwill to others when it is going to harm your businesses? There are people for whom cash is a dominant motivation, and who are primarily self-interested and opportunistic to switch on and off between cash to cashless exchange and transaction, and generally not comfortable with all digital surveillance on transaction data privacy. So we introduce goodwill banking: Interchangeable of fairness over appropriation of short-term profit.</p>
+                        </div>
+                        <div class="legends-container">
+                            <div id="o2o-legend" class="legends" style="display:none;">
+                                <div class="legend grey">
+                                    <span class="circle grey"></span>
+                                    <span class="legend-text">B2B Micromarket Agreements</span>
+                                </div>
+                                <div class="legend purple">
+                                    <span class="circle purple"></span>
+                                    <span class="legend-text">API Cashless</span>
+                                </div>
+                                <div class="legend blue">
+                                    <span class="circle blue"></span>
+                                    <span class="legend-text">Use Case</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -244,38 +258,6 @@
                         <span class="number">9</span>
                     </div>
                     <span class="instruction">STATS</span>
-                </div>
-            </div>
-
-            <div class="ngin-btn top-ngin instructions-mobile-container area">
-                <div class="instructions-mobile">
-                    <div class="instructions create-token">
-                        <span class="instruction active">CREATE TOKEN</span>
-                    </div>
-                    <div class="instructions open-acc">
-                        <span class="instruction">OPEN ACCOUNT</span>
-                    </div>
-                    <div class="instructions cashin">
-                        <span class="instruction">CASH IN</span>
-                    </div>
-                    <div class="instructions check-balance">
-                        <span class="instruction">CHECK BALANCE</span>
-                    </div>
-                    <div class="instructions transfer-giro">
-                        <span class="instruction">TRANSFER GIRO TO GIRO</span>
-                    </div>
-                    <div class="instructions hist-trx">
-                        <span class="instruction">HISTORY TRX</span>
-                    </div>
-                    <div class="instructions kyc">
-                        <span class="instruction">KYC</span>
-                    </div>
-                    <div class="instructions cashout">
-                        <span class="instruction">CASH OUT</span>
-                    </div>
-                    <div class="instructions stats">
-                        <span class="instruction">STATS</span>
-                    </div>
                 </div>
             </div>
 
@@ -428,17 +410,16 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                     <p class="body-text">Making the choice between money and meaning. No matter how convenience your full-time job may be, finding the right side business with the right partner and eventually becoming fully entrepreneur is even more meaningful than sexy bonus and pretty allowances.</p>
                 </div>
             </div>
-            <div class="bg-middle area"></div>
             <div class="monitor-pg col-row area">
                 <div class="pg">
-                    <img class="product" src="assets/img/product.svg" alt="icon product">
+                    <img class="product" src="assets/img/compliment.svg" alt="icon product">
                     <p class="title">ZERO TO HERO PLATFORM. HUSTLER MINDED</p>
                     <div class="line"></div>
                     <p class="body-text">Interactions between merchants always on who will be the consumer and producer. while using Digiroin, merchants are able to provide goodwill as capital not interest factor like Bank, without consider fund as a burden.</p>
                 </div>
             </div>
             <div class="monitor-img col-row area">
-                <img src="assets/img/build-illustration.png" alt="Build Illustration">
+                <img src="assets/img/desert.png" alt="Build Illustration">
             </div>
             <div class="growth-img col-row area">
                 <img class="product" src="assets/img/grow-illustration.svg" alt="Swap Illustration">
@@ -484,7 +465,16 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                     <a href="#subscribe-now" class="cta-btn">Subscribe</a>
                 </div>
             </div>
-
+            <div class="supported col-row area">
+                <p>Supported By:</p>
+            </div>
+            <div class="pos-img col-row area">
+                <img src="assets/img/pos-logo.png" alt="Pos Logo">
+            </div>
+            <div class="pos-pg col-row area">
+                <p>DIGIROIN supported by POS INDONESIA in escalating GIROPOS as one of the backbone for Indonesian financial inclusion, give the people options of financial services and also to help the government as a whole to be the strategic development in financial literations. POS INDONESIA has been a long time player for helping Indonesian people for sending money as well as a storage of money. DIGIROIN acknowledge to help POS INDONESIA to revitalize the GIROPOS to become relevant to today’s digital world.</p>
+            </div>
+            
             <div class="subscribe email-container col-row area">
                 <p id="subscribe-now" class="title">Subscribe NOW!</p>
                 <div class="subscribe-flex container">
@@ -508,77 +498,68 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                 </div>
             </div>
 
-            <div class="supported col-row area">
-                <p>Supported By:</p>
-            </div>
-            <div class="pos-img col-row area">
-                <img src="assets/img/pos-logo.png" alt="Pos Logo">
-            </div>
-            <div class="pos-pg col-row area">
-                <p>DIGIROIN supported by POS INDONESIA in escalating GIROPOS as one of the backbone for Indonesian financial inclusion, give the people options of financial services and also to help the government as a whole to be the strategic development in financial literations. POS INDONESIA has been a long time player for helping Indonesian people for sending money as well as a storage of money. DIGIROIN acknowledge to help POS INDONESIA to revitalize the GIROPOS to become relevant to today’s digital world.</p>
-            </div>
             <footer class="footer col-row area">
-                <div class="logo-footer">
-                    <img src="assets/img/logogram.svg" alt="Logo Footer.svg">
-                </div>
-                <div class="product-footer container">
-                    <h3>Product</h3>
-                    <div class="product-footer footer-links container">
-                        <p class="use-case">
-                            <a href="https://medium.com/digiroin/tagged/use-cases">Use Case</a>
-                        </p>
-                        <p class="product-update">
-                            <a href="https://medium.com/digiroin/tagged/product-updates">Product Updates</a>
-                        </p>
-                        <p class="tnc">
-                            <a href="tnc_page.html">Terms and Conditions</a>
-                        </p>
+                <div class="footer-menu container">
+                    <div class="logo-footer">
+                        <img src="assets/img/logogram.svg" alt="Logo Footer.svg">
                     </div>
-                </div>
-                <div class="resources-footer container">
-                    <h3>Resources</h3>
-                    <div class="resources-footer footer-links container">
-                        <p class="blog">
-                            <a href="https://medium.com/digiroin">Blog</a>
-                        </p>
-                        <p class="documentation">
-                            <a href="https://medium.com/digiroin/tagged/documentation">Documentation</a>
-                        </p>
-                        <p class="faq">
-                            <a href="faq_page.html">FAQ</a>
-                        </p>
+                    <div class="product-footer container">
+                        <h3>Product</h3>
+                        <div class="product-footer footer-links container">
+                            <p class="use-case">
+                                <a href="https://medium.com/digiroin/tagged/use-cases">Use Case</a>
+                            </p>
+                            <p class="product-update">
+                                <a href="https://medium.com/digiroin/tagged/product-updates">Product Updates</a>
+                            </p>
+                            <p class="tnc">
+                                <a href="tnc_page.html">Terms and Conditions</a>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-us container">
-                    <h3>
-                        <a href="mailto:cs@digiro.in?Subject=Digiroin%20Support">Contact Us</a>
-                    </h3>
-                    <div class="socmed">
-                        <a href="https://www.instagram.com/digiroin/?hl=en">
-                            <img src="assets/img/Socmed/instagram.png" alt="instagram">
-                        </a>
-                        <a href="https://twitter.com/digiroin">
-                            <img src="assets/img/Socmed/twitter.png" alt="twitter">
-                        </a>
-                        <a href="https://dribbble.com/DIGIROIN">
-                            <img src="assets/img/Socmed/dribbble.png" alt="dribbble">
-                        </a>
-                        <a href="https://medium.com/digiroin">
-                            <img src="assets/img/Socmed/medium.png" alt="medium">
-                        </a>
+                    <div class="resources-footer container">
+                        <h3>Resources</h3>
+                        <div class="resources-footer footer-links container">
+                            <p class="blog">
+                                <a href="https://medium.com/digiroin">Blog</a>
+                            </p>
+                            <p class="documentation">
+                                <a href="https://medium.com/digiroin/tagged/documentation">Documentation</a>
+                            </p>
+                            <p class="faq">
+                                <a href="faq_page.html">FAQ</a>
+                            </p>
+                        </div>
                     </div>
-                    <p class="copyright">© 2018 Digiro.in. All Rights Reserved</p>
+                    <div class="contact-us container">
+                        <h3>
+                            <a href="mailto:cs@digiro.in?Subject=Digiroin%20Support">Contact Us</a>
+                        </h3>
+                        <div class="socmed">
+                            <a href="https://www.instagram.com/digiroin/?hl=en">
+                                <img src="assets/img/Socmed/instagram.png" alt="instagram">
+                            </a>
+                            <a href="https://twitter.com/digiroin">
+                                <img src="assets/img/Socmed/twitter.png" alt="twitter">
+                            </a>
+                            <a href="https://dribbble.com/DIGIROIN">
+                                <img src="assets/img/Socmed/dribbble.png" alt="dribbble">
+                            </a>
+                            <a href="https://medium.com/digiroin">
+                                <img src="assets/img/Socmed/medium.png" alt="medium">
+                            </a>
+                        </div>
+                        <p class="copyright">© 2018 Digiro.in. All Rights Reserved</p>
+                    </div>
                 </div>
             </footer>
+            <div class="bg-footer col-row area"></div>
         </main>
-        <div class="bg-bottom"></div>
-        <div class="bg-footer col-row area"></div>
     </div>
     
-    <script src="node_modules/axios/dist/axios.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="node_modules/json-pretty-html/dist/bundle.js"></script>
-    
+
+    <!-- Smooth Scroll -->
     <script>
         var smoothScroll = new SmoothScroll('a[href*="#"]', {
             topOnEmptyHash: true,

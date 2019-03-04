@@ -30,14 +30,18 @@ window.onscroll = function () {
     // }
 }
 
-// POP UP CAROUSEL
-var popCarousel = function () {
-    console.log("Test");
-};
-document.querySelector('.diagram-container').addEventListener('click', popCarousel);
+// SLIDE UP API BOX
+var slideUp = function (event) {
+    // var thisElm = event.target;
+    if (event.target.classList.contains('sld-btn')) {
+        event.target.classList.toggle("up");
+        event.target.parentElement.parentElement.classList.toggle("up");
+    }
+}
+document.addEventListener("click", slideUp);
 
 // OPEN DIAGRAM
-function openDiagram(evt, diagramName) {
+function openDiagram(evt, diagramName, diagramLegend) {
     // Declare all variables
     var i, diagram, diagramLinks;
 
@@ -57,6 +61,7 @@ function openDiagram(evt, diagramName) {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(diagramName).style.display = "flex";
+    document.getElementById(diagramLegend).style.display = "flex";
     evt.currentTarget.className += " active";
     evt.currentTarget.firstElementChild.className += " active";
     evt.currentTarget.lastElementChild.className += " active";
