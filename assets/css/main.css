@@ -703,10 +703,10 @@ header.scrolled {
     flex-grow: 1;
     width: 100%;
     max-width: 320px;
+    margin-right: 1.5em;
 }
 .apibox.api-diagram .diagram-text {
     flex-grow: 1;
-    margin-left: 1.5em;
     width: 40%;
 }
 .apibox .diagram-title {
