@@ -6,12 +6,19 @@
     <title>Digiroin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="assets/img/favicon-01.png" type="image/x-icon">
+    <!-- Gide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
+    <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/icons/DGN_Fontastic/digiroin-font-icon/font-icon.css" />
 
     <!-- Smooth Scroll -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+    <!-- Glide JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
 </head>
 <body>
@@ -82,19 +89,19 @@
                 <div class="line"></div>
                 <!-- <div class="line blue"></div> -->
                 <!-- <div class="line blue transfer paid trx"></div> -->
-                <div class="instructions cashin diagram-links active" onclick="openDiagram(event, 'cashout-diagram', 'cashout-legend')">
+                <div class="instructions cashout diagram-links active" onclick="openDiagram(event, 'cashout-diagram', 'cashout-legend')">
                     <div class="circle-grey active one">
                         <span class="number">1</span>
                     </div>
                     <span class="instruction active">CASH OUT</span>
                 </div>
-                <div class="instructions kyc diagram-links" onclick="openDiagram(event, 'cashin-diagram', 'cashin-legend')">
+                <div class="instructions cashin diagram-links" onclick="openDiagram(event, 'cashin-diagram', 'cashin-legend')">
                     <div class="circle-grey two">
                         <span class="number">2</span>
                     </div>
                     <span class="instruction">CASH IN</span>
                 </div>
-                <div class="instructions cashout diagram-links" onclick="openDiagram(event, 'o2o-diagram', 'o2o-legend')">
+                <div class="instructions o2o diagram-links" onclick="openDiagram(event, 'o2o-diagram', 'o2o-legend')">
                     <div class="circle-grey tri">
                         <span class="number">3</span>
                     </div>
@@ -105,8 +112,27 @@
             <!-- API BOX / BLACK BOX -->
             <div class="main-ngin how-it-works col-row area">
                 <div class="diagram-container">
-                    <div id="cashout-diagram" class="apibox area api-diagram" style="width:100%; height: 572px;">
-                        <img src="assets/img/cash-out-diagram.svg" alt="cashout_diagaram.svg">
+                    <div id="cashout-diagram" class="apibox area api-diagram" style="height: 572px;">
+                        <div class="diagram-image container">
+                            <img src="assets/img/cash-out-diagram.svg" alt="cashout_diagaram.svg">
+                            <div class="legends-container">
+                                <p class="notes">Color Notes:</p>
+                                <div id="cashout-legend" class="legends">
+                                    <div class="legend grey">
+                                        <span class="circle grey"></span>
+                                        <span class="legend-text">B2B Micromarket Agreements</span>
+                                    </div>
+                                    <div class="legend purple">
+                                        <span class="circle purple"></span>
+                                        <span class="legend-text">API Cash Out</span>
+                                    </div>
+                                    <div class="legend blue">
+                                        <span class="circle blue"></span>
+                                        <span class="legend-text">Use Case</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="diagram-text container">
                             <div class="dg-title-container">
                                 <p class="diagram-title">Cash Out</p>
@@ -114,27 +140,29 @@
                             </div>
                             <p class="diagram-par">Do people really need food festival, bazaar, and another cup of artisan kopi gula aren, combo of three or a bigger martabak? Really? Until a customer visit a merchant and ask, "I'd like to tradein my time, my writing, for yours, your coffee, banana, clothes, film". See… When we don't have enough of business model to make human to exchange everything possible, then everything stuck into waste. So we build a programmable CashOut API, to connect everything on everyone earnings to be possible to exchange and settle.</p>
                         </div>
-                        
-                        <div class="legends-container">
-                            <div id="cashout-legend" class="legends">
-                                <div class="legend grey">
-                                    <span class="circle grey"></span>
-                                    <span class="legend-text">B2B Micromarket Agreements</span>
-                                </div>
-                                <div class="legend purple">
-                                    <span class="circle purple"></span>
-                                    <span class="legend-text">API Cash Out</span>
-                                </div>
-                                <div class="legend blue">
-                                    <span class="circle blue"></span>
-                                    <span class="legend-text">Use Case</span>
+                    </div>
+    
+                    <div id="cashin-diagram" class="apibox area api-diagram" style="height: 572px; display: none;">
+                        <div class="diagram-image container">
+                            <img src="assets/img/cash-in-diagram.svg" alt="cashin_diagaram.svg">
+                            <div class="legends-container">
+                                <p class="notes">Color Notes:</p>
+                                <div id="cashin-legend" class="legends" style="display:none;">
+                                    <div class="legend grey">
+                                        <span class="circle grey"></span>
+                                        <span class="legend-text">B2B Micromarket Agreements</span>
+                                    </div>
+                                    <div class="legend purple">
+                                        <span class="circle purple"></span>
+                                        <span class="legend-text">API Cash In / Top Up</span>
+                                    </div>
+                                    <div class="legend blue">
+                                        <span class="circle blue"></span>
+                                        <span class="legend-text">Use Case</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-    
-                    <div id="cashin-diagram" class="apibox area api-diagram" style="width:100%; height: 572px; display: none;">
-                        <img src="assets/img/cash-in-diagram.svg" alt="cashin_diagaram.svg">
                         <div class="diagram-text container">
                             <div class="dg-title-container">
                                 <p class="diagram-title">Cash In</p>
@@ -142,27 +170,29 @@
                             </div>
                             <p class="diagram-par">It's a mystery why so many keep their money parked in big banks that send them the untouchable hitman, a debt collectors through. Move your money to a better bank, a bank that hasn't needed a bailout, or a totally new kind of bank, like digiroin. Onboarding costs are low and the benefits are clear without hidden fees and conflict of interest. Want a stylish studio apartment? Vouch a barista class. Want designer streetwear outfit? Subscribe to salad bowl. Every choice you make with your money reflects your true investment for goodwill.</p>
                         </div>
-                        
-                        <div class="legends-container">
-                            <div id="cashin-legend" class="legends" style="display:none;">
-                                <div class="legend grey">
-                                    <span class="circle grey"></span>
-                                    <span class="legend-text">B2B Micromarket Agreements</span>
-                                </div>
-                                <div class="legend purple">
-                                    <span class="circle purple"></span>
-                                    <span class="legend-text">API Cash In / Top Up</span>
-                                </div>
-                                <div class="legend blue">
-                                    <span class="circle blue"></span>
-                                    <span class="legend-text">Use Case</span>
+                    </div>
+    
+                    <div id="o2o-diagram" class="apibox area api-diagram" style="height: 572px; display: none;">
+                        <div class="diagram-image container">
+                            <img src="assets/img/o-2-o-diagram.svg" alt="o2o.svg">
+                            <div class="legends-container">
+                                <p class="notes">Color Notes:</p>
+                                <div id="o2o-legend" class="legends" style="display:none;">
+                                    <div class="legend grey">
+                                        <span class="circle grey"></span>
+                                        <span class="legend-text">B2B Micromarket Agreements</span>
+                                    </div>
+                                    <div class="legend purple">
+                                        <span class="circle purple"></span>
+                                        <span class="legend-text">API Cashless</span>
+                                    </div>
+                                    <div class="legend blue">
+                                        <span class="circle blue"></span>
+                                        <span class="legend-text">Use Case</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-    
-                    <div id="o2o-diagram" class="apibox area api-diagram" style="width:100%; height: 572px; display: none;">
-                        <img src="assets/img/o-2-o-diagram.svg" alt="o2o.svg">
                         <div class="diagram-text container">
                             <div class="dg-title-container">
                                 <p class="diagram-title">Online To Offline</p>
@@ -170,20 +200,137 @@
                             </div>
                             <p class="diagram-par">What is the cashless things, yo fintech pundits? Asked the skeptics who rejoice in their customers desires. Is it not this: To exhibit one's transaction history in order to infiltrate at one's privacy? Or is it this: To love those who take your orders in a store, and give goodwill to others when it is going to harm your businesses? There are people for whom cash is a dominant motivation, and who are primarily self-interested and opportunistic to switch on and off between cash to cashless exchange and transaction, and generally not comfortable with all digital surveillance on transaction data privacy. So we introduce goodwill banking: Interchangeable of fairness over appropriation of short-term profit.</p>
                         </div>
-                        <div class="legends-container">
-                            <div id="o2o-legend" class="legends" style="display:none;">
-                                <div class="legend grey">
-                                    <span class="circle grey"></span>
-                                    <span class="legend-text">B2B Micromarket Agreements</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Diagram -->
+                <div class="diagram-container-mobile glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            
+                            <!-- Cashout Diagram -->
+                            <li class="glide__slide">
+                                <div id="cashout-diagram" class="apibox area api-diagram" style="height: 572px;">
+                                    <div class="diagram-image container">
+                                        <img src="assets/img/cash-out-diagram.svg" alt="cashout_diagaram.svg">
+                                        <div class="legends-container">
+                                            <p class="notes">Color Notes:</p>
+                                            <div id="cashout-legend" class="legends">
+                                                <div class="legend grey">
+                                                    <span class="circle grey"></span>
+                                                    <span class="legend-text">B2B Micromarket Agreements</span>
+                                                </div>
+                                                <div class="legend purple">
+                                                    <span class="circle purple"></span>
+                                                    <span class="legend-text">API Cash Out</span>
+                                                </div>
+                                                <div class="legend blue">
+                                                    <span class="circle blue"></span>
+                                                    <span class="legend-text">Use Case</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-text container">
+                                        <div class="dg-title-container">
+                                            <p class="diagram-title">Cash Out</p>
+                                            <i class="font-icon icon-arrow sld-btn"></i>
+                                        </div>
+                                        <p class="diagram-par">Do people really need food festival, bazaar, and another cup of artisan kopi gula aren, combo of three or a bigger martabak? Really? Until a customer visit a merchant and ask, "I'd like to tradein my time, my writing, for yours, your coffee, banana, clothes, film". See… When we don't have enough of business model to make human to exchange everything possible, then everything stuck into waste. So we build a programmable CashOut API, to connect everything on everyone earnings to be possible to exchange and settle.</p>
+                                    </div>
                                 </div>
-                                <div class="legend purple">
-                                    <span class="circle purple"></span>
-                                    <span class="legend-text">API Cashless</span>
+                            </li>
+
+                            <!-- Cashin Diagram -->
+                            <li class="glide__slide">
+                                <div id="cashin-diagram" class="apibox area api-diagram" style="height: 572px;">
+                                    <div class="diagram-image container">
+                                        <img src="assets/img/cash-in-diagram.svg" alt="cashin_diagaram.svg">
+                                        <div class="legends-container">
+                                            <p class="notes">Color Notes:</p>
+                                            <div id="cashin-legend" class="legends" style="display:none;">
+                                                <div class="legend grey">
+                                                    <span class="circle grey"></span>
+                                                    <span class="legend-text">B2B Micromarket Agreements</span>
+                                                </div>
+                                                <div class="legend purple">
+                                                    <span class="circle purple"></span>
+                                                    <span class="legend-text">API Cash In / Top Up</span>
+                                                </div>
+                                                <div class="legend blue">
+                                                    <span class="circle blue"></span>
+                                                    <span class="legend-text">Use Case</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-text container">
+                                        <div class="dg-title-container">
+                                            <p class="diagram-title">Cash In</p>
+                                            <i class="font-icon icon-arrow sld-btn"></i>
+                                        </div>
+                                        <p class="diagram-par">It's a mystery why so many keep their money parked in big banks that send them the untouchable hitman, a debt collectors through. Move your money to a better bank, a bank that hasn't needed a bailout, or a totally new kind of bank, like digiroin. Onboarding costs are low and the benefits are clear without hidden fees and conflict of interest. Want a stylish studio apartment? Vouch a barista class. Want designer streetwear outfit? Subscribe to salad bowl. Every choice you make with your money reflects your true investment for goodwill.</p>
+                                    </div>
                                 </div>
-                                <div class="legend blue">
-                                    <span class="circle blue"></span>
-                                    <span class="legend-text">Use Case</span>
+                            </li>
+
+                            <!-- o2o Diagram -->
+                            <li class="glide__slide">
+                                <div id="o2o-diagram" class="apibox area api-diagram" style="height: 572px;">
+                                    <div class="diagram-image container">
+                                        <img src="assets/img/o-2-o-diagram.svg" alt="o2o.svg">
+                                        <div class="legends-container">
+                                            <p class="notes">Color Notes:</p>
+                                            <div id="o2o-legend" class="legends" style="display:none;">
+                                                <div class="legend grey">
+                                                    <span class="circle grey"></span>
+                                                    <span class="legend-text">B2B Micromarket Agreements</span>
+                                                </div>
+                                                <div class="legend purple">
+                                                    <span class="circle purple"></span>
+                                                    <span class="legend-text">API Cashless</span>
+                                                </div>
+                                                <div class="legend blue">
+                                                    <span class="circle blue"></span>
+                                                    <span class="legend-text">Use Case</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-text container">
+                                        <div class="dg-title-container">
+                                            <p class="diagram-title">Online To Offline</p>
+                                            <i class="font-icon icon-arrow sld-btn"></i>
+                                        </div>
+                                        <p class="diagram-par">What is the cashless things, yo fintech pundits? Asked the skeptics who rejoice in their customers desires. Is it not this: To exhibit one's transaction history in order to infiltrate at one's privacy? Or is it this: To love those who take your orders in a store, and give goodwill to others when it is going to harm your businesses? There are people for whom cash is a dominant motivation, and who are primarily self-interested and opportunistic to switch on and off between cash to cashless exchange and transaction, and generally not comfortable with all digital surveillance on transaction data privacy. So we introduce goodwill banking: Interchangeable of fairness over appropriation of short-term profit.</p>
+                                    </div>
                                 </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="glide__bullets side-ngin how-it-works ngin-btn" data-glide-el="controls[nav]">
+                        <div class="glide__bullet" data-glide-dir="=0">
+                            <div class="instructions cashout diagram-links active">
+                                <div class="circle-grey active one">
+                                    <span class="number">1</span>
+                                </div>
+                                <span class="instruction active">CASH OUT</span>
+                            </div>
+                        </div>
+                        <div class="glide__bullet" data-glide-dir="=1">
+                            <div class="instructions cashin diagram-links">
+                                <div class="circle-grey two">
+                                    <span class="number">2</span>
+                                </div>
+                                <span class="instruction">CASH IN</span>
+                            </div>
+                        </div>
+                        <div class="glide__bullet" data-glide-dir="=2">
+                            <div class="instructions o2o diagram-links">
+                                <div class="circle-grey tri">
+                                    <span class="number">3</span>
+                                </div>
+                                <span class="instruction">O2O</span>
                             </div>
                         </div>
                     </div>
@@ -498,7 +645,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                 </div>
             </div>
 
-            <footer class="footer col-row area">
+            <footer class="footer sidenav col-row area">
                 <div class="footer-menu container">
                     <div class="logo-footer">
                         <img src="assets/img/logogram.svg" alt="Logo Footer.svg">
@@ -554,6 +701,9 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                 </div>
             </footer>
             <div class="bg-footer col-row area"></div>
+            <div class="floating-trigger container" onclick="openSideNav()">
+                <div class="floating-trigger content"></div>
+            </div>
         </main>
     </div>
     
@@ -570,6 +720,11 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
             // Custom Events
             emitEvents: true // Emit custom events
         });
+    </script>
+
+    <!-- Mobile Carousel -->
+    <script>
+        new Glide('.glide').mount()
     </script>
 </body>
 </html>
