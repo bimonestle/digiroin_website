@@ -10,24 +10,6 @@ window.onscroll = function () {
     } else {
         navHead[0].classList.remove("scrolled");
     }
-
-
-    // SCROLLSPY VARIABLE
-    // var section = document.querySelectorAll(".scrollspy");
-    // var sections = {};
-    // var i = 0;
-
-    // Array.prototype.forEach.call(section, function(e) {
-    //     sections[e.id] = e.offsetTop;
-    // });
-    // // SCROLLSPY
-    // var scrollPosition = html.scrollTop || body.scrollTop;
-    // for (i in sections) {
-    //     if (sections[i] <= scrollPosition) {
-    //     document.querySelector('.active').setAttribute('class', ' ');
-    //     document.querySelector('.menu a[href*=' + i + ']').setAttribute('class', 'active');
-    //     }
-    // }
 }
 
 // SLIDE UP API BOX
@@ -140,8 +122,11 @@ function submitForm() {
 }
 
 // OPEN SIDENAV
-function openSideNav() {
-    document.querySelector(".sidenav").style.width = "250px";
-    document.querySelector("body > div").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+var openSideNav = function () {
+    if (event.target.classList.contains('floating-trigger')) {
+        document.querySelector(".sidenav").classList.toggle('slide');
+        document.querySelector(".footer-menu.container").classList.toggle('slide');
+        // document.querySelector("body > div").classList.toggle('slide');
+    }
 }
+document.addEventListener('click', openSideNav);

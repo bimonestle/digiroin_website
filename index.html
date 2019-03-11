@@ -248,7 +248,7 @@
                                         <img src="assets/img/cash-in-diagram.svg" alt="cashin_diagaram.svg">
                                         <div class="legends-container">
                                             <p class="notes">Color Notes:</p>
-                                            <div id="cashin-legend" class="legends" style="display:none;">
+                                            <div id="cashin-legend" class="legends">
                                                 <div class="legend grey">
                                                     <span class="circle grey"></span>
                                                     <span class="legend-text">B2B Micromarket Agreements</span>
@@ -281,7 +281,7 @@
                                         <img src="assets/img/o-2-o-diagram.svg" alt="o2o.svg">
                                         <div class="legends-container">
                                             <p class="notes">Color Notes:</p>
-                                            <div id="o2o-legend" class="legends" style="display:none;">
+                                            <div id="o2o-legend" class="legends">
                                                 <div class="legend grey">
                                                     <span class="circle grey"></span>
                                                     <span class="legend-text">B2B Micromarket Agreements</span>
@@ -410,8 +410,8 @@
 
             <!-- API BOX / BLACK BOX -->
             <div class="main-ngin developer-guide col-row area">
-                <iframe id="api-createToken" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/createToken.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless></iframe>
-                <iframe id="api-openAccount" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/openAccount.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
+                <iframe id="api-createToken" class="apibox api-box" src="//api.apiembed.com/?source=http://digiro.in/createToken.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless></iframe>
+                <iframe id="api-openAccount" class="apibox api-box" src="//api.apiembed.com/?source=http://digiro.in/openAccount.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
                 <div id="api-openCashin" class="apibox api-box content guide area" style="width:100%; height: 572px; display: none;">
                     <h1>Cash In</h1>
                     <pre>Giro akun anda adalah nomer VA anda yang terdaftar maka kode yang dapat dipakai untuk identifikasi perusahaan adalah</pre>
@@ -519,9 +519,9 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                     <pre>• Masukkan jumlah top up yang diinginkan.</pre>
                     <pre>• Ikuti instruksi untuk menyelesaikan transaksi.</pre>
                 </div>
-                <iframe id="api-getBalance" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/getBalance.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
-                <iframe id="api-transferGiro" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/transferGiro.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
-                <iframe id="api-historyTrx" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/historyTrx.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
+                <iframe id="api-getBalance" class="apibox api-box" src="//api.apiembed.com/?source=http://digiro.in/getBalance.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
+                <iframe id="api-transferGiro" class="apibox api-box" src="//api.apiembed.com/?source=http://digiro.in/transferGiro.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
+                <iframe id="api-historyTrx" class="apibox api-box" src="//api.apiembed.com/?source=http://digiro.in/historyTrx.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>
                 <div id="api-openKYC" class="apibox api-box content guide area" style="width:100%; height: 572px; display: none;">
                     <h1>KYC</h1>
                     <pre>Untuk melakukan KYC, ada beberapa hal yang perlu di perhatikan:</pre>
@@ -538,7 +538,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                     <pre>• Main akun (Akun utama) dapat lakukan Cash out apabila sudah melakukan KyC dan sudah di approve</pre>
                     <pre>• Pastikan nama Main akun (Akun utama) di akun bank dan nama di KTP anda sama Dengan approval dari Digiroin ini maka Main akun (Akun utama) sudah dapat melakukan Cash Out</pre>
                 </div>
-                <iframe id="api-openStats" class="apibox api-box" src="//api.apiembed.com/?source=https://digiro.in/stat.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>          
+                <iframe id="api-openStats" class="apibox api-box" src="//api.apiembed.com/?source=http://digiro.in/stat.json&targets=shell:curl,node:unirest,java:unirest,python:requests,php:curl,ruby:native,objc:nsurlsession,go:native, erlang:native" frameborder="0" scrolling="no" width="100%" height="572px" seamless style="display:none;"></iframe>          
             </div>
 
             <div id="features" class="feat-title col-row area scrollspy">
@@ -701,7 +701,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                 </div>
             </footer>
             <div class="bg-footer col-row area"></div>
-            <div class="floating-trigger container" onclick="openSideNav()">
+            <div class="floating-trigger container">
                 <div class="floating-trigger content"></div>
             </div>
         </main>
@@ -724,7 +724,21 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
 
     <!-- Mobile Carousel -->
     <script>
-        new Glide('.glide').mount()
+        var carousel = new Glide('.glide',{
+            animationTimingFunc: 'cubic-bezier(0.77, 0, 0.175, 1)',
+            peek: 25
+        });
+        carousel.on('run.before', function () {
+            document.querySelector('.glide__bullet--active').firstElementChild.firstElementChild.classList.toggle('active');
+            document.querySelector('.glide__bullet--active').firstElementChild.lastElementChild.classList.toggle('active');
+            document.querySelector('.glide__slide--active .diagram-text.container').classList.remove('up');
+            document.querySelector('.glide__slide--active .sld-btn').classList.remove('up');
+        });
+        carousel.on('run.after', function () {
+            document.querySelector('.glide__bullet--active').firstElementChild.firstElementChild.classList.toggle('active');
+            document.querySelector('.glide__bullet--active').firstElementChild.lastElementChild.classList.toggle('active');
+        });
+        carousel.mount();
     </script>
 </body>
 </html>

@@ -42,7 +42,15 @@ body {
     font-family: 'Proxima Nova', 'Gotham', sans-serif;
 }
 body > div {
-    transition: margin-left .5s;
+    transition-property: margin-left, background-color;
+    transition:.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-transition:.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -moz-transition:.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -ms-transition:.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition:.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+body > div.slide {
+    margin-left: 250px;
 }
 a {
     text-decoration: none;
@@ -626,10 +634,6 @@ header.scrolled {
     overflow-y: scroll;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    border: 1px solid #C7C7C7;
-    border: 1px solid rgba(0, 0, 0, .22);
-    background-color: #FFFFFF;
-    box-shadow: 1px 0px 3px rgba(0, 0, 0, .15);
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
@@ -704,6 +708,7 @@ header.scrolled {
     align-items: center;
     justify-content: flex-start;
     padding: 30px;
+    border: 1px solid #C7C7C7;
 }
 .apibox.api-diagram .diagram-text {
     flex-grow: 1;
@@ -1018,6 +1023,7 @@ span.header {
 .subscribe-flex .wording {
     line-height: 22px;
     margin-right: 1em;
+    width: 90%;
 }
 .subscribe-flex .subscribe-email-box {
     width: 100%;
@@ -1154,8 +1160,8 @@ span.header {
     display: none;
     position: fixed;
     bottom: 5em;
-    right: 2em;
-    z-index: 10;
+    right: 1em;
+    z-index: 1100;
 }
 .floating-trigger.content {
     background-color: #4286f5;
@@ -1707,7 +1713,7 @@ table.pos .gradient {
     }
 }
 @media screen and (max-width: 1200px) {
-    .main-ngin .apibox {
+    .main-ngin.how-it-works .apibox {
         overflow-y: hidden;
     }
     .diagram-image.container {
@@ -2323,7 +2329,7 @@ p.tnc-title {
         ". . plan-title plan-title plan-title plan-title plan-title plan-title . ."
         ". . strup strup strup strup strup strup . ."
         ". . entp entp entp entp entp entp . ."
-        ". subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont ."
+        ". . subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont . ."
         ". footer footer footer footer footer footer footer footer .";
     }
     header.area {
@@ -2392,7 +2398,6 @@ p.tnc-title {
     .enterprise-box.area {
         grid-area: entp;
     }
-
     .subscribe.email-container.area {
         grid-area: subsc-cont;
     }
@@ -2425,7 +2430,7 @@ p.tnc-title {
     .menu-container .menu {
         width: calc(100% - 2em);
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         margin-top: 1em;
         padding: 1em;
@@ -2460,7 +2465,7 @@ p.tnc-title {
         display: flex;
         justify-content: flex-start;
         flex-direction: unset;
-        margin-bottom: 2em;
+        margin-top: 2em;
     }
     .side-ngin.ngin-btn.how-it-works {
         justify-content: center;
@@ -2468,9 +2473,10 @@ p.tnc-title {
     .side-ngin .line {
         display: none;
     }
-    .side-ngin > .instructions {
+    .side-ngin .instructions {
         padding: 0px;
         margin-right: 2em;
+        margin-bottom: .5em;
         flex-direction: column;
     }
     .side-ngin .instructions.active {
@@ -2487,6 +2493,24 @@ p.tnc-title {
     }
     .apibox.api-diagram {
         height: 390px !important;
+    }
+    .diagram-image.container {
+        flex-flow: row;
+        justify-content: center;
+    }
+    .diagram-image.container > img {
+        width: 45%;
+    }
+    .main-ngin.how-it-works .legends {
+        flex-flow: column wrap;
+        align-items: flex-start;
+        margin-top: 1em;
+    }
+    .legends-container {
+        flex-flow: column;
+        margin-left: 3em;
+        justify-content: center;
+        margin-top: 0;
     }
     .apibox .diagram-par {
         font-size: 12px;
@@ -2545,42 +2569,96 @@ p.tnc-title {
         margin-bottom: unset;
     }
     .subscribe.email-container {
-        margin-top: 3em;
-    }
+        margin-top: 20%;
+        transform: translateY(-70px);
+        -webkit-transform: translateY(-70px);
+        -moz-transform: translateY(-70px);
+        -ms-transform: translateY(-70px);
+        -o-transform: translateY(-70px);
+}
     .subscribe-flex.container {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: flex-start;
     }
     .subscribe-flex .wording {
         margin-bottom: 22px;
+        width: 100%;
     }
     .contact-us.container .socmed {
-        justify-content: flex-end;
+        justify-content: space-between;
+        margin: 1em 0;
     }
     .socmed a {
         margin-left: 1em;
     }
     .copyright {
-        text-align: right;
-        margin-left: auto;
         width: 75%;
         line-height: 16px;
+        text-align: center;
+        margin: 0 auto;
     }
     .bg-footer {
-        height: 480px;
+        height: 4.5%;
     }
     .sidenav {
-        height: 100%; /* 100% Full-height */
-        width: 0; /* 0 width - change this with JavaScript */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Stay on top */
-        top: 0; /* Stay at the top */
+        margin-top: 0px;
+        margin-bottom: 0;
+        padding-top: 0;
+        height: 100%;
+        width: 0%;
+        position: fixed;
+        overflow: hidden;
+        z-index: 1100;
+        top: 0;
         left: 0;
-        background-color: #111; /* Black*/
-        overflow-x: hidden; /* Disable horizontal scroll */
-        padding-top: 60px; /* Place content 60px from the top */
-        transition: 0.5s;
+        background-color: rgb(0,0,0,0.6);
+        overflow-x: hidden;
+        transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+        -ms-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+        -o-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+}
+    .sidenav.slide {
+        width: 100%;
+    }
+    .footer-menu.container {
+        flex-flow: column wrap;
+        width: 0px;
+        height: inherit;
+        background-color: white;
+        transition: width .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transition: width .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: width .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -ms-transition: width .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -o-transition: width .5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+    .footer-menu.container.slide {
+        width: 250px;
+    }
+    .footer-menu.container > div {
+        margin-top: 1em;
+        min-width: 250px;
+    }
+    .logo-footer {
+        align-self: center;
+        width: 100%;
+        text-align: center;
+    }
+    .footer-menu.container > .resources-footer.container {
+        margin-left: 0;
+    }
+    .footer-menu.container .contact-us {
+        margin: 0 unset;
+        margin-left: unset;
+    }
+    .contact-us.container h3 {
+        text-align: center;
+    }
+    footer.footer .product-footer.container {
+        margin-left: unset;
     }
     .floating-trigger.container {
         display: block;
@@ -2716,7 +2794,7 @@ p.tnc-title {
         ". create-acc create-acc create-acc create-acc ."
         "how how how how how how"
         "side-how side-how side-how side-how side-how side-how"
-        ". main-how main-how main-how main-how ."
+        "main-how main-how main-how main-how main-how main-how"
         "sponsor sponsor sponsor sponsor sponsor sponsor"
         "pos-logo pos-logo pos-logo pos-logo pos-logo pos-logo"
         ". pos-par pos-par pos-par pos-par ."
@@ -2759,48 +2837,52 @@ p.tnc-title {
         display: flex;
         flex-direction: column-reverse;
     }
-    .main-ngin.how-it-works .legends-container {
-        margin-top: 20px;
+    .diagram-image.container {
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .legends-container {
+        margin-top: 1em;
+        margin-left: unset;
+
     }
     .main-ngin.how-it-works .legends {
         margin-bottom: 0px;
+        margin-top: .5em;
+        flex-flow: row;
     }
     .legends .legend {
-        flex-direction: column;
+        flex-flow: row wrap;
         text-align: left;
-        margin-right: unset;
-        align-items: flex-start;
-    }
-    .legends .legend:nth-child(2) {
-        margin: 0 1em;
+        justify-content: stretch;
+        margin-right: .5em;
+        align-items: center;
     }
     .legends .legend .circle {
-        margin-right: unset;
-        margin-bottom: .5em;
+        margin-right: .5em;
     }
     .legend .legend-text {
         font-size: 12px;
-    }
-    .main-ngin.how-it-works .apibox {
-        overflow-y: hidden;
+        margin-top: .5em;
     }
     .apibox.api-diagram {
-        justify-content: flex-start;
+        justify-content: center;
+        padding: 1em;
+        overflow-y: hidden;
+        align-items: flex-start;
     }
-    .apibox.api-diagram > img {
-        margin-left: unset;
-        width: 85%;
-        margin-bottom: 1em;
-        flex-grow: .5;
+    .diagram-image.container > img {
+        width: 210px;
     }
     .apibox.api-diagram .diagram-text {
         margin: 0;
         padding: 0 1em;
-        padding-top: 2em;
+        padding-top: .5em;
         background-color: rgba(34, 34, 34, 0.9);
         position: absolute;
         left: 0;
-        top: 80%;
+        top: 85%;
         width: auto;
         height: 100%;
         transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
@@ -2852,9 +2934,6 @@ p.tnc-title {
     }
     .pos-pg p {
         font-size: 12px;
-    }
-    .side-ngin.developer-guide .instructions {
-        margin-right: 1em;
     }
     .try-sub p {
         margin-top: 2em;
@@ -2962,49 +3041,14 @@ p.tnc-title {
         text-align: center;
         margin: 1.5em;
     }
-    .footer {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-flow: row wrap;
-        margin-top: 5em;
-    }
-    .footer > div {
-        margin-bottom: 2em;
-    }
-    .logo-footer {
-        align-self: center;
-        width: 100%;
-        text-align: center;
-    }
     footer.footer a {
         font-size: 13px;
     }
     footer.footer .socmed a:first-child {
         margin-left: 0;
     }
-    footer.footer .product-footer.container {
-        margin-left: auto;
-    }
-    footer.footer .resources-footer.container {
-        margin-right: auto;
-    }
-    .footer .contact-us {
-        margin-left: unset;
-        margin: 0 auto;
-        margin-bottom: 2em;
-    }
-    .contact-us.container h3 {
-        text-align: center;
-    }
-    .contact-us.container .socmed {
-        justify-content: space-between;
-        margin: 1em 0;
-    }
-    .copyright {
-        text-align: center;
-        margin-left: unset;
-        margin: 0 auto;
+    .footer-menu.container > div:nth-child(3) {
+        margin-left: 0;
     }
 
     /* PRICING PAGE */
