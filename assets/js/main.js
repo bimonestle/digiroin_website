@@ -129,4 +129,5 @@ var openSideNav = function () {
         // document.querySelector("body > div").classList.toggle('slide');
     }
 }
-document.addEventListener('click', openSideNav);
+document.addEventListener('click', openSideNav, false);
+document.addEventListener('touchstart', openSideNav, false); // for ios safari

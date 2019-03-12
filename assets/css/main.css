@@ -396,7 +396,7 @@ header.scrolled {
 .plan-title .line,
 .our-pricing-container .line,
 .pos-title-container .line {
-    border-bottom: 2px solid #dddddd;
+    border-bottom: 2px solid #4286f5;
     width: 70px;
     margin: 0 auto;
 }
@@ -663,6 +663,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    width: 70%;
 }
 .legends .legend {
     display: flex;
@@ -708,7 +709,8 @@ header.scrolled {
     align-items: center;
     justify-content: flex-start;
     padding: 30px;
-    border: 1px solid #C7C7C7;
+    /* border: 1px solid #C7C7C7; */
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
 .apibox.api-diagram .diagram-text {
     flex-grow: 1;
@@ -943,7 +945,7 @@ span.header {
 .enterprise-box .title {
     font-size: 30px;
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
     margin-top: 50px;
 }
 .startup-box .title span,
@@ -1109,18 +1111,11 @@ span.header {
 }
 .footer-menu.container h3 {
     font-size: 16px;
+    font-weight: 600;
 }
 .footer-menu.container .contact-us.container h3 a {
     color: #222222;
     font-size: 16px;
-    transition: .3s;
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -ms-transition: .3s;
-    -o-transition: .3s;
-}
-.footer-menu.container .contact-us.container h3 a:hover {
-    color: #4286f5;
 }
 .footer-menu.container a {
     display: inline-block;
@@ -1723,7 +1718,7 @@ table.pos .gradient {
     .apibox.api-diagram .diagram-text {
         margin: 0;
         padding: 0 1em;
-        padding-top: 1em;
+        padding-top: .5em;
         background-color: rgba(34, 34, 34, 0.9);
         position: absolute;
         left: 0;
@@ -2488,6 +2483,10 @@ p.tnc-title {
         margin-top: 1em;
         max-width: 70px;
     }
+    .glide__slides {
+        overflow: unset;
+        padding: 10px 0;
+    }
     .apibox.api-diagram > img {
         width: 40%;
     }
@@ -2505,6 +2504,14 @@ p.tnc-title {
         flex-flow: column wrap;
         align-items: flex-start;
         margin-top: 1em;
+        width: unset;
+    }
+    .legends .legend {
+        margin-right: unset;
+        flex-flow: row wrap;
+    }
+    .legend.grey .legend-text {
+        width: 80%;
     }
     .legends-container {
         flex-flow: column;
@@ -2515,6 +2522,11 @@ p.tnc-title {
     .apibox .diagram-par {
         font-size: 12px;
         line-height: 18px;
+    }
+    .main-ngin.developer-guide iframe {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
     }
     .side-ngin.developer-guide.col-row {
         overflow: hidden;
@@ -2590,9 +2602,6 @@ p.tnc-title {
         justify-content: space-between;
         margin: 1em 0;
     }
-    .socmed a {
-        margin-left: 1em;
-    }
     .copyright {
         width: 75%;
         line-height: 16px;
@@ -2613,7 +2622,7 @@ p.tnc-title {
         z-index: 1100;
         top: 0;
         left: 0;
-        background-color: rgb(0,0,0,0.6);
+        background-color: #00000099;
         overflow-x: hidden;
         transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
         -webkit-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
@@ -2639,12 +2648,12 @@ p.tnc-title {
         width: 250px;
     }
     .footer-menu.container > div {
-        margin-top: 1em;
-        min-width: 250px;
+        margin-top: 2em;
+        padding: 0 1em;
+        min-width: 218px;
     }
     .logo-footer {
-        align-self: center;
-        width: 100%;
+        width: auto;
         text-align: center;
     }
     .footer-menu.container > .resources-footer.container {
@@ -3045,9 +3054,6 @@ p.tnc-title {
         font-size: 13px;
     }
     footer.footer .socmed a:first-child {
-        margin-left: 0;
-    }
-    .footer-menu.container > div:nth-child(3) {
         margin-left: 0;
     }
 
