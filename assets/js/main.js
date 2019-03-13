@@ -2,13 +2,13 @@
 window.onscroll = function () {
     var body = document.body;
     var html = document.documentElement;
-    var navHead = document.querySelectorAll("header.header");
+    var navHead = document.querySelector("header.header");
 
-    if (body.scrollTop >= navHead[0].clientHeight || html.scrollTop >= navHead[0].clientHeight) {
+    if (body.scrollTop >= navHead.clientHeight || html.scrollTop >= navHead.clientHeight) {
         // console.log("test");
-        navHead[0].classList.add("scrolled");
+        navHead.classList.add("scrolled");
     } else {
-        navHead[0].classList.remove("scrolled");
+        navHead.classList.remove("scrolled");
     }
 }
 
@@ -129,5 +129,5 @@ var openSideNav = function () {
         // document.querySelector("body > div").classList.toggle('slide');
     }
 }
-document.addEventListener('click', openSideNav, false);
+// document.addEventListener('click', openSideNav, false);
 document.addEventListener('touchstart', openSideNav, false); // for ios safari

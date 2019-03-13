@@ -142,10 +142,15 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ffffff;    
+    background-color: transparent;
+    transition: background-color ease-in-out .3s;
+    -webkit-transition: background-color ease-in-out .3s;
+    -moz-transition: background-color ease-in-out .3s;
+    -ms-transition: background-color ease-in-out .3s;
+    -o-transition: background-color ease-in-out .3s;
 }
 header.scrolled {
-    border-bottom: 1px solid #4286f5;
+    background-color: #ffffff
 }
 .menu-container {
     display: flex;
@@ -1078,9 +1083,14 @@ span.header {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 95px;
+    margin-top: 60.5px;
     margin-bottom: 42px;
     z-index: 1;
+}
+.footer hr {
+    width: 30px;
+    border: 1px solid #dddddd;
+    margin-bottom: 49.5px;
 }
 .subscribe.email-container {
     z-index: 1;
@@ -1104,9 +1114,13 @@ span.header {
 }
 .footer-menu.container {
     display: flex;
+    flex-flow: row wrap;
 }
-.footer-menu.container > div:nth-child(2),
-.footer-menu.container > div:nth-child(3) {
+.footer-menu.container .line-container {
+    width: 100%;
+}
+.footer-menu.container > .product-footer.container,
+.footer-menu.container > .resources-footer.container {
     margin-left: 2em;
 }
 .footer-menu.container h3 {
@@ -1160,8 +1174,13 @@ span.header {
 }
 .floating-trigger.content {
     background-color: #4286f5;
+    background-image: url('/assets/img/floating-footer.svg');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 3px 5px;
     width: 40px;
     height: 40px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
     border-radius: 100%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -2587,7 +2606,7 @@ p.tnc-title {
         -moz-transform: translateY(-70px);
         -ms-transform: translateY(-70px);
         -o-transform: translateY(-70px);
-}
+    }
     .subscribe-flex.container {
         display: flex;
         flex-direction: column;
@@ -2603,7 +2622,6 @@ p.tnc-title {
         margin: 1em 0;
     }
     .copyright {
-        width: 75%;
         line-height: 16px;
         text-align: center;
         margin: 0 auto;
@@ -2629,7 +2647,7 @@ p.tnc-title {
         -moz-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
         -ms-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
         -o-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
-}
+    }
     .sidenav.slide {
         width: 100%;
     }
@@ -2643,9 +2661,22 @@ p.tnc-title {
         -moz-transition: width .5s cubic-bezier(0.77, 0, 0.175, 1);
         -ms-transition: width .5s cubic-bezier(0.77, 0, 0.175, 1);
         -o-transition: width .5s cubic-bezier(0.77, 0, 0.175, 1);
-}
+    }
     .footer-menu.container.slide {
         width: 250px;
+    }
+    .footer-menu.container .line-container {
+        width: unset;
+        position: relative;
+        top: 6em;
+    }
+    .footer hr {
+        margin: 0 auto;
+        width: 60px;
+    }
+    .footer-menu.container > .product-footer.container,
+    .footer-menu.container > .resources-footer.container {
+        margin-left: unset;
     }
     .footer-menu.container > div {
         margin-top: 2em;
@@ -2655,9 +2686,7 @@ p.tnc-title {
     .logo-footer {
         width: auto;
         text-align: center;
-    }
-    .footer-menu.container > .resources-footer.container {
-        margin-left: 0;
+        margin-bottom: 2em;
     }
     .footer-menu.container .contact-us {
         margin: 0 unset;
@@ -2665,9 +2694,6 @@ p.tnc-title {
     }
     .contact-us.container h3 {
         text-align: center;
-    }
-    footer.footer .product-footer.container {
-        margin-left: unset;
     }
     .floating-trigger.container {
         display: block;
