@@ -552,17 +552,19 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
             </div>
             <div class="build-pg col-row area">
                 <div class="pg">
-                    <img class="bill-on" src="assets/img/bill-on.svg" alt="bill on">
-                    <p class="title">START YOUR OWN BUSINESS WITH YOUR OWN PAYMENT</p>
+                    <img class="icon bill-on" src="assets/img/bill-on.svg" alt="bill on">
+                    <p class="title">START YOUR OWN BUSINESS WITH YOUR OWN SIDE JOB</p>
                     <div class="line"></div>
+                    <img class="mob-img" src="assets/img/day-night-mob.png" alt="day-night-mob" srcset="">
                     <p class="body-text">Making the choice between money and meaning. No matter how convenience your full-time job may be, finding the right side business with the right partner and eventually becoming fully entrepreneur is even more meaningful than sexy bonus and pretty allowances.</p>
                 </div>
             </div>
             <div class="monitor-pg col-row area">
                 <div class="pg">
-                    <img class="product" src="assets/img/compliment.svg" alt="icon product">
+                    <img class="icon product" src="assets/img/compliment.svg" alt="icon product">
                     <p class="title">ZERO TO HERO PLATFORM. HUSTLER MINDED</p>
                     <div class="line"></div>
+                    <img class="mob-img" src="assets/img/desert.png" alt="day-night-mob" srcset="">
                     <p class="body-text">Interactions between merchants always on who will be the consumer and producer. while using Digiroin, merchants are able to provide goodwill as capital not interest factor like Bank, without consider fund as a burden.</p>
                 </div>
             </div>
@@ -574,9 +576,10 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
             </div>
             <div class="growth-pg col-row area">
                 <div class="pg">
-                    <img class="bill-on" src="assets/img/swap-ok.svg" alt="Icon Swap">
+                    <img class="icon swap" src="assets/img/swap-ok.svg" alt="Icon Swap">
                     <p class="title">SWAP</p>
                     <div class="line"></div>
+                    <img class="mob-img" src="assets/img/swap.svg" alt="Swap Illustration">
                     <p class="body-text">Creating smart contracts for swapping offers between merchants. Merchants are able to create exchange with other merchants, this will be written in the blockchain. Creating limitations, deals, promotions are now possible with Digiroin.</p>
                 </div>
             </div>
@@ -611,6 +614,52 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                         <li>Available for cashout, in merchants registered with Digiroin</li>
                     </ul>
                     <a href="#subscribe-now" class="cta-btn">Subscribe</a>
+                </div>
+            </div>
+            
+            <!-- MOBILE PLAN BOXES -->
+            <div class="plan-boxes mobile container area">
+                <div class="plan-boxes mobile content glide">
+                    <div class="glide__bullets" data-glide-el="controls[nav]">
+                        <button class="glide__bullet" data-glide-dir="=0"></button>
+                        <button class="glide__bullet blue" data-glide-dir="=1"></button>
+                    </div>
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide">
+                                <div class="startup-box col-row">
+                                    <div class="cta-box">
+                                        <div class="top-color"></div>
+                                        <p class="title">Free Account | <span>For Test & Review</span></p>
+                                        <ul>
+                                            <li>Free to use without integration with Digiroin team</li>
+                                            <li>Create account in one click</li>
+                                            <li>Integration in 5 minutes</li>
+                                            <li>Up to 50 users</li>
+                                            <li>Balance maximum 10 Million IDR, or 200 ribu per user</li>
+                                        </ul>
+                                        <a href="#how-it-works" class="cta-btn">Start Now</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="enterprise-box col-row">
+                                    <div class="cta-box">
+                                        <div class="top-color"></div>
+                                        <p class="title">Enterprise | <span>For Scale</span></p>
+                                        <ul>
+                                            <li>Integrated dashboard managing accounts of customer</li>
+                                            <li>User embedded with GIRO account</li>
+                                            <li>Unlimited users & balance</li>
+                                            <li>Available cash in, in merchants registered with Digiroin</li>
+                                            <li>Available for cashout, in merchants registered with Digiroin</li>
+                                        </ul>
+                                        <a href="#subscribe-now" class="cta-btn">Subscribe</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="supported col-row area">
@@ -731,7 +780,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
 
     <!-- Mobile Carousel -->
     <script>
-        var carousel = new Glide('.glide',{
+        var carousel = new Glide('.diagram-container-mobile.glide',{
             animationTimingFunc: 'cubic-bezier(0.77, 0, 0.175, 1)',
             peek: 25
         });
@@ -746,6 +795,20 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
             document.querySelector('.glide__bullet--active').firstElementChild.lastElementChild.classList.toggle('active');
         });
         carousel.mount();
+
+        var plansMobile = new Glide('.glide.plan-boxes.mobile.content',{
+            animationTimingFunc: 'cubic-bezier(0.77, 0, 0.175, 1)',
+            peek: 60,
+            startAt: 1
+        });
+        plansMobile.on('run', function () {
+            var purpleBullet = document.querySelector('.glide.plan-boxes.mobile.content .glide__bullet[data-glide-dir="=0"]');
+            if (!purpleBullet.classList.contains("glide__active")) {
+                purpleBullet.classList.toggle('purple');
+                purpleBullet.nextElementSibling.classList.toggle('blue');
+            }
+        })
+        plansMobile.mount();
     </script>
 </body>
 </html>

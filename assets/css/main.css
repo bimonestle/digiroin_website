@@ -334,6 +334,7 @@ header.scrolled {
 .sub-title p {
     line-height: 22px;
     margin-top: 30px;
+    color: #222222;
 }
 .sub-title, .cr-acc, .main-img {
     display: flex;
@@ -714,6 +715,7 @@ header.scrolled {
     align-items: center;
     justify-content: flex-start;
     padding: 30px;
+    background-color: #ffffff;
     /* border: 1px solid #C7C7C7; */
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
@@ -871,6 +873,11 @@ span.header {
     line-height: 35px;
     margin: 22px 0;
 }
+.build-pg .mob-img,
+.monitor-pg .mob-img,
+.growth-pg .mob-img {
+    display: none;
+}
 .build-pg .title,
 .monitor-pg .title {
     width: 70%;
@@ -915,9 +922,9 @@ span.header {
 .growth-img img {
     margin-bottom: 100px;
 }
-.monitor-pg img.product,
-.growth-pg img {
-    width: 44px;
+.pg .icon {
+    width: 10%;
+    min-width: 44px;
 }
 .build-pg .pg {
     margin-top: 4em;
@@ -1698,10 +1705,6 @@ table.pos .gradient {
     .menu-container {
         width: 90%;
     }
-    .cr-acc .create {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
     .startup-box ul, .enterprise-box ul {
         padding: 0 2em;
     }
@@ -1895,6 +1898,10 @@ header.area {
 }
 .growth-pg.area {
     grid-area: grw-par;
+}
+.plan-boxes.mobile.container.area {
+    grid-area: plan-mob;
+    display: none;
 }
 .startup-box.area {
     grid-area: strup;
@@ -2322,7 +2329,7 @@ p.tnc-title {
         "how how how how how how how how how how"
         "side-how side-how side-how side-how side-how side-how side-how side-how side-how side-how"
         ". main-how main-how main-how main-how main-how main-how main-how main-how ."
-        "sponsor sponsor sponsor sponsor sponsor sponsor sponsor sponsor sponsor sponsor"
+        ". sponsor sponsor sponsor sponsor sponsor sponsor sponsor sponsor ."
         "pos-logo pos-logo pos-logo pos-logo pos-logo pos-logo pos-logo pos-logo pos-logo pos-logo"
         ". pos-par pos-par pos-par pos-par pos-par pos-par pos-par pos-par ."
         ". try-par try-par try-par try-par try-par try-par try-par try-par ."
@@ -2341,6 +2348,7 @@ p.tnc-title {
         ". . grw-image grw-image grw-image grw-image grw-image grw-image . ."
         "grw-par grw-par grw-par grw-par grw-par grw-par grw-par grw-par grw-par grw-par"
         ". . plan-title plan-title plan-title plan-title plan-title plan-title . ."
+        ". . plan-mob plan-mob plan-mob plan-mob plan-mob plan-mob . ."
         ". . strup strup strup strup strup strup . ."
         ". . entp entp entp entp entp entp . ."
         ". . subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont . ."
@@ -2406,6 +2414,10 @@ p.tnc-title {
     .growth-pg.area {
         grid-area: grw-par;
     }
+    .plan-boxes.mobile.container.area {
+        grid-area: plan-mob;
+        display: block;
+    }
     .startup-box.area {
         grid-area: strup;
     }
@@ -2457,6 +2469,53 @@ p.tnc-title {
         margin: 0 7px;
         font-size: 13px;
     }
+    .main-title p.main-title {
+        font-size: 25px;
+        font-weight: 200;
+        text-align: center;
+        line-height: 1.28;
+        width: 65%;
+    }
+    .main-title p.small-title {
+        font-size: 14px;
+        text-align: center;
+    }
+    .sub-title p {
+        font-size: 14px;
+        line-height: 1.29;
+        text-align: justify;
+        padding: 0 1.5em;
+    }
+    .cr-acc .create {
+        margin: 0 auto;
+        margin-top: 2em;
+        width: 50%;
+        background-color: transparent;
+        color: #4286f5;
+        border: 1px solid #4286f5;
+        font-size: 16px;
+        font-weight: 300;
+        min-width: 136px;
+    }
+    .section-title {
+        font-size: 16px;
+        font-weight: 300
+    }
+    .section-title.developer-guide {
+        margin-top: 100px;
+    }
+    .section-sub-title {
+        font-size: 14px;
+        margin-top: 16px;
+        margin-bottom: 32px;
+        line-height: 18px;
+        padding: 0 16px;
+    }
+    .feat-title p {
+        margin-bottom: 50px;
+        font-size: 16px;
+        font-weight: 300;
+    }
     .bg-bottom {
         bottom: 28em;
     }
@@ -2467,7 +2526,8 @@ p.tnc-title {
         display: none;
     }
     .diagram-container-mobile {
-        display: block;
+        display: flex;
+        flex-flow: column-reverse;
     }
     .side-ngin .instruction {
         font-size: 10px;
@@ -2483,6 +2543,7 @@ p.tnc-title {
     }
     .side-ngin.ngin-btn.how-it-works {
         justify-content: center;
+        margin-top: unset;
     }
     .side-ngin .line {
         display: none;
@@ -2505,6 +2566,33 @@ p.tnc-title {
     .glide__slides {
         overflow: unset;
         padding: 10px 0;
+    }
+    .glide__slide > div {
+        transform:scale(0.97);
+        -webkit-transform:scale(0.97);
+        -moz-transform:scale(0.97);
+        -ms-transform:scale(0.97);
+        -o-transform:scale(0.97);
+        transition: transform .2s;
+        -webkit-transition: transform .2s;
+        -moz-transition: transform .2s;
+        -ms-transition: transform .2s;
+        -o-transition: transform .2s;
+    }
+    .glide__slide--active > div {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+    .build-pg .mob-img,
+    .monitor-pg .mob-img,
+    .growth-pg .mob-img {
+        display: block;
+        width: 50%;
+        min-width: 230px;
+        margin: 0 auto;
     }
     .apibox.api-diagram > img {
         width: 40%;
@@ -2553,39 +2641,55 @@ p.tnc-title {
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
     }
+    .supported {
+        margin-top: 22px;
+        margin-bottom: 1em;
+    }
     .supported p {
-        text-align: center;
+        font-size: 10px;
     }
     .pos-img img {
         margin: 0 auto;
         margin-bottom: 2em;
     }
     .pos-pg {
-        text-align: center;
+        font-size: 10px;
+        line-height: 1.6;
+        text-align: justify;
+        padding: 0 16px;
+    }
+    .pg .icon {
+        width: 5%;
+        min-width: 30px;
     }
     .build-img,
     .monitor-img,
     .growth-img img {
-        margin-bottom: unset;
+        display: none;
     }
     .build-pg .pg,
     .monitor-pg .pg,
     .growth-pg .pg {
         text-align: center;
-        margin-top: 2em;
-        margin-bottom: 4em;
+        margin-top: unset;
+        margin-bottom: 50px;
     }
     .build-pg .pg .title,
     .monitor-pg .pg .title,
     .growth-pg .pg .title {
         margin: 0 auto;
         margin-top: 1em;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.29;
+        color: #222222;
     }
     .build-pg .line,
     .monitor-pg .line,
     .growth-pg .line {
         margin: 0 auto;
         margin-top: 1em;
+        margin-bottom: 30px;
         width: 50%;
     }
     .build-pg .body-text,
@@ -2593,7 +2697,51 @@ p.tnc-title {
     .growth-pg .body-text {
         width: 75%;
         margin: 0 auto;
-        margin-top: 1em;
+        margin-top: 22px;
+        font-size: 14px;
+    }
+    .plan-title p {
+        margin-top: 50px;
+        margin-bottom: 32px;
+    }
+    .plan-boxes.mobile.content .glide__bullets {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    button.glide__bullet {
+        width: 8px;
+        height: 8px;
+        background-color: #d8d8d8;
+        outline: none;
+        border: none;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+        transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -ms-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -o-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+    button.glide__bullet.blue {
+        background-color: #4286f5;
+        width: 10px;
+        height: 10px;
+    }
+    button.glide__bullet--active.purple {
+        background-color: #a28ffd;
+        width: 10px;
+        height: 10px;
+    }
+    .startup-box.area,
+    .enterprise-box.area {
+        display: none;
+    }
+
+    .plan-boxes.mobile.container {
+        display: block;
     }
     .startup-box .cta-box,
     .enterprise-box .cta-box {
@@ -2825,15 +2973,15 @@ p.tnc-title {
         "head head head head head head"
         "main-title main-title main-title main-title main-title main-title"
         "main-image main-image main-image main-image main-image main-image"
-        ". sub-title sub-title sub-title sub-title ."
+        "sub-title sub-title sub-title sub-title sub-title sub-title"
         ". create-acc create-acc create-acc create-acc ."
         "how how how how how how"
         "side-how side-how side-how side-how side-how side-how"
         "main-how main-how main-how main-how main-how main-how"
         "sponsor sponsor sponsor sponsor sponsor sponsor"
         "pos-logo pos-logo pos-logo pos-logo pos-logo pos-logo"
-        ". pos-par pos-par pos-par pos-par ."
-        ". try-par try-par try-par try-par ."
+        "pos-par pos-par pos-par pos-par pos-par pos-par"
+        "try-par try-par try-par try-par try-par try-par"
         ". try-now try-now try-now try-now ."
         "doc-box doc-box doc-box doc-box doc-box doc-box"
         ". side-ngin side-ngin side-ngin side-ngin ."
@@ -2848,6 +2996,7 @@ p.tnc-title {
         ". grw-image grw-image grw-image grw-image ."
         "grw-par grw-par grw-par grw-par grw-par grw-par"
         ". plan-title plan-title plan-title plan-title ."
+        "plan-mob plan-mob plan-mob plan-mob plan-mob plan-mob"
         ". strup strup strup strup ."
         ". entp entp entp entp ."
         ". subsc-cont subsc-cont subsc-cont subsc-cont ."
@@ -2860,10 +3009,6 @@ p.tnc-title {
         width: 90%;
         margin: 0 auto;
         margin-top: 2em;
-    }
-    .sub-title p {
-        font-size: 14px;
-        text-align: center;
     }
     .side-ngin.ngin-btn.how-it-works {
         margin-bottom: .5em;
@@ -2970,9 +3115,6 @@ p.tnc-title {
     .pos-pg p {
         font-size: 12px;
     }
-    .try-sub p {
-        margin-top: 2em;
-    }
     .top-ngin {
         display: block;
     }
@@ -3004,16 +3146,6 @@ p.tnc-title {
     .monitor-pg .title,
     .growth-pg .title {
         width: auto;
-    }
-    .build-pg .line,
-    .monitor-pg .line,
-    .growth-pg .line {
-        margin: auto;
-        margin-bottom: 40px;
-        justify-content: center;
-    }
-    .plan-title p {
-        margin-bottom: 1em;
     }
     .startup-box .cta-box,
     .enterprise-box .cta-box {
@@ -3071,10 +3203,6 @@ p.tnc-title {
     }
     .pos-img img {
         width: 20%;
-    }
-    .pos-pg {
-        text-align: center;
-        margin: 1.5em;
     }
     footer.footer a {
         font-size: 13px;
