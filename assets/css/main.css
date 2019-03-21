@@ -1014,9 +1014,6 @@ span.header {
     left: 0;
     right: 0;
 }
-.startup-box .cta-btn {
-    margin-top: 96px;
-}
 .enterprise-box .cta-btn {
     background-color: #4286f5;
 }
@@ -1619,6 +1616,7 @@ table.pos td {
     border-right: 1px solid #dddddd;
     /* word-break: break-all; */
     word-wrap: break-word;
+    vertical-align: middle;
 }
 table.our thead th.on-premise {
     padding: 0;
@@ -2291,6 +2289,11 @@ p.tnc-title {
     -webkit-overflow-scrolling: touch;
     max-height: 819px;
 }
+.welcome {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+}
 .tnc-sections {
     margin-top: 1em;
 }
@@ -2484,7 +2487,7 @@ p.tnc-title {
         font-size: 14px;
         line-height: 1.29;
         text-align: justify;
-        padding: 0 1.5em;
+        padding: 0 16px;
     }
     .cr-acc .create {
         margin: 0 auto;
@@ -2550,7 +2553,7 @@ p.tnc-title {
     }
     .side-ngin .instructions {
         padding: 0px;
-        margin-right: 2em;
+        margin-right: 1.5em;
         margin-bottom: .5em;
         flex-direction: column;
     }
@@ -2706,9 +2709,13 @@ p.tnc-title {
     }
     .plan-boxes.mobile.content .glide__bullets {
         text-align: center;
-        margin-bottom: 32px;
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     button.glide__bullet {
+        margin: auto 5px;
         width: 8px;
         height: 8px;
         background-color: #d8d8d8;
@@ -2739,6 +2746,12 @@ p.tnc-title {
     .enterprise-box.area {
         display: none;
     }
+    .startup-box li,
+    .enterprise-box li {
+        margin: 0;
+        margin-bottom: 1em;
+        font-size: 12px;
+    }
 
     .plan-boxes.mobile.container {
         display: block;
@@ -2746,8 +2759,45 @@ p.tnc-title {
     .startup-box .cta-box,
     .enterprise-box .cta-box {
         margin-bottom: unset;
+        margin-top: 16px;
+    }
+    .startup-box .cta-box,
+    .enterprise-box .cta-box {
+        position: relative;
+        width: 100%;
+        height: 430px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 6px 0 #0000004d;
+        margin-bottom: 70px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+    }
+    .startup-box .top-color,
+    .enterprise-box .top-color {
+        background-color: #a28ffd;
+        height: 15px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    .enterprise-box .top-color {
+        background-color: #4286f5;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    .try-title .try-container .line,
+    .feat-title .feat-container .line,
+    .plan-title .plan-container .line  {
+        margin-bottom: 2em;
+    }
+    .startup-box .cta-btn,
+    .enterprise-box .cta-btn {
+        bottom: 6%;
     }
     .subscribe.email-container {
+        padding: 0 1em;
         margin-top: 20%;
         transform: translateY(-70px);
         -webkit-transform: translateY(-70px);
@@ -2757,13 +2807,14 @@ p.tnc-title {
     }
     .subscribe-flex.container {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: center;
         align-items: flex-start;
     }
     .subscribe-flex .wording {
-        margin-bottom: 22px;
+        margin-top: 22px;
         width: 100%;
+        font-size: 14px;
     }
     .contact-us.container .socmed {
         justify-content: space-between;
@@ -2775,7 +2826,7 @@ p.tnc-title {
         margin: 0 auto;
     }
     .bg-footer {
-        height: 4.5%;
+        height: 6%;
     }
     .sidenav {
         margin-top: 0px;
@@ -2846,6 +2897,9 @@ p.tnc-title {
     .floating-trigger.container {
         display: block;
     }
+    .subscribe.email-container input.email {
+        font-size: 14px;
+    }
 
     /* PRICING PAGE */
     .pricing-page.grids {
@@ -2888,6 +2942,25 @@ p.tnc-title {
     .pos-table.area {
         grid-area: pos-tbl;
     } */
+    .pricing-title p {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 0 16px;
+        width: 70%;
+        margin: 0 auto;
+        line-height: 1.4;
+        margin-bottom: 22px;
+    }
+    .pricing-img img {
+        padding-top: unset;
+    }
+    .pricing-sub-title p {
+        font-size: 14px;
+        text-align: justify;
+        padding: 0 1em;
+        padding-top: 2em;
+        line-height: 1.29;
+    }
     .our-table,
     .pos-table {
         margin-top: 4em;
@@ -2895,7 +2968,7 @@ p.tnc-title {
         overflow-x: scroll;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-    }
+}
     .our-table table,
     .pos-table table {
         margin-top: unset;
@@ -2907,13 +2980,27 @@ p.tnc-title {
         margin-left: 0;
         margin-right: 0;
     }
+    th.item {
+        width: 30%;
+    }
     .gradient.line {
         display: none;
+    }
+    .pricing-wrapper .bg-footer {
+        height: 12.5%;
     }
 
     /* FAQ PAGE */
     .faq-wrapper {
         background-size: cover;
+    }
+    .faq-title.container p,
+    .tnc-title.container p {
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: 0 2em;
+        width: 70%;
+        margin: 0 auto;
     }
     .faq-box {
         padding-left: 36px;
@@ -2929,10 +3016,19 @@ p.tnc-title {
     .accordion-content div.cta-box {
         width: 95%;
     }
+    .faq-wrapper .bg-footer {
+        height: 13.5%;
+    }
 
     /* TNC PAGE  */
     .tnc-wrapper {
         background-size: cover;
+    }
+    .tnc-content.container > div {
+        padding: 0 1em;
+    }
+    .tnc-wrapper .bg-footer {
+        height: 23.5%;
     }
 
     /* DOCUMENTATION PAGE */
@@ -2985,7 +3081,7 @@ p.tnc-title {
         ". try-now try-now try-now try-now ."
         "doc-box doc-box doc-box doc-box doc-box doc-box"
         ". side-ngin side-ngin side-ngin side-ngin ."
-        ". main-ngin main-ngin main-ngin main-ngin ."
+        "main-ngin main-ngin main-ngin main-ngin main-ngin main-ngin"
         ". . check-bal check-bal check-bal check-bal"
         ". feat-title feat-title feat-title feat-title ."
         ". bd-image bd-image bd-image bd-image ."
@@ -2999,7 +3095,7 @@ p.tnc-title {
         "plan-mob plan-mob plan-mob plan-mob plan-mob plan-mob"
         ". strup strup strup strup ."
         ". entp entp entp entp ."
-        ". subsc-cont subsc-cont subsc-cont subsc-cont ."
+        "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
         ". footer footer footer footer .";
     }
     .menu-container {
@@ -3115,6 +3211,9 @@ p.tnc-title {
     .pos-pg p {
         font-size: 12px;
     }
+    .main-ngin.developer-guide.col-row {
+        padding: 0 16px;
+    }
     .top-ngin {
         display: block;
     }
@@ -3146,49 +3245,6 @@ p.tnc-title {
     .monitor-pg .title,
     .growth-pg .title {
         width: auto;
-    }
-    .startup-box .cta-box,
-    .enterprise-box .cta-box {
-        position: relative;
-        width: 90%;
-        height: 570px;
-        background-color: #ffffff;
-        box-shadow: 0 2px 6px 0 #0000004d;
-        /* overflow: hidden; */
-        margin: 0 auto;
-        margin-bottom: 70px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-    }
-    .startup-box .top-color,
-    .enterprise-box .top-color {
-        background-color: #a28ffd;
-        height: 15px;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-    }
-    .enterprise-box .top-color {
-        background-color: #4286f5;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-    }
-    .try-title .try-container .line,
-    .feat-title .feat-container .line,
-    .plan-title .plan-container .line  {
-        margin-bottom: 2em;
-    }
-    .startup-box li,
-    .enterprise-box li {
-        margin: 0;
-        margin-bottom: 1em;
-        font-size: 13px;
-    }
-    .startup-box .cta-btn,
-    .enterprise-box .cta-btn {
-        bottom: 3%;
     }
     .bg-bottom {
         bottom: 35em;
@@ -3223,12 +3279,12 @@ p.tnc-title {
         "head head head head head head"
         "prc-title prc-title prc-title prc-title prc-title prc-title"
         ". prc-img prc-img prc-img prc-img ."
-        ". prc-subtitle prc-subtitle prc-subtitle prc-subtitle ."
+        "prc-subtitle prc-subtitle prc-subtitle prc-subtitle prc-subtitle prc-subtitle"
         "our-prc our-prc our-prc our-prc our-prc our-prc"
         "our-tbl our-tbl our-tbl our-tbl our-tbl our-tbl"
         "pos-title pos-title pos-title pos-title pos-title pos-title"
         "pos-tbl pos-tbl pos-tbl pos-tbl pos-tbl pos-tbl"
-        ". subsc-cont subsc-cont subsc-cont subsc-cont ."
+        "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
         "footer footer footer footer footer footer";
     }
     .our-table table,
@@ -3240,22 +3296,40 @@ p.tnc-title {
     .faq-title p {
         margin-top: 2em;
     }
-    .pricing-sub-title p {
-        font-size: 14px;
-        padding-top: 2em;
-        line-height: 22px;
-    }
-    .our-pricing-container p {
-        padding-top: 3em;
-    }
     .our-table,
     .pos-table {
         margin-top: 2em;
     }
 
     /* FAQ PAGE */
+    .faq-page.grids {
+        display: grid;
+        grid-template-columns: repeat(6, 15%);
+        grid-auto-flow: column;
+        grid-column-gap: 2%;
+        width: 100vw;
+        grid-template-areas: 
+        "head head head head head head"
+        "faq-title faq-title faq-title faq-title faq-title faq-title"
+        "faq-intro faq-intro faq-intro faq-intro faq-intro faq-intro"
+        "faq-product faq-product faq-product faq-product faq-product faq-product"
+        "faq-feature faq-feature faq-feature faq-feature faq-feature faq-feature"
+        "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
+        "footer footer footer footer footer footer"
+    }
     .faq-wrapper {
         background-size: auto 75%;
+    }
+    .faq-title.container {
+        margin-top: unset;
+    }
+    .faq-intro-wrap,
+    .faq-product-wrap,
+    .faq-feature-wrap {
+        padding: 0 1em;
+    }
+    .faq-section-wrap .faq-intro-container {
+        margin-top: 50px;
     }
     .accordion-content p,
     .accordion-content li {
@@ -3268,6 +3342,19 @@ p.tnc-title {
     /*  TNC PAGE */
     .tnc-wrapper {
         background-size: cover;
+    }
+    .tnc-page.grids {
+        display: grid;
+        grid-template-columns: repeat(6, 15%);
+        grid-auto-flow: column;
+        grid-column-gap: 2%;
+        width: 100vw;
+        grid-template-areas: 
+        "head head head head head head"
+        "tnc-title tnc-title tnc-title tnc-title tnc-title tnc-title"
+        "tnc-content tnc-content tnc-content tnc-content tnc-content tnc-content"
+        "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
+        "footer footer footer footer footer footer"
     }
 
 

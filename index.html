@@ -630,7 +630,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                                 <div class="startup-box col-row">
                                     <div class="cta-box">
                                         <div class="top-color"></div>
-                                        <p class="title">Free Account | <span>For Test & Review</span></p>
+                                        <p class="title">Free Account | <span>For Test</span></p>
                                         <ul>
                                             <li>Free to use without integration with Digiroin team</li>
                                             <li>Create account in one click</li>
@@ -796,10 +796,19 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
         });
         carousel.mount();
 
+        // PLANS CAROUSEL
+        var translateX = function (Glide, Components, Events) {
+            return {
+                modify(translate) {
+                    return translate + 20;
+                }
+            }
+        }
         var plansMobile = new Glide('.glide.plan-boxes.mobile.content',{
             animationTimingFunc: 'cubic-bezier(0.77, 0, 0.175, 1)',
-            peek: 60,
-            startAt: 1
+            peek: 35,
+            startAt: 1,
+            translate: 20
         });
         plansMobile.on('run', function () {
             var purpleBullet = document.querySelector('.glide.plan-boxes.mobile.content .glide__bullet[data-glide-dir="=0"]');
@@ -808,6 +817,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                 purpleBullet.nextElementSibling.classList.toggle('blue');
             }
         })
+        // plansMobile.mutate([translateX]);
         plansMobile.mount();
     </script>
 </body>
