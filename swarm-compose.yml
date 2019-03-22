@@ -1,0 +1,11 @@
+version: '3'
+services:
+  home-page:
+    image: 258846817560.dkr.ecr.ap-southeast-1.amazonaws.com/frontend/www:20190305.01
+    ports:
+      - 80:80
+    deploy:
+      replicas: 1
+      mode: replicated
+      restart_policy:
+        condition: on-failure

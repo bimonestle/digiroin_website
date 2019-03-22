@@ -1,0 +1,12 @@
+stages:
+  - production
+
+deploy-to-production:
+  environment: production
+  stage: production
+  tags:
+    - digiroinHome
+  only:
+    - master
+  script:
+    - docker build -t 258846817560.dkr.ecr.ap-southeast-1.amazonaws.com/frontend/www -f Dockerfile .
