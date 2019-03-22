@@ -5,7 +5,7 @@ deploy-to-production:
   environment: production
   stage: production
   tags:
-    - digiroinHome
+    - homepage
   only:
     - master
   script:
