@@ -9,4 +9,4 @@ deploy-to-production:
   only:
     - master
   script:
-    - docker build -t 258846817560.dkr.ecr.ap-southeast-1.amazonaws.com/frontend/www -f Dockerfile .
+    - docker build -t digiroin/home -f Dockerfile .
