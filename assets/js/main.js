@@ -131,3 +131,10 @@ var openSideNav = function () {
 }
 // document.addEventListener('click', openSideNav, false);
 document.addEventListener('touchstart', openSideNav, false); // for ios safari
+
+// var shrink = function () {
+//     var wrapper = document.getElementById('wrapper');
+//     document.getElementById('home').style.height = "90vh";
+//     wrapper.style.transform = 'scale(0.9)';
+// }
+// document.getElementById('menuToggle').addEventListener("click", shrink, false);

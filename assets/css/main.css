@@ -38,11 +38,15 @@
     font-weight: 900;
     font-style: normal;
 }
+html,
+body {
+    height: 100%;
+}
 body {
     font-family: 'Proxima Nova', 'Gotham', sans-serif;
 }
 body > div {
-    transition-property: margin-left, background-color;
+    transition-property: all;
     transition:.5s cubic-bezier(0.77, 0, 0.175, 1);
     -webkit-transition:.5s cubic-bezier(0.77, 0, 0.175, 1);
     -moz-transition:.5s cubic-bezier(0.77, 0, 0.175, 1);
@@ -69,12 +73,15 @@ a {
     background-image: url("../img/big-background.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: cover;
 }
-.pricing-wrapper,
+.pricing-wrapper {
+    background-image: url("../img/bg-pricing.png");
+    background-size: cover;
+}
 .faq-wrapper,
 .tnc-wrapper {
-    background-image: url("../img/big-background2.svg");
+    background-image: url("../img/bg-faq-tnc.svg");
     background-size: cover;
 }
 .wrapper-login-page,
@@ -2354,8 +2361,8 @@ p.tnc-title {
         ". . plan-mob plan-mob plan-mob plan-mob plan-mob plan-mob . ."
         ". . strup strup strup strup strup strup . ."
         ". . entp entp entp entp entp entp . ."
-        ". . subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont . ."
-        ". footer footer footer footer footer footer footer footer .";
+        "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
+        "footer footer footer footer footer footer footer footer footer footer";
     }
     header.area {
         grid-area: head;
@@ -2796,7 +2803,8 @@ p.tnc-title {
     .enterprise-box .cta-btn {
         bottom: 6%;
     }
-    .subscribe.email-container {
+    /* This is sidenav footer */
+    /* .subscribe.email-container {
         padding: 0 1em;
         margin-top: 20%;
         transform: translateY(-70px);
@@ -2804,6 +2812,13 @@ p.tnc-title {
         -moz-transform: translateY(-70px);
         -ms-transform: translateY(-70px);
         -o-transform: translateY(-70px);
+    } */
+    .subscribe.email-container {
+        padding: 0 20.5%;
+        margin-top: 50px;
+    }
+    .subscribe.email-container .title {
+        margin-top: 32px;
     }
     .subscribe-flex.container {
         display: flex;
@@ -2822,13 +2837,15 @@ p.tnc-title {
     }
     .copyright {
         line-height: 16px;
-        text-align: center;
-        margin: 0 auto;
+        /* text-align: center; */
+        text-align: left;
+        /* margin: 0 auto; */
     }
     .bg-footer {
-        height: 6%;
+        height: 14.5%;
+        max-height: 871px;
     }
-    .sidenav {
+    /* .sidenav {
         margin-top: 0px;
         margin-bottom: 0;
         padding-top: 0;
@@ -2846,9 +2863,25 @@ p.tnc-title {
         -moz-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
         -ms-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
         -o-transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+    } */
+    .sidenav {
+        margin-top: 0px;
+        /* margin-bottom: 0; */
+        margin-bottom: 60px;
+        padding-top: 0;
+        padding: 0 20.5%;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
     }
     .sidenav.slide {
         width: 100%;
+    }
+    .subscribe.email-container,
+    .sidenav {
+        background-color: #ffffff;
     }
     .footer-menu.container {
         flex-flow: column wrap;
@@ -2864,38 +2897,52 @@ p.tnc-title {
     .footer-menu.container.slide {
         width: 250px;
     }
-    .footer-menu.container .line-container {
+    /* This is sidenav footer */
+    /* .footer-menu.container .line-container {
         width: unset;
         position: relative;
         top: 6em;
+    } */
+    .footer-menu.container .line-container {
+        width: unset;
+        position: relative;
     }
     .footer hr {
         margin: 0 auto;
+        margin: unset;
         width: 60px;
     }
     .footer-menu.container > .product-footer.container,
     .footer-menu.container > .resources-footer.container {
         margin-left: unset;
     }
+    .footer-menu.container > .resources-footer.container,
+    .footer-menu.container > .contact-us.container {
+        margin-top: 50px;
+    }
     .footer-menu.container > div {
         margin-top: 2em;
-        padding: 0 1em;
-        min-width: 218px;
+        /* padding: 0 1em; */
+        min-width: 239px;
     }
     .logo-footer {
         width: auto;
-        text-align: center;
-        margin-bottom: 2em;
+        /* text-align: center; */
+        text-align: left;
+        /* margin-bottom: 2em; */
+        margin-bottom: unset;
     }
     .footer-menu.container .contact-us {
         margin: 0 unset;
         margin-left: unset;
     }
     .contact-us.container h3 {
-        text-align: center;
+        /* text-align: center; */
+        text-align: left;
     }
     .floating-trigger.container {
-        display: block;
+        /* display: block; */
+        display: none;
     }
     .subscribe.email-container input.email {
         font-size: 14px;
@@ -2918,8 +2965,8 @@ p.tnc-title {
         ". our-tbl our-tbl our-tbl our-tbl our-tbl our-tbl our-tbl our-tbl ."
         "pos-title pos-title pos-title pos-title pos-title pos-title pos-title pos-title pos-title pos-title"
         ". pos-tbl pos-tbl pos-tbl pos-tbl pos-tbl pos-tbl pos-tbl pos-tbl ."
-        ". subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont ."
-        ". footer footer footer footer footer footer footer footer .";
+        "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
+        "footer footer footer footer footer footer footer footer footer footer";
     }
     /* .pricing-title.area {
         grid-area: prc-title;
@@ -2991,8 +3038,20 @@ p.tnc-title {
     }
 
     /* FAQ PAGE */
-    .faq-wrapper {
-        background-size: cover;
+    .faq-page.grids {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-auto-flow: column;
+        grid-column-gap: 2%;
+        width: 100vw;
+        grid-template-areas: 
+        "head head head head head head head head head head"
+        ". . faq-title faq-title faq-title faq-title faq-title faq-title . ."
+        ". . faq-intro faq-intro faq-intro faq-intro faq-intro faq-intro . ."
+        ". . faq-product faq-product faq-product faq-product faq-product faq-product . ."
+        ". . faq-feature faq-feature faq-feature faq-feature faq-feature faq-feature . ."
+        "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
+        "footer footer footer footer footer footer footer footer footer footer"
     }
     .faq-title.container p,
     .tnc-title.container p {
@@ -3016,6 +3075,17 @@ p.tnc-title {
     .accordion-content div.cta-box {
         width: 95%;
     }
+    .faq-wrapper .startup-box,
+    .faq-wrapper .enterprise-box {
+        display: block;
+    }
+    .faq-wrapper .cta-box {
+        height: auto;
+        padding-bottom: 2em;
+    }
+    .faq-wrapper .cta-btn {
+        display: none;
+    }
     .faq-wrapper .bg-footer {
         height: 13.5%;
     }
@@ -3023,6 +3093,19 @@ p.tnc-title {
     /* TNC PAGE  */
     .tnc-wrapper {
         background-size: cover;
+    }
+    .tnc-page.grids {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-auto-flow: column;
+        grid-column-gap: 2%;
+        width: 100vw;
+        grid-template-areas: 
+        "head head head head head head head head head head"
+        "tnc-title tnc-title tnc-title tnc-title tnc-title tnc-title tnc-title tnc-title tnc-title tnc-title"
+        ". . tnc-content tnc-content tnc-content tnc-content tnc-content tnc-content . ."
+        "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
+        "footer footer footer footer footer footer footer footer footer footer"
     }
     .tnc-content.container > div {
         padding: 0 1em;
@@ -3096,7 +3179,7 @@ p.tnc-title {
         ". strup strup strup strup ."
         ". entp entp entp entp ."
         "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
-        ". footer footer footer footer .";
+        "footer footer footer footer footer footer";
     }
     .menu-container {
         justify-content: center;
@@ -3260,6 +3343,10 @@ p.tnc-title {
     .pos-img img {
         width: 20%;
     }
+    .subscribe.email-container,
+    .sidenav {
+        padding: 0 5%;
+    }
     footer.footer a {
         font-size: 13px;
     }
@@ -3316,9 +3403,6 @@ p.tnc-title {
         "faq-feature faq-feature faq-feature faq-feature faq-feature faq-feature"
         "subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont subsc-cont"
         "footer footer footer footer footer footer"
-    }
-    .faq-wrapper {
-        background-size: auto 75%;
     }
     .faq-title.container {
         margin-top: unset;
@@ -3415,4 +3499,136 @@ p.tnc-title {
         margin-right: 2em;
         margin-bottom: 6em;
     }
+}
+.burger-container {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+}
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
 }
