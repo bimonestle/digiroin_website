@@ -1,0 +1,12 @@
+stages:
+  - production
+
+deploy-to-production:
+  environment: production
+  stage: production
+  tags:
+    - digiroin
+  only:
+    - master
+  script:
+    - docker build -t digiroin/home -f Dockerfile .
