@@ -171,11 +171,13 @@ header.scrolled {
 }
 .menu {
     position: relative;
+    display: flex;
 }
 .menu .discover-lk.active,
 .menu .features-lk.active,
 .menu .docs-lk.active,
-.menu .plan-lk.active {
+.menu .plan-lk.active,
+.menu .pricing-lk.active {
     color: #4286f5;
 }
 .menu > a:hover {
@@ -191,7 +193,22 @@ header.scrolled {
     -o-transition: all .4s;
 }
 .menu > a div {
-    display: inline;
+    opacity: 0;
+    width: 6px;
+    height: 6px;
+    background-color: #4286f5;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
 }
 .menu > a:first-child {
     margin-left: 0;
@@ -342,6 +359,7 @@ header.scrolled {
     line-height: 22px;
     margin-top: 30px;
     color: #222222;
+    text-align: justify;
 }
 .sub-title, .cr-acc, .main-img {
     display: flex;
@@ -538,7 +556,7 @@ header.scrolled {
 }
 .side-ngin .line {
     position: absolute;
-    height: 32%;
+    height: 31%;
     width: 6px;
     background-color: #dddddd;
     border-radius: 10px;
@@ -676,7 +694,6 @@ header.scrolled {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 70%;
 }
 .legends .legend {
     display: flex;
@@ -729,7 +746,6 @@ header.scrolled {
 .apibox.api-diagram .diagram-text {
     flex-grow: 1;
     width: 75%;
-    align-self: flex-start;
     margin-left: 34px;
 }
 .apibox .diagram-title {
@@ -1157,6 +1173,9 @@ span.header {
 .footer-links p {
     margin-top: 10px;
 }
+.footer-links p a.active {
+    color: #4286f5;
+}
 .footer-links a:hover {
     color: #4286f5;
 }
@@ -1477,6 +1496,9 @@ pre a {
     font-weight: 600;
     margin-top: 1em;
 }
+.pricing-sub-title p {
+    text-align: justify;
+}
 .pricing-img img {
     width: 100%;
 }
@@ -1580,7 +1602,7 @@ table.our td.on-premise,
 table.our td.api {
     position: relative;
 }
-table.our th.on-premise::before,
+/* table.our th.on-premise::before,
 table.our td.on-premise::before {
     box-shadow: -15px 0 20px -20px inset;
     content: " ";
@@ -1589,8 +1611,8 @@ table.our td.on-premise::before {
     left: -15px;
     position: absolute;
     width: 15px;
-}
-table.our th.on-premise::after,
+} */
+/* table.our th.on-premise::after,
 table.our td.on-premise::after {
     box-shadow: 15px 0 20px -20px inset;
     content: " ";
@@ -1600,7 +1622,7 @@ table.our td.on-premise::after {
     top: 0;
     right: -15px;
     width: 15px;
-}
+} */
 table.our th.on-premise.entp::before,
 table.our td.on-premise.entp::before {
     box-shadow: none;
@@ -1744,57 +1766,53 @@ table.pos .gradient {
     }
     .apibox.api-diagram .diagram-text {
         margin: 0;
-        padding: 0 1em;
-        padding-top: .5em;
-        background-color: rgba(34, 34, 34, 0.9);
+        box-sizing: border-box;
+        padding: 1em;
+        padding-top: 8px;
+        padding-bottom: 22px;
+        background-color: #f7f7f7;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
         position: absolute;
         left: 0;
-        top: 90%;
+        bottom: 0;
         width: auto;
-        height: 100%;
-        transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -webkit-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -moz-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -ms-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -o-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
+        height: 70px;
+        /* overflow: hidden; */
+        /* overflow-y: scroll; */
+        transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -ms-transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -o-transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
     }
     .apibox.api-diagram .diagram-text.up {
-        top: 0%;
+        height: initial;
     }
-    .diagram-text .dg-title-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .dg-title-container .dg-lines-container {
+        width: 100%;
         margin-bottom: 10px;
+    }
+    .dg-title-container .line.top,
+    .dg-title-container .line.bottom {
+        border-bottom: 2px solid #dddddd;
+        margin: .5em auto;
+    }
+    .dg-title-container .line.top {
+        width: 7%;
+    }
+    .dg-title-container .line.bottom {
+        width: 10%;
     }
     .apibox .diagram-title {
         margin-bottom: 0;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        text-align: center;
+        line-height: unset;
     }
-    .dg-title-container .icon-arrow {
-        display: inline-block;
-        transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
-        -webkit-transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
-        -moz-transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
-        -ms-transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
-        -o-transform: rotate(-90deg) translateZ(0) rotateZ(360deg);
-
-        transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -webkit-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -moz-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -ms-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -o-transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-
-        will-change: transform;
-    }
-    .font-icon.icon-arrow.up {
-        transform: rotate(90deg);
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
+    .apibox .diagram-par {
+        color: #222222;
     }
 }
 
@@ -2203,6 +2221,13 @@ footer.area {
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
+}
+.accordion-head .icon-arrow {
+    transition: transform .2s ease-in-out;
+    -webkit-transition: transform .2s ease-in-out;
+    -moz-transition: transform .2s ease-in-out;
+    -ms-transition: transform .2s ease-in-out;
+    -o-transition: transform .2s ease-in-out;
 }
 .faq-box {
     padding: 18px 0;
@@ -2636,9 +2661,13 @@ p.tnc-title {
         justify-content: center;
         margin-top: 0;
     }
+    .apibox .diagram-title {
+        font-size: 16px;
+    }
     .apibox .diagram-par {
         font-size: 12px;
         line-height: 18px;
+        color: #222222;
     }
     .main-ngin.developer-guide iframe {
         width: 1px;
@@ -2700,7 +2729,7 @@ p.tnc-title {
         margin: 0 auto;
         margin-top: 1em;
         margin-bottom: 30px;
-        width: 50%;
+        width: 50px;
     }
     .build-pg .body-text,
     .monitor-pg .body-text,
@@ -3209,14 +3238,16 @@ p.tnc-title {
     .main-ngin.how-it-works .legends {
         margin-bottom: 0px;
         margin-top: .5em;
-        flex-flow: row;
+        flex-flow: row wrap;
     }
     .legends .legend {
-        flex-flow: row wrap;
         text-align: left;
-        justify-content: stretch;
-        margin-right: .5em;
+        /* justify-content: stretch; */
+        margin-right: 1em;
         align-items: center;
+    }
+    .legends .legend.grey {
+        width: 100%;
     }
     .legends .legend .circle {
         margin-right: .5em;
@@ -3236,31 +3267,29 @@ p.tnc-title {
     }
     .apibox.api-diagram .diagram-text {
         margin: 0;
-        padding: 0 1em;
-        padding-top: .5em;
-        background-color: rgba(34, 34, 34, 0.9);
+        padding: 1em;
+        padding-top: 8px;
+        background-color: #f7f7f7;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
         position: absolute;
         left: 0;
-        top: 85%;
+        bottom: 0;
         width: auto;
-        height: 100%;
-        transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -webkit-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -moz-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -ms-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
-        -o-transition: top .5s cubic-bezier(0.77, 0, 0.175, 1);
+        height: 50px;
+        max-height: 350px;
+        transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -ms-transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
+        -o-transition: height .5s cubic-bezier(0.77, 0, 0.175, 1);
     }
-    .apibox.api-diagram .diagram-text.up {
-        top: 0%;
-    }
-    .diagram-text .dg-title-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
+    .dg-title-container .line.top, .dg-title-container .line.bottom {
+        border-bottom: 2px solid #dddddd;
+        margin: 0.2em auto;
     }
     .apibox .diagram-title {
-        margin-bottom: 0;
+        font-size: 10px;
     }
     .dg-title-container .icon-arrow {
         display: inline-block;
@@ -3289,7 +3318,7 @@ p.tnc-title {
         -o-transform: rotate(90deg);
     }
     .apibox .diagram-par {
-        color: #ccc;
+        font-size: 10px;
     }
     .pos-pg p {
         font-size: 12px;
@@ -3335,7 +3364,7 @@ p.tnc-title {
     .supported {
         margin-top: 10em;
         margin-bottom: 1em;
-        text-align: center;
+        padding: 0 16px;
     }
     .pos-img {
         justify-content: center;

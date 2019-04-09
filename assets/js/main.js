@@ -12,15 +12,32 @@ window.onscroll = function () {
     }
 }
 
-// SLIDE UP API BOX
-var slideUp = function (event) {
-    // var thisElm = event.target;
-    if (event.target.classList.contains('sld-btn')) {
-        event.target.classList.toggle("up");
-        event.target.parentElement.parentElement.classList.toggle("up");
+// ACTIVE LINKS IN NAV HEADER
+var blueLinks = function (event) {
+    var navLinks = document.querySelectorAll('.navbar-links');
+    if (event.target.classList.contains('navbar-links')) {
+        for (let i = 0; i < navLinks.length; i++) {
+            navLinks[i].classList.remove('active');
+            navLinks[i].firstElementChild.style.opacity = 0;
+        }
+        event.target.classList.add("active");
+        event.target.firstElementChild.style.opacity = 1;
     }
 }
-document.addEventListener("click", slideUp);
+document.addEventListener("click", blueLinks)
+
+// SLIDE UP API BOX
+var dgLinesContainer = document.querySelectorAll('.dg-lines-container');
+for (let i = 0; i < dgLinesContainer.length; i++) {
+    dgLinesContainer[i].addEventListener("click", function () {
+        var dgTextContainer = this.parentElement.parentElement;
+        if (dgTextContainer.style.height) {
+            dgTextContainer.style.height = "";
+        } else {
+            dgTextContainer.style.height = dgTextContainer.scrollHeight + "px";
+        }
+    })
+}
 
 // OPEN DIAGRAM
 function openDiagram(evt, diagramName, diagramLegend) {
@@ -31,6 +48,7 @@ function openDiagram(evt, diagramName, diagramLegend) {
     diagram = document.getElementsByClassName("api-diagram");
     for (i = 0; i < diagram.length; i++) {
         diagram[i].style.display = "none";
+        diagram[i].lastElementChild.style.height = "";
     }
 
     // Get all elements with class="diagramLinks" and remove the class "active"
@@ -131,10 +149,3 @@ var openSideNav = function () {
 }
 // document.addEventListener('click', openSideNav, false);
 document.addEventListener('touchstart', openSideNav, false); // for ios safari
-
-// var shrink = function () {
-//     var wrapper = document.getElementById('wrapper');
-//     document.getElementById('home').style.height = "90vh";
-//     wrapper.style.transform = 'scale(0.9)';
-// }
-// document.getElementById('menuToggle').addEventListener("click", shrink, false);

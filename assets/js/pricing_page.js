@@ -1,3 +1,11 @@
+// ACTIVE LINKS IN NAV HEADER
+window.onload = function () {
+    var pricingLink = document.querySelector(".pricing-lk");
+    pricingLink.classList.add("active");
+    pricingLink.firstElementChild.style.opacity = 1;
+
+}
+
 // BOTTOM LINE FOR HEADER WHEN SCROLLED & SCROLLSPY
 window.onscroll = function () {
     var body = document.body;
@@ -21,27 +29,3 @@ window.onscroll = function () {
             navLinks[i].classList.remove("active");
         }
     }
-
-    // // PRICING
-    // document.querySelector(".our-pricing-lk").onclick = function () {
-    //     document.querySelector(".our-pricing-lk").classList.add("active");
-    //     document.querySelector(".dot").style.opacity = 1;
-    //     document.querySelector(".dot").classList.add("pricing");
-        
-    //     // Deactivate previously clicked button
-    //     document.querySelector(".pos-lk").classList.remove("active");
-    //     document.querySelector(".dot").classList.remove("pos");
-    // }
-
-    // // POS
-    // document.querySelector(".pos-lk").onclick = function () {
-    //     document.querySelector(".pos-lk").classList.add("active");
-    //     document.querySelector(".dot").style.opacity = 1;
-    //     document.querySelector(".dot").classList.add("pos");
-        
-    //     // Deactivate previously clicked button
-    //     document.querySelector(".our-pricing-lk").classList.remove("active");
-    //     document.querySelector(".dot").classList.remove("pricing");
-    // }
-
-    
