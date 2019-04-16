@@ -567,25 +567,34 @@
 
     <!-- SMOOTH SCROLL -->
     <script>
-            var smoothScroll = new SmoothScroll('.menu-container a[href*="#"]', {
-                topOnEmptyHash: false,
-                easing: 'easeInOutCubic',
-                updateURL: false, // Update the URL on scroll
-                popstate: true, // Animate scrolling with the forward/backward browser buttons (requires updateURL to be true)
-    
-                // Custom Events
-                emitEvents: true // Emit custom events
-            });
+        var smoothScroll = new SmoothScroll('.menu-container a[href*="#"]', {
+            topOnEmptyHash: false,
+            easing: 'easeInOutCubic',
+            updateURL: false, // Update the URL on scroll
+            popstate: true, // Animate scrolling with the forward/backward browser buttons (requires updateURL to be true)
 
-            var smoothScrollMobile = new SmoothScroll('.menu-mobile .menu a[href*="#"]', {
-                topOnEmptyHash: false,
-                easing: 'easeInOutCubic',
-                updateURL: false, // Update the URL on scroll
-                popstate: true, // Animate scrolling with the forward/backward browser buttons (requires updateURL to be true)
-    
-                // Custom Events
-                emitEvents: true // Emit custom events
-            });
-        </script>
+            // Custom Events
+            emitEvents: true // Emit custom events
+        });
+
+        var smoothScrollMobile = new SmoothScroll('.menu-mobile .menu a[href*="#"]', {
+            topOnEmptyHash: false,
+            easing: 'easeInOutCubic',
+            updateURL: false, // Update the URL on scroll
+            popstate: true, // Animate scrolling with the forward/backward browser buttons (requires updateURL to be true)
+
+            // Custom Events
+            emitEvents: true // Emit custom events
+        });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138360559-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138360559-1');
+    </script>
 </body>
 </html>
