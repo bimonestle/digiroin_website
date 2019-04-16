@@ -1766,7 +1766,7 @@ table.pos .gradient {
     }
     .apibox.api-diagram .diagram-text {
         margin: 0;
-        box-sizing: border-box;
+        box-sizing: initial;
         padding: 1em;
         padding-top: 8px;
         padding-bottom: 22px;
