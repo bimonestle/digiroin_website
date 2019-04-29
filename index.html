@@ -20,6 +20,9 @@
     <!-- Glide JS -->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -630,7 +633,26 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                         <li>Up to 50 users</li>
                         <li>Balance maximum 10 Million IDR, or 200 ribu per user</li>
                     </ul>
-                    <a href="#how-it-works" class="cta-btn">Start Now</a>
+                    <a class="cta-btn" onclick="openClickAcc()" >Start Now</a>
+                </div>
+            </div>
+            <div id="modal-crAcc" class="modal-crAcc">
+                <div class="crAcc-wrapper">
+                    <div class="crAcc-content">
+                        <div class="crAcc-header">
+                            <p class="icon-close" style="text-align: right; cursor: pointer"></p>
+                            <p class="crAcc-title">Create Account</p>
+                            <p class="crAcc-subtitle">Prove by yourself creating an account in one click</p>
+                        </div>
+                        <div class="crAcc-inputs">
+                            <span class="font-icon icon-smartphone"></span>
+                            <label for="input-phonenumber" class="label-input">No.Handphone (6281xxxxxx)</label>
+                            <input type="text" name="input-phonenumber" id="input-phonenumber" class="input-phonenumber">
+                        </div>
+                        <div class="crAcc-footer">
+                            <input type="button" value="Create" id="oneClickCreate" class="oneClickCreate" onclick="createNewAcc()">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="enterprise-box col-row area">
@@ -669,7 +691,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                                             <li>Up to 50 users</li>
                                             <li>Balance maximum 10 Million IDR, or 200 ribu per user</li>
                                         </ul>
-                                        <a href="#how-it-works" class="cta-btn">Start Now</a>
+                                        <a class="cta-btn" onclick="openClickAcc()" >Start Now</a>
                                     </div>
                                 </div>
                             </li>

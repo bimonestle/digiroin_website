@@ -1015,6 +1015,7 @@ span.header {
 }
 .startup-box .cta-btn,
 .enterprise-box .cta-btn {
+    cursor: pointer;
     margin-top: 96px;
     display: inline-block;
     text-align: center;
@@ -1036,6 +1037,112 @@ span.header {
     bottom: 10%;
     left: 0;
     right: 0;
+}
+.modal-crAcc {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.crAcc-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.crAcc-content {
+    max-width: 469px;
+    width: 100%;
+    max-height: 360px;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+.crAcc-header,
+.crAcc-inputs,
+.crAcc-footer {
+    margin: 0 60px;
+}
+.crAcc-header {
+    margin-top: 36px;
+}
+.crAcc-title {
+    font-size: 30px;
+    line-height: 38px;
+    margin-top: 18px;
+}
+.crAcc-subtitle {
+    margin-top: 18px;
+    line-height: 22px;
+}
+.crAcc-inputs {
+    margin-top: 37px;
+    border-bottom: 1px solid #22222266;
+    padding: 8.5px 0;
+    position: relative;
+}
+.crAcc-inputs .icon-smartphone {
+    font-size: 24px;
+    color: #cdcdcd;
+    transition: color 150ms ease-out;
+    -webkit-transition: color 150ms ease-out;
+    -moz-transition: color 150ms ease-out;
+    -ms-transition: color 150ms ease-out;
+    -o-transition: color 150ms ease-out;
+}
+.crAcc-inputs .icon-smartphone.focused {
+    color: #4286f5;
+}
+.label-input {
+    color: #888888;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    transition: transform 150ms ease-out, font-size 150ms ease-out;
+    -webkit-transition: transform 150ms ease-out, font-size 150ms ease-out;
+    -moz-transition: transform 150ms ease-out, font-size 150ms ease-out;
+    -ms-transition: transform 150ms ease-out, font-size 150ms ease-out;
+    -o-transition: transform 150ms ease-out, font-size 150ms ease-out;
+}
+.label-input.focused {
+    font-size: 12px;
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+}
+.input-phonenumber {
+    width: 90%;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+.crAcc-footer {
+    margin-top: 34px;
+    text-align: right;
+}
+.oneClickCreate {
+    width: 142px;
+    height: 50px;
+    object-fit: contain;
+    background-color: #cdcdcd;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: not-allowed;
+    outline: none;
+}
+.oneClickCreate.legit {
+    background-color: #4286f5;
+    cursor: pointer;
 }
 .enterprise-box .cta-btn {
     background-color: #4286f5;

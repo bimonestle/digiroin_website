@@ -95,6 +95,87 @@ function openApiBox(evt, apiName) {
     
 }
 
+// ONE CLICK CREATE ACCOUNT
+var phoneInput = document.getElementById('input-phonenumber');
+var createBtn = document.querySelector('.oneClickCreate');
+var labelInput = document.querySelector('.label-input');
+
+function openClickAcc() {
+    var crAccModal = document.getElementById('modal-crAcc');
+    crAccModal.style.display = "block"
+    phoneInput.focus();
+}
+var focusPhone = function (event) {
+    document.querySelector('.font-icon.icon-smartphone').classList.add('focused');
+    labelInput.classList.add('focused');
+}
+var blurPhone = function (event) {
+    if (phoneInput.value == "") {
+        labelInput.classList.remove('focused');
+        document.querySelector('.font-icon.icon-smartphone').classList.remove('focused');
+    } else {
+        labelInput.classList.add('focused');
+    }
+}
+function numbOnly(inputBox, inputFilter) {
+    var keyEvents = ['input', 'keydown', 'keyup', 'mousedown', 'mouseup', 'select', 'contextmenu', 'drop'];
+    
+    keyEvents.forEach(function (event) {
+        inputBox.addEventListener(event, function () {
+            if (inputFilter(this.value)) {
+                this.oldValue = this.value;
+                this.oldSelectionStart = this.selectionStart;
+                this.oldSelectionEnd = this.selectionEnd;
+            } else if(this.hasOwnProperty('oldValue')) {
+                this.value = this.oldValue;
+                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            }
+        });
+    });
+}
+numbOnly(phoneInput, function (value) {
+    return /^\d*$/.test(value) // integer values (positive only)
+})
+var checkNum = function (event) {
+    if (this.value.length >= 9) {
+        this.classList.add('focused');
+        createBtn.classList.add('legit');
+    } else {
+        createBtn.classList.remove('legit');
+    }
+}
+function createNewAcc() {
+    console.log("Your phone number is " + phoneInput.value);
+}
+phoneInput.addEventListener('focus', focusPhone, false);
+phoneInput.addEventListener('blur', blurPhone, false);
+phoneInput.addEventListener('keyup', checkNum, false);
+
+// AXIOS
+createBtn.addEventListener('click', function (event) {
+    var baseURLAuth = "http://13.229.138.171/new-giro/";
+    var phoneNumb = phoneInput.value;
+
+    axios.get(baseURLAuth + phoneNumb, {
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+    })
+
+    // If not registered, create this response
+    .then(function (response) {
+        console.log(response.data);
+        console.log(response.data.result);
+        // document.getElementById('balance-response').innerHTML = "Your balance is Rp " + response.data.result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    })
+
+    // If registeres already, create this response
+    .catch(function (error) {
+        console.log(error);
+    })
+})
+
+
 // SHOW DASHBOARD BUTTON / LOG IN
 // var navDashboardBtn = document.getElementById('dashboard-nav');
 // if (localStorage.Authentication == authentication) {
