@@ -99,11 +99,17 @@ function openApiBox(evt, apiName) {
 var phoneInput = document.getElementById('input-phonenumber');
 var createBtn = document.querySelector('.oneClickCreate');
 var labelInput = document.querySelector('.label-input');
+var crAccModal = document.getElementById('modal-crAcc');
 
-function openClickAcc() {
-    var crAccModal = document.getElementById('modal-crAcc');
+function openClickAcc(event) {
     crAccModal.style.display = "block"
     phoneInput.focus();
+}
+var closeCrAcc = document.querySelectorAll('.close-crAcc');
+for (let i = 0; i < closeCrAcc.length; i++) {
+    closeCrAcc[i].addEventListener('click', function closeClickAcc(event) {
+        event.target.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = 'none';
+    });
 }
 var focusPhone = function (event) {
     document.querySelector('.font-icon.icon-smartphone').classList.add('focused');
@@ -153,25 +159,37 @@ phoneInput.addEventListener('keyup', checkNum, false);
 
 // AXIOS
 createBtn.addEventListener('click', function (event) {
-    var baseURLAuth = "http://13.229.138.171/new-giro/";
+    var baseURLAuth = "http://13.229.138.171/new-giro";
     var phoneNumb = phoneInput.value;
+    var modalSucc = document.getElementById('success-crAcc');
+    var modalErr = document.getElementById('error-crAcc');
+    var errResp = document.getElementById('registered-phonenumb');
+    var giroNumb = document.getElementById('giro-numb');
 
-    axios.get(baseURLAuth + phoneNumb, {
+    axios.post(baseURLAuth, {phone: phoneNumb}, {
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/json"
         },
     })
 
     // If not registered, create this response
     .then(function (response) {
         console.log(response.data);
-        console.log(response.data.result);
+        console.log("9989" + response.data.account_number);
         // document.getElementById('balance-response').innerHTML = "Your balance is Rp " + response.data.result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        giroNumb.innerHTML = "9989" + response.data.account_number;
+        crAccModal.style.display = "none";
+        modalSucc.style.display = "block";
+        phoneInput.value = "";
     })
 
     // If registeres already, create this response
     .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data.message);
+        crAccModal.style.display = "none";
+        modalErr.style.display = "block";
+        errResp.innerHTML = phoneNumb + " is already registered.";
+        phoneInput.value = "";
     })
 })
 
@@ -230,3 +248,5 @@ var openSideNav = function () {
 }
 // document.addEventListener('click', openSideNav, false);
 document.addEventListener('touchstart', openSideNav, false); // for ios safari
+
+document.querySelector('[data-toggle="apakek"]')

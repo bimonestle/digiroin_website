@@ -9,6 +9,11 @@
     <!-- Gide CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@4/themes/light.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@4/themes/light-border.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@4/themes/google.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@4/themes/translucent.css"/>
+
     <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/icons/DGN_Fontastic/digiroin-font-icon/font-icon.css" />
@@ -622,7 +627,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                     <p class="section-title">PLAN</p>
                 </div>
             </div>
-            <div class="startup-box col-row area">
+            <!-- <div class="startup-box col-row area">
                 <div class="cta-box">
                     <div class="top-color"></div>
                     <p class="title">Free Account | <span>For Test & Review</span></p>
@@ -635,16 +640,20 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                     </ul>
                     <a class="cta-btn" onclick="openClickAcc()" >Start Now</a>
                 </div>
-            </div>
+            </div> -->
+
+            <!-- ONE CLICK CREATE ACCOUNT RESPONSE -->
             <div id="modal-crAcc" class="modal-crAcc">
                 <div class="crAcc-wrapper">
                     <div class="crAcc-content">
                         <div class="crAcc-header">
-                            <p class="icon-close" style="text-align: right; cursor: pointer"></p>
+                            <p style="text-align: right;">
+                                <span id="closeCreate" class="close-crAcc icon-close" style="cursor: pointer"></span>
+                            </p>
                             <p class="crAcc-title">Create Account</p>
                             <p class="crAcc-subtitle">Prove by yourself creating an account in one click</p>
                         </div>
-                        <div class="crAcc-inputs">
+                        <div class="crAcc-middle">
                             <span class="font-icon icon-smartphone"></span>
                             <label for="input-phonenumber" class="label-input">No.Handphone (6281xxxxxx)</label>
                             <input type="text" name="input-phonenumber" id="input-phonenumber" class="input-phonenumber">
@@ -655,7 +664,44 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                     </div>
                 </div>
             </div>
-            <div class="enterprise-box col-row area">
+            <div id="success-crAcc" class="modal-crAcc success-crAcc wrapper1">
+                <div class="crAcc-wrapper success-crAcc wrapper2">
+                    <div class="crAcc-content success wrapper3">
+                        <div class="crAcc-header success wrapper4">
+                            <p style="text-align: right;">
+                                <span id="closeSuccess" class="close-crAcc icon-close" style="cursor: pointer"></span>
+                            </p>
+                            <p class="crAcc-title">Your Account is ready!</p>
+                            <p class="crAcc-subtitle">Here’s your Giro Number to access your account.</p>
+                        </div>
+                        <div class="crAcc-middle success">
+                            <div id="copy-giro" class="middle success-content wrapper1">
+                                <p id="giro-numb" class="crAcc-title success"></p>
+                                <span id="copy-clipboard" class="font-icon icon-repeat copy-giro"></span>
+                            </div>
+                        </div>
+                        <div class="crAcc-footer success">
+                            <input type="button" value="Share to your business partner" id="oneClickShare" class="oneClickCreate shareAcc legit" onclick="shareGiroNum()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="error-crAcc" class="modal-crAcc error-crAcc wrapper1">
+                <div class="crAcc-wrapper error-crAcc wrapper2">
+                    <div class="crAcc-content error wrapper3">
+                        <div class="crAcc-header wrapper4">
+                            <p style="text-align: right;">
+                                <span id="closeError" class="close-crAcc icon-close" style="cursor: pointer"></span>
+                            </p>
+                            <p id="registered-phonenumb" class="crAcc-title error"></p>
+                        </div>
+                        <div class="crAcc-footer wrapper3">
+                            <input type="button" value="Access Account" id="accessAcc" class="oneClickCreate accessAcc legit" onclick="accessAccount()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="enterprise-box col-row area">
                 <div class="cta-box">
                     <div class="top-color"></div>
                     <p class="title">Enterprise | <span>For Scale</span></p>
@@ -668,10 +714,10 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                     </ul>
                     <a href="#subscribe-now" class="cta-btn">Subscribe</a>
                 </div>
-            </div>
+            </div> -->
             
             <!-- MOBILE PLAN BOXES -->
-            <div class="plan-boxes mobile container area">
+            <!-- <div class="plan-boxes mobile container area">
                 <div class="plan-boxes mobile content glide">
                     <div class="glide__bullets" data-glide-el="controls[nav]">
                         <button class="glide__bullet" data-glide-dir="=0"></button>
@@ -712,6 +758,251 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div> -->
+            <div class="plans-comparison col-row area wrapper1">
+                <div class="plans-comparison wrapper2">
+                    <div class="plans comparison-table wrapper3">
+                        <div class="plans table-column">
+                            <div class="comparison-column categories">
+                                <div class="comparison-cell category">
+                                    <p class="cell-title category">Tech Stack</p>
+                                    <!-- <p class="cell-copy category"></p> -->
+                                </div>
+                                <div class="comparison-cell category">
+                                    <p class="cell-title category">Interaction Design</p>
+                                    <!-- <p class="cell-copy category"></p> -->
+                                </div>
+                                <div class="comparison-cell category">
+                                    <p class="cell-title category">Pricing</p>
+                                    <!-- <p class="cell-copy category"></p> -->
+                                </div>
+                                <div class="comparison-cell category">
+                                    <p class="cell-title category">Platform at Scale</p>
+                                    <!-- <p class="cell-copy category"></p> -->
+                                </div>
+                            </div>
+                            <div class="comparison-column standards">
+                                <div class="comparison-cell standard header">
+                                    <p class="cell-title standard">Standard</p>
+                                    <!-- <p class="cell-copy standard">Untuk bisnis sampingan, Pop Up Store</p> -->
+                                </div>
+                                <div class="comparison-cell standard body">
+                                    <p class="cell-title standard">Account Onboarding, Collecting Payments, Processing Charge, Receiving Payout</p>
+                                    <p class="cell-copy standard">Everything you need</p>
+                                </div>
+                                <div class="comparison-cell standard body">
+                                    <p class="cell-title standard"></p>
+                                    <p class="cell-copy standard integration">Low <span id="uiLow" class="font-icon icon-information"></span></p>
+                                </div>
+                                <div class="comparison-cell standard body">
+                                    <p class="cell-title standard"></p>
+                                    <p class="cell-copy standard">
+                                        <a href="javascipt:;" class="cta-btn" onclick="openClickAcc()">Test it out</a>
+                                    </p>
+                                </div>
+                                <div class="comparison-cell standard body">
+                                    <p class="cell-title standard"></p>
+                                    <p class="cell-copy standard">If you have unusually large order values or transaction up to 20 million rupiahs/month, add payments to your platform for you to test. No set up fees, monthly fees, or hidden fees</p>
+                                </div>
+                            </div>
+                            <div class="comparison-column enterprises">
+                                <div class="comparison-cell enterprise header">
+                                    <p class="cell-title enterprise">Enterprise</p>
+                                    <!-- <p class="cell-copy enterprise">For platform who aims to scale up at an on-demand marketplace</p> -->
+                                </div>
+                                <div class="comparison-cell enterprise body">
+                                    <p class="cell-title enterprise">Bank Payout, Activity Report, On Demand Use Case, Transaction Reconciliation, Smart Contract Library</p>
+                                    <p class="cell-copy enterprise">Built for unique business model</p>
+                                </div>
+                                <div class="comparison-cell enterprise body">
+                                    <p class="cell-title enterprise"></p>
+                                    <p class="cell-copy enterprise integration">High <span id="uiHigh" class="font-icon icon-information"></span></p>
+                                </div>
+                                <div class="comparison-cell enterprise body">
+                                    <p class="cell-title enterprise"></p>
+                                    <p class="cell-copy enterprise">
+                                        <a href="#subscribe-now" class="cta-btn">Contact Us</a>
+                                    </p>
+                                </div>
+                                <div class="comparison-cell enterprise body">
+                                    <p class="cell-title enterprise"></p>
+                                    <p class="cell-copy enterprise">A customized plan built for fast-growing or complex businesses.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="plans-comparison-mobile col-row area wrapper1">
+                <div class="plans-comparison wrapper2">
+                    <div class="plans comparison-table wrapper3">
+
+                        <div class="plans table-column">
+                            <div class="table-row1 title wrapper1">
+                                <div class="table-row1 wrapper2">
+                                    <div class="comparison-cell category">
+                                        <p class="cell-title category">Tech Stack</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-row2 content wrapper1">
+                                <div class="table-row2 content wrapper2">
+                                    <div class="comparison-cell standard header">
+                                        <p class="cell-title standard">Standard</p>
+                                    </div>
+                                    <div class="comparison-cell standard body">
+                                        <p class="cell-title standard">Account Onboarding, Collecting Payments, Processing Charge, Receiving Payout</p>
+                                        <p class="cell-copy standard">Everything you need</p>
+                                    </div>
+                                </div>
+                                <div class="table-row2 content wrapper2">
+                                    <div class="comparison-cell enterprise header">
+                                        <p class="cell-title enterprise">Enterprise</p>
+                                    </div>
+                                    <div class="comparison-cell enterprise body">
+                                        <p class="cell-title enterprise">Bank Payout, Activity Report, On Demand Use Case, Transaction Reconciliation, Smart Contract Library</p>
+                                        <p class="cell-copy enterprise">Built for unique business model</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="plans table-column">
+                            <div class="table-row1 title wrapper1">
+                                <div class="table-row1 wrapper2">
+                                    <div class="comparison-cell category">
+                                        <p class="cell-title category">Interaction Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-row2 content wrapper1">
+                                <div class="table-row2 content wrapper2">
+                                    <div class="comparison-cell standard header">
+                                        <p class="cell-title standard">Standard</p>
+                                    </div>
+                                    <div class="comparison-cell standard body">
+                                        <p class="cell-title standard"></p>
+                                        <p class="cell-copy standard integration">Low <span id="uiLow" class="font-icon icon-information"></span></p>
+                                    </div>
+                                </div>
+                                <div class="table-row2 content wrapper2">
+                                    <div class="comparison-cell enterprise header">
+                                        <p class="cell-title enterprise">Enterprise</p>
+                                    </div>
+                                    <div class="comparison-cell enterprise body">
+                                        <p class="cell-title enterprise"></p>
+                                        <p class="cell-copy enterprise integration">High <span id="uiHigh" class="font-icon icon-information"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="plans table-column">
+                            <div class="table-row1 title wrapper1">
+                                <div class="table-row1 wrapper2">
+                                    <div class="comparison-cell category">
+                                        <p class="cell-title category">Pricing</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-row2 content wrapper1">
+                                <div class="table-row2 content wrapper2">
+                                    <div class="comparison-cell standard header">
+                                        <p class="cell-title standard">Standard</p>
+                                    </div>
+                                    <div class="comparison-cell standard body">
+                                        <p class="cell-title standard"></p>
+                                        <p class="cell-copy standard">
+                                            <a href="javascipt:;" class="cta-btn" onclick="openClickAcc()">Test it out</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="table-row2 content wrapper2">
+                                    <div class="comparison-cell enterprise header">
+                                        <p class="cell-title enterprise">Enterprise</p>
+                                    </div>
+                                    <div class="comparison-cell enterprise body">
+                                        <p class="cell-title enterprise"></p>
+                                        <p class="cell-copy enterprise">
+                                            <a href="#subscribe-now" class="cta-btn">Contact Us</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="plans table-column">
+                            <div class="table-row1 title wrapper1">
+                                <div class="table-row1 wrapper2">
+                                    <div class="comparison-cell category">
+                                        <p class="cell-title category">Platform At Scale</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-row2 content wrapper1">
+                                <div class="table-row2 content wrapper2">
+                                    <div class="comparison-cell standard header">
+                                        <p class="cell-title standard">Standard</p>
+                                    </div>
+                                    <div class="comparison-cell standard body">
+                                        <p class="cell-title standard"></p>
+                                        <p class="cell-copy standard">If you have unusually large order values or transaction up to 20 million rupiahs/month, add payments to your platform for you to test. No set up fees, monthly fees, or hidden fees</p>
+                                    </div>
+                                </div>
+                                <div class="table-row2 content wrapper2">
+                                    <div class="comparison-cell enterprise header">
+                                        <p class="cell-title enterprise">Enterprise</p>
+                                    </div>
+                                    <div class="comparison-cell enterprise body">
+                                        <p class="cell-title enterprise"></p>
+                                        <p class="cell-copy enterprise">A customized plan built for fast-growing or complex businesses.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="all-accounts col-row area wrapper1">
+                <div class="all-accounts wrapper2">
+                    <div class="all-accounts wrapper3">
+                        <div class="all-accounts columns">
+                            <div class="included-heading columns">
+                                <p class="included-title">All accounts included</p>
+                            </div>
+                            <div class="included-body columns">
+                                <div class="included-body cell">
+                                    <span>
+                                        <i class="font-icon icon-tick"></i>
+                                    </span>
+                                    <p class="cell-copy">Dashboard</p>
+                                </div>
+                                <div class="included-body cell">
+                                    <span>
+                                        <i class="font-icon icon-tick"></i>
+                                    </span>
+                                    <p class="cell-copy">PO Box</p>
+                                </div>
+                                <div class="included-body cell">
+                                    <span>
+                                        <i class="font-icon icon-tick"></i>
+                                    </span>
+                                    <p class="cell-copy">Giro Engine, Funds, Routing</p>
+                                </div>
+                                <div class="included-body cell">
+                                    <span>
+                                        <i class="font-icon icon-tick"></i>
+                                    </span>
+                                    <p class="cell-copy">Incremental funds verification</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -868,28 +1159,28 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
         carousel.mount();
 
         // PLANS CAROUSEL
-        var translateX = function (Glide, Components, Events) {
-            return {
-                modify(translate) {
-                    return translate + 20;
-                }
-            }
-        }
-        var plansMobile = new Glide('.glide.plan-boxes.mobile.content',{
-            animationTimingFunc: 'cubic-bezier(0.77, 0, 0.175, 1)',
-            peek: 35,
-            startAt: 1,
-            translate: 20
-        });
-        plansMobile.on('run', function () {
-            var purpleBullet = document.querySelector('.glide.plan-boxes.mobile.content .glide__bullet[data-glide-dir="=0"]');
-            if (!purpleBullet.classList.contains("glide__active")) {
-                purpleBullet.classList.toggle('purple');
-                purpleBullet.nextElementSibling.classList.toggle('blue');
-            }
-        })
-        // plansMobile.mutate([translateX]);
-        plansMobile.mount();
+        // var translateX = function (Glide, Components, Events) {
+        //     return {
+        //         modify(translate) {
+        //             return translate + 20;
+        //         }
+        //     }
+        // }
+        // var plansMobile = new Glide('.glide.plan-boxes.mobile.content',{
+        //     animationTimingFunc: 'cubic-bezier(0.77, 0, 0.175, 1)',
+        //     peek: 35,
+        //     startAt: 1,
+        //     translate: 20
+        // });
+        // plansMobile.on('run', function () {
+        //     var purpleBullet = document.querySelector('.glide.plan-boxes.mobile.content .glide__bullet[data-glide-dir="=0"]');
+        //     if (!purpleBullet.classList.contains("glide__active")) {
+        //         purpleBullet.classList.toggle('purple');
+        //         purpleBullet.nextElementSibling.classList.toggle('blue');
+        //     }
+        // })
+        // // plansMobile.mutate([translateX]);
+        // plansMobile.mount();
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138360559-1"></script>
@@ -899,6 +1190,30 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
         gtag('js', new Date());
 
         gtag('config', 'UA-138360559-1');
+    </script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script>
+        tippy('#uiHigh', {
+            content: '<img src="assets/img/high_integration.jpg" alt="Main Image" style= "width: 100%";>',
+            theme: 'light-border',
+            interactive: true,
+            maxWidth: 180,
+            // trigger: 'click',
+            arrow: true,
+            arrowType: 'round',
+            placement: 'right'
+        })
+        tippy('#uiLow', {
+            content: '<img src="assets/img/low_integration.png" alt="Low Integration" style= "width: 100%";>',
+            theme: 'light-border',
+            interactive: true,
+            maxWidth: 250,
+            // trigger: 'click',
+            arrow: true,
+            arrowType: 'round',
+            placement: 'right'
+        })
     </script>
 </body>
 </html>
