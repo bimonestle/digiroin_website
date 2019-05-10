@@ -159,6 +159,36 @@ header {
 header.scrolled {
     background-color: #ffffff
 }
+header .copy-alert {
+    background-color: #222222;
+    padding: 1em;
+    display: block;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    right: 1.5em;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    transition: top .2s ease;
+    -webkit-transition: top .2s ease;
+    -moz-transition: top .2s ease;
+    -ms-transition: top .2s ease;
+    -o-transition: top .2s ease;
+}
+header .copy-alert.success {
+    background-color: #4286f5;
+    top: 80px
+}
+header .copy-alert.error {
+    background-color: #ff001f;
+    top: 80px;
+}
+header .copy-alert p {
+    color: #ffffff;
+}
 .menu-container {
     display: flex;
     align-items: center;
@@ -184,6 +214,8 @@ header.scrolled {
     color: #4286f5;
 }
 .menu > a {
+    display: flex;
+    flex-direction: column;
     color: #222222;
     margin: 0 15px;
     transition: all .4s;
@@ -1301,8 +1333,6 @@ span.header {
     font-size: 30px;
     line-height: 38px;
     margin-top: 18px;
-}
-.crAcc-title.error {
     font-weight: 600;
 }
 .crAcc-title.success {
@@ -3908,6 +3938,41 @@ p.tnc-title {
     .included-body .icon-tick {
         margin-top: unset;
         font-size: 10px;
+    }
+    .crAcc-header, .crAcc-content, .crAcc-footer {
+        margin: 0 32px;
+    }
+    .crAcc-header {
+        margin-top: unset;
+    }
+    .crAcc-middle {
+        margin: 16px 32px 0;
+    }
+    .crAcc-content {
+        max-width: 280px;
+        max-height: unset;
+        height: auto;
+        padding: 1em 0;
+    }
+    .input-phonenumber {
+        width: 100%;
+        font-size: 14px;
+    }
+    .crAcc-title {
+        font-size: 24px;
+        line-height: unset;
+        font-weight: 600;
+    }
+    .crAcc-title.success {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .crAcc-footer {
+        margin-top: 16px;
+    }
+    .oneClickCreate {
+        width: 110px;
+        height: 40px;
     }
 
     /* PRICING PAGE */

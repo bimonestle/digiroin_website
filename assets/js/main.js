@@ -193,6 +193,40 @@ createBtn.addEventListener('click', function (event) {
     })
 })
 
+// COPY GIRO NUMBER
+var copyGiro = document.getElementById('copy-giro');
+copyGiro.addEventListener('click', function (event) {
+    var giroNumb = document.getElementById('giro-numb');
+    var range = document.createRange();
+    var selection = window.getSelection();
+    range.selectNodeContents(giroNumb);
+
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    var copyGiroAlert = `<div class="copy-alert success"><p>Copy giro number successful</p></div>`;
+    var headNode = document.querySelector('header .popup-container');
+    var copyPopup = function (template, node) {
+
+        node.innerHTML = template;
+        
+        setTimeout(() => {
+            var template = document.querySelector('.copy-alert');
+            template.parentElement.removeChild(template);
+        }, 3000);
+    }
+    try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? giroNumb.innerText : "unsuccessful";
+        console.log("The copied text is " + msg);
+
+        copyPopup(copyGiroAlert, headNode);
+    }
+    catch(err) {
+        console.log("Unable to copy text");
+    }
+})
+
 
 // SHOW DASHBOARD BUTTON / LOG IN
 // var navDashboardBtn = document.getElementById('dashboard-nav');
