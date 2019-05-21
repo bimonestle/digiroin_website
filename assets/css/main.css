@@ -159,14 +159,17 @@ header {
 header.scrolled {
     background-color: #ffffff
 }
-header .copy-alert {
-    background-color: #222222;
+.page-container .popup-container {
+    position: fixed;
+    z-index: 1010;
+    top: 80px;
+    right: 1.5em;
+}
+.page-container .copy-alert {
+    background-color: #ffffff;
     padding: 1em;
     display: block;
     opacity: 1;
-    position: absolute;
-    top: 0px;
-    right: 1.5em;
     border-radius: 100px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
@@ -178,15 +181,15 @@ header .copy-alert {
     -ms-transition: top .2s ease;
     -o-transition: top .2s ease;
 }
-header .copy-alert.success {
-    background-color: #4286f5;
+.page-container .copy-alert.success {
+    background-color:#4286f5;
     top: 80px
 }
-header .copy-alert.error {
+.page-container .copy-alert.error {
     background-color: #ff001f;
     top: 80px;
 }
-header .copy-alert p {
+.page-container .copy-alert p {
     color: #ffffff;
 }
 .menu-container {
@@ -202,6 +205,7 @@ header .copy-alert p {
 .menu {
     position: relative;
     display: flex;
+    align-items: center;
 }
 .menu .discover-lk.active,
 .menu .features-lk.active,
@@ -214,7 +218,10 @@ header .copy-alert p {
     color: #4286f5;
 }
 .menu > a {
-    display: flex;
+    display: -moz-box;
+    display: -moz-inline-box;
+    display: -webkit-box;
+    display: -webkit-inline-box;
     flex-direction: column;
     color: #222222;
     margin: 0 15px;
@@ -267,6 +274,67 @@ header .copy-alert p {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
+}
+.menu > .signed.account {
+    display: block;
+}
+.menu .giro-search.wrapper1 {
+    position: absolute;
+    z-index: 1001;
+    right: 1em;
+    bottom: -4.5em;
+    width: 300px;
+    max-width: 300px;
+}
+.menu .giro-search.wrapper2 {
+    position: relative;
+    background-color: #ffffff;
+    padding: 14px 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+.menu .triangle {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -2.5em;
+    right: 1em;
+    transform: rotate(90deg);
+    overflow: hidden;
+}
+.menu .triangle::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    transform: rotate(135deg);
+    top: 13px;
+    left: 30px;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.menu .giro-search.wrapper3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.menu .icon-arrowback {
+    color: #4286f5;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.menu .input-giro {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
 }
 .signed .icon-arrow {
     font-size: 10px;
@@ -1313,21 +1381,12 @@ span.header {
 .crAcc-content {
     max-width: 469px;
     width: 100%;
-    max-height: 360px;
-    height: 100%;
     border-radius: 8px;
     background-color: #ffffff;
 }
-.crAcc-content.error {
-    max-height: 286px;
-}
-.crAcc-header,
-.crAcc-middle,
-.crAcc-footer {
-    margin: 0 60px;
-}
 .crAcc-header {
-    margin-top: 36px;
+    padding: 0 60px;
+    padding-top: 36px;
 }
 .crAcc-title {
     font-size: 30px;
@@ -1355,15 +1414,16 @@ span.header {
     margin-top: 18px;
     line-height: 22px;
 }
-.crAcc-middle {
-    margin-top: 37px;
-    border-bottom: 1px solid #22222266;
-    padding: 8.5px 0;
-    position: relative;
+.crAcc-subtitle.link {
+    color: #4286f5;
+    cursor: pointer;
+    display: inline-block;
 }
-.crAcc-middle.success {
-    border: none;
-    margin-top: 22px;
+.crAcc-middle {
+    padding: 0 60px;
+    padding-top: 37px;
+    /* border-bottom: 1px solid #22222266; */
+    position: relative;
 }
 .crAcc-middle .icon-smartphone {
     font-size: 24px;
@@ -1377,11 +1437,15 @@ span.header {
 .crAcc-middle .icon-smartphone.focused {
     color: #4286f5;
 }
+.crAcc-middle .inputPhone-container {
+    border-bottom: 1px solid #dddddd;
+}
 .label-input {
     color: #888888;
     position: absolute;
-    left: 30px;
-    top: 20px;
+    z-index: 0;
+    left: 100px;
+    bottom: 5px;
     transition: transform 150ms ease-out, font-size 150ms ease-out;
     -webkit-transition: transform 150ms ease-out, font-size 150ms ease-out;
     -moz-transition: transform 150ms ease-out, font-size 150ms ease-out;
@@ -1397,24 +1461,41 @@ span.header {
     -o-transform: translateY(-20px);
 }
 .input-phonenumber {
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
     width: 90%;
     font-size: 16px;
     border: none;
     outline: none;
 }
 .crAcc-footer {
-    margin-top: 34px;
+    padding: 0 60px;
+    padding-top: 34px;
+    padding-bottom: 50px;
     text-align: right;
 }
 .crAcc-footer.success {
-    margin-top: 32px;
-    margin-bottom: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.crAcc-footer.forgot {
+    text-align: unset;
+}
+.crAcc-footer .notAccept.tryAgain {
+    margin-top: 16px;
 }
 .crAcc-footer.crAcc-title.success {
     text-align: center;
 }
+.crAcc-footer.success input {
+    flex: 0 1;
+    margin-bottom: .5em;
+}
 .oneClickCreate {
-    width: 164px;
+    -webkit-appearance: none;
+    min-width: 164px;
     height: 50px;
     object-fit: contain;
     background-color: #cdcdcd;
@@ -1439,6 +1520,9 @@ span.header {
 }
 .oneClickCreate.shareAcc.legit {
     width: 100%;
+    background-color: #fff;
+    color: #4286f5;
+    border: 1px solid #4286f5
 }
 .enterprise-box .cta-btn {
     background-color: #4286f5;
@@ -3065,12 +3149,14 @@ p.tnc-title {
     }
     .apibox.api-diagram {
         height: 390px !important;
+        align-items: flex-start;
     }
     .diagram-image.container {
         flex-flow: row;
         justify-content: center;
     }
     .diagram-image.container > img {
+        align-self: center;
         width: 45%;
     }
     .main-ngin.how-it-works .legends {
@@ -3939,23 +4025,22 @@ p.tnc-title {
         margin-top: unset;
         font-size: 10px;
     }
-    .crAcc-header, .crAcc-content, .crAcc-footer {
-        margin: 0 32px;
+    .crAcc-header,
+    .crAcc-middle,
+    .crAcc-footer {
+        padding: 0 20px;
+        padding-top: 20px;
     }
-    .crAcc-header {
-        margin-top: unset;
-    }
-    .crAcc-middle {
-        margin: 16px 32px 0;
+    .crAcc-middle .label-input {
+        left: unset;
     }
     .crAcc-content {
         max-width: 280px;
         max-height: unset;
         height: auto;
-        padding: 1em 0;
     }
     .input-phonenumber {
-        width: 100%;
+        width: auto;
         font-size: 14px;
     }
     .crAcc-title {
@@ -3967,12 +4052,15 @@ p.tnc-title {
         font-size: 22px;
         font-weight: 600;
     }
-    .crAcc-footer {
-        margin-top: 16px;
-    }
     .oneClickCreate {
         width: 110px;
         height: 40px;
+    }
+    .crAcc-footer {
+        padding-bottom: 32px;
+    }
+    .crAcc-footer.success input {
+        flex: 1 1;
     }
 
     /* PRICING PAGE */

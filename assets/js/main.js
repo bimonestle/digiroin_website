@@ -101,16 +101,12 @@ var createBtn = document.querySelector('.oneClickCreate');
 var labelInput = document.querySelector('.label-input');
 var crAccModal = document.getElementById('modal-crAcc');
 
+// Open Create Account Modal
 function openClickAcc(event) {
     crAccModal.style.display = "block"
     phoneInput.focus();
 }
-var closeCrAcc = document.querySelectorAll('.close-crAcc');
-for (let i = 0; i < closeCrAcc.length; i++) {
-    closeCrAcc[i].addEventListener('click', function closeClickAcc(event) {
-        event.target.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = 'none';
-    });
-}
+
 var focusPhone = function (event) {
     document.querySelector('.font-icon.icon-smartphone').classList.add('focused');
     labelInput.classList.add('focused');
@@ -140,16 +136,37 @@ function numbOnly(inputBox, inputFilter) {
     });
 }
 numbOnly(phoneInput, function (value) {
-    return /^\d*$/.test(value) // integer values (positive only)
+    return /^\d*$/.test(value); // integer values (positive only)
 })
+
 var checkNum = function (event) {
+    var proceedBtn = this.parentElement.parentElement.nextElementSibling.firstElementChild;
     if (this.value.length >= 9) {
         this.classList.add('focused');
-        createBtn.classList.add('legit');
+        proceedBtn.removeAttribute('disabled');
+        proceedBtn.classList.add('legit');
     } else {
-        createBtn.classList.remove('legit');
+        proceedBtn.classList.remove('legit');
     }
 }
+
+// Close every modals created
+function closeClickAcc(event) {
+    event.target.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = 'none';
+}
+var closeCrAcc = document.querySelectorAll('.close-crAcc');
+closeCrAcc.forEach(function (item) {
+    item.addEventListener('click', closeClickAcc);
+})
+
+// Access Account
+function accessAcc(event) {
+    event.target.parentElement.parentElement.parentElement.parentElement.style.display = 'none';
+    document.querySelector('.menu .giro-search.wrapper1').style.display = 'block';
+}
+document.getElementById('accessAcc').addEventListener('click', accessAcc);
+
+// Create new Account
 function createNewAcc() {
     console.log("Your phone number is " + phoneInput.value);
 }
@@ -157,6 +174,126 @@ phoneInput.addEventListener('focus', focusPhone, false);
 phoneInput.addEventListener('blur', blurPhone, false);
 phoneInput.addEventListener('keyup', checkNum, false);
 
+// CHECK GIRO NUMBER SECTION
+// Display search bar in navbar
+
+var attempts = []; // store failed attempts to check giro number
+function searchBarGiro() {
+    var searchBar = document.querySelector('.menu .giro-search.wrapper1');
+    if (searchBar.style.display === 'none') {
+        searchBar.style.display = 'block';
+        searchBar.firstElementChild.lastElementChild.firstElementChild.value = '';
+        searchBar.firstElementChild.lastElementChild.firstElementChild.focus();
+    } else {
+        searchBar.style.display = 'none';
+    }
+}
+document.querySelector('.menu > .signed.account').addEventListener('click', searchBarGiro);
+
+// REDIRECT TO CREATE GIRO ACCOUNT
+document.getElementById('no-account').addEventListener('click', function () {
+    openClickAcc();
+    this.parentElement.parentElement.parentElement.parentElement.style.display = 'none';
+})
+
+// TRY CHECKING GIRO NUMBER AGAIN
+document.getElementById('tryAgain').addEventListener('click', function () {
+    var errorGiro = document.getElementById('error-checkGiro');
+    if (attempts.length > 2) {
+        alert(attempts);
+        errorGiro.style.display = 'block';
+
+        // Erase don't have account
+        errorGiro.querySelector('.crAcc-header.wrapper4').removeChild(document.getElementById('no-account'));
+
+        // Create new element
+        errorGiro.querySelector('.crAcc-footer.checkGiro')
+        .innerHTML = `<input type="button" value="Forgot Giro Number"
+        id="forgotGiroBtn" class="oneClickCreate forgotGiro legit" style= "width: 100%";>`;
+
+        document.getElementById('forgotGiroBtn').addEventListener('click', function (params) {
+            // Erase errorGiro
+            errorGiro.style.display = 'none';
+            
+            var forgotModal = document.getElementById('modal-forgotGiro');
+            forgotModal.style.display = 'block';
+        })
+
+    } else {
+        // attempts.push(this.getAttribute('data-tries'))
+        searchBarGiro();
+        errorGiro.style.display = 'none';
+    }
+});
+
+// Limit the input becomes numbers only
+numbOnly(document.getElementById('input-giro'), function (value) {
+    return /^\d*$/.test(value) // integer values (positive only)
+})
+
+// Search Giro Number
+function searchGiro(inputSearch) {
+    if (inputSearch.value === "12345678901234" ) {
+        console.log('Your giro number is ' + inputSearch.value);
+    }
+    // else if (inputSearch.value.length < 14) {
+    //     alert('Insufficient');
+    // }
+    else {
+        attempts.push('false');
+        document.getElementById('error-checkGiro').style.display = "block";
+        document.getElementById('checked-giro').innerHTML = inputSearch.value
+    }
+}
+
+// User clicks arrow
+document.getElementById('search-giro').addEventListener('click', function () {
+    searchGiro(document.getElementById('input-giro'));
+    document.querySelector('.menu .giro-search.wrapper1').style.display = 'none';
+});
+
+// User presses enter key
+document.getElementById('input-giro').addEventListener('keyup', function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById('search-giro').click();
+    }
+});
+
+// FORGOT GIRO NUMBER
+function inputPhoneFocus(event) {
+    this.parentElement.querySelectorAll('.font-icon, .label-input').forEach(function (child) {
+        child.classList.add('focused')
+    })
+}
+function inputPhoneBlur(event) {
+    if (this.value == "") {
+        this.parentElement.querySelectorAll('.font-icon, .label-input').forEach(function (child) {
+            child.classList.remove('focused')
+        })
+    }
+}
+document.getElementById('input-phonenumber2').addEventListener('focus', inputPhoneFocus);
+document.getElementById('input-phonenumber2').addEventListener('blur', inputPhoneBlur);
+numbOnly(document.getElementById('input-phonenumber2'), function (value) {
+    return /^\d*$/.test(value) // integer values (positive only)
+})
+document.getElementById('input-phonenumber2').addEventListener('keyup', checkNum);
+
+// SEND SMS
+function sms(inputPhone) {
+    console.log('Sending SMS to ' + inputPhone.value);
+}
+document.getElementById('sendSMS').addEventListener('click', function () {
+    sms(document.getElementById('input-phonenumber2'));
+})
+document.getElementById('input-phonenumber2').addEventListener('keyup', function (event) {
+    if (event.keyCode === 13) {
+        sms(document.getElementById('input-phonenumber2'));
+    }
+})
+
+// CHECK PHONE NUMBER REGISTER
 // AXIOS
 createBtn.addEventListener('click', function (event) {
     var baseURLAuth = "http://13.229.138.171/new-giro";
@@ -174,22 +311,26 @@ createBtn.addEventListener('click', function (event) {
 
     // If not registered, create this response
     .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         console.log("9989" + response.data.account_number);
         // document.getElementById('balance-response').innerHTML = "Your balance is Rp " + response.data.result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         giroNumb.innerHTML = "9989" + response.data.account_number;
         crAccModal.style.display = "none";
         modalSucc.style.display = "block";
         phoneInput.value = "";
+        createBtn.setAttribute('disabled');
+        createBtn.classList.remove('legit');
     })
 
     // If registeres already, create this response
     .catch(function (error) {
-        console.log(error.response.data.message);
+        // console.log(error.response.data);
         crAccModal.style.display = "none";
         modalErr.style.display = "block";
         errResp.innerHTML = phoneNumb + " is already registered.";
         phoneInput.value = "";
+        createBtn.setAttribute('disabled', null);
+        createBtn.classList.remove('legit');
     })
 })
 
@@ -205,8 +346,8 @@ copyGiro.addEventListener('click', function (event) {
     selection.addRange(range);
 
     var copyGiroAlert = `<div class="copy-alert success"><p>Copy giro number successful</p></div>`;
-    var headNode = document.querySelector('header .popup-container');
-    var copyPopup = function (template, node) {
+    var headNode = document.querySelector('.page-container .popup-container');
+    var renderedCopyAlert = function (template, node) {
 
         node.innerHTML = template;
         
@@ -220,11 +361,47 @@ copyGiro.addEventListener('click', function (event) {
         var msg = successful ? giroNumb.innerText : "unsuccessful";
         console.log("The copied text is " + msg);
 
-        copyPopup(copyGiroAlert, headNode);
+        renderedCopyAlert(copyGiroAlert, headNode);
     }
     catch(err) {
         console.log("Unable to copy text");
     }
+})
+
+// SHARE GIRO NUM
+function shareGiroNum() {
+    var middleContent = this.parentElement.previousElementSibling;
+    if (navigator.share !== undefined) { // check if web share API Available, if it's true it'll open native share mobile
+        navigator.share({
+            title: 'My Giro Account Number',
+            text: "Hello, this is my Giro Account Number ",
+            url: "Hello, this is my Giro Account Number " +
+            middleContent.querySelector('#giro-numb').innerText +
+            " from " + window.location.href
+        })
+        .then(function() {
+            console.log(`Sharing Giro Account Number in mobile.`);
+            alert(`Sharing Giro Account Number in mobile.`);
+        })
+        .catch(function (err) {
+            console.log(err + `. Can't share Giro Account Number in mobile.`);
+            alert(err + `. Can't share Giro Account Number in mobile.`);
+        });
+    } else { // the web share API is not available, thus open mail app in your desktop
+        console.log('Web Share API not supported');
+        var link = "mailto:?"
+        + "&subject=" + encodeURI("Sharing My Giro Number")
+        + "&body= Hello, this is my Giro Account Number "
+        + middleContent.querySelector('#giro-numb').innerText
+        + " from " + window.location.href;
+        window.location.href = link;
+    }
+}
+document.getElementById('oneClickShare').addEventListener('click', shareGiroNum);
+
+// START ACCESSING GIRO NUMBER
+document.getElementById('oneClickStart').addEventListener('click', function () {
+    accessAcc(event);
 })
 
 
@@ -282,5 +459,3 @@ var openSideNav = function () {
 }
 // document.addEventListener('click', openSideNav, false);
 document.addEventListener('touchstart', openSideNav, false); // for ios safari
-
-document.querySelector('[data-toggle="apakek"]')

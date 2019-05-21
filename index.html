@@ -46,8 +46,8 @@
     
     <div id="wrapper" class="wrapper">
         <main id="home" class="page-container main-page grids">
+            <div class="popup-container"></div>
             <header class="header col-row area">
-                <div class="popup-container"></div>
                 <div class="menu-container">
                     <a href="index.html">
                         <img src="assets/img/digiroin_plain_logo.svg" alt="digiroin logo" srcset="">
@@ -59,6 +59,16 @@
                         <a href="#plan-section" class="plan-lk navbar-links">Plan<div></div></a>
                         <a href="pricing_page.html" class="pricing-lk navbar-links">Pricing<div></div></a>
                         <!-- <a href="signin_page.html" class="sign-lk">Sign In / Sign Up</a> -->
+                        <a href="javascript:;" id="account-btn" class="signed account">Account</a>
+                        <div class="giro-search wrapper1" style="display: none;">
+                            <div class="giro-search wrapper2">
+                                <div class="triangle"></div>
+                                <div class="giro-search wrapper3">
+                                    <input type="text" name="input-giro" id="input-giro" class="input-giro" placeholder="Input your Giro Number">
+                                    <span id="search-giro" class="font-icon icon-arrowback"></span>
+                                </div>
+                            </div>
+                        </div>
                         <a href="#dasboard" id="dashboard-nav" class="signed">Dashboard<i class="icon-arrow"></i></a>
                         <div id="drop-menu" class="drop-menu">
                             <div class="menu">
@@ -655,12 +665,14 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                             <p class="crAcc-subtitle">Prove by yourself creating an account in one click</p>
                         </div>
                         <div class="crAcc-middle">
-                            <span class="font-icon icon-smartphone"></span>
-                            <label for="input-phonenumber" class="label-input">No.Handphone (6281xxxxxx)</label>
-                            <input type="text" name="input-phonenumber" id="input-phonenumber" class="input-phonenumber">
+                            <div class="inputPhone-container wrapper2">
+                                <span class="font-icon icon-smartphone"></span>
+                                <label for="input-phonenumber" class="label-input">No.Handphone (6281xxxxxx)</label>
+                                <input type="text" name="input-phonenumber" id="input-phonenumber" class="input-phonenumber">
+                            </div>
                         </div>
                         <div class="crAcc-footer">
-                            <input type="button" value="Create" id="oneClickCreate" class="oneClickCreate" onclick="createNewAcc()">
+                            <input type="button" value="Create" id="oneClickCreate" class="oneClickCreate" onclick="createNewAcc()" disabled>
                         </div>
                     </div>
                 </div>
@@ -683,21 +695,68 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                         </div>
                         <div class="crAcc-footer success">
                             <input type="button" value="Share" id="oneClickShare" class="oneClickCreate shareAcc legit" onclick="shareGiroNum()">
+                            <input type="button" value="Start" id="oneClickStart" class="oneClickCreate startAcc legit">
                         </div>
                     </div>
                 </div>
             </div>
             <div id="error-crAcc" class="modal-crAcc error-crAcc wrapper1">
                 <div class="crAcc-wrapper error-crAcc wrapper2">
-                    <div class="crAcc-content error wrapper3">
+                    <div class="crAcc-content error-crAcc wrapper3">
                         <div class="crAcc-header wrapper4">
                             <p style="text-align: right;">
-                                <span id="closeError" class="close-crAcc icon-close" style="cursor: pointer"></span>
+                                <span id="closeError" class="close-crAcc icon-close" style="cursor: pointer;"></span>
                             </p>
                             <p id="registered-phonenumb" class="crAcc-title error"></p>
                         </div>
                         <div class="crAcc-footer wrapper3">
-                            <input type="button" value="Access Account" id="accessAcc" class="oneClickCreate accessAcc legit" onclick="accessAccount()">
+                            <input type="button" value="Access Account" id="accessAcc" class="oneClickCreate accessAcc legit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECK GIRO -->
+            <div id="error-checkGiro" class="modal-crAcc error-checkGiro wrapper1">
+                <div class="crAcc-wrapper error-checkGiro wrapper2">
+                    <div class="crAcc-content error wrapper3">
+                        <div class="crAcc-header wrapper4">
+                            <p style="text-align: right;">
+                                <span id="close-errorCheck" class="close-crAcc icon-close" style="cursor: pointer;"></span>
+                            </p>
+                            <p id="check-giroNumb" class="crAcc-title error"><span id="checked-giro"></span> is not registered</p>
+                            <p id="no-account">
+                                <a href="javascript:;" class="crAcc-subtitle link">Don't have an account? Create it in one click</a>
+                            </p>
+                        </div>
+                        <div class="crAcc-footer checkGiro">
+                            <input type="button" value="Try Again" id="tryAgain" data-tries="false" class="oneClickCreate tryAgain legit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORGOT GIRO -->
+            <div id="modal-forgotGiro" class="modal-crAcc forgotGiro" style="display:none;">
+                <div class="crAcc-wrapper">
+                    <div class="crAcc-content forgotBox">
+                        <div class="crAcc-header forgot">
+                            <p style="text-align: right;">
+                                <span id="closeCreate" class="close-crAcc icon-close" style="cursor: pointer"></span>
+                            </p>
+                            <p class="crAcc-title">Forgot Giro Number</p>
+                            <p class="crAcc-subtitle">Enter your phone number to get SMS of your Giro Number</p>
+                        </div>
+                        <div class="crAcc-middle forgot">
+                            <div class="inputPhone-container wrapper2">
+                                <span class="font-icon icon-smartphone"></span>
+                                <label for="input-phonenumber" class="label-input">Phone Number (6281xxxxxx)</label>
+                                <input type="text" name="input-phonenumber" id="input-phonenumber2" class="input-phonenumber">
+                            </div>
+                        </div>
+                        <div class="crAcc-footer forgot">
+                            <input type="button" value="Send SMS" id="sendSMS" class="oneClickCreate sendSMS" disabled>
+                            <p class="notAccept tryAgain">Do not accept SMS yet? Try Again</p>
                         </div>
                     </div>
                 </div>
