@@ -18,7 +18,14 @@
   },
   "homepage": "https://gitlab.com/bimonestle/vault-web#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "base-64": "^0.1.0",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.4",
+    "helmet": "^3.18.0",
+    "qs": "^6.7.0",
+    "redis": "^2.8.0"
   }
 }
