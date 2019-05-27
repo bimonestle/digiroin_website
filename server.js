@@ -6,9 +6,32 @@ const axios = require('axios');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const redis = require("redis");
-const client = redis.createClient('6378', '54.179.161.208');
+// const client = redis.createClient('6378', '54.179.161.208');
 const baseURL = "https://wallet.digiro.in/"
 const key = "Basic NjI4MTIzMjI5MTAxMTp0b2tlbl9iaW1waThxZnUyZ2NpNnJrOTN1Zw=="
+
+let client = redis.createClient({
+    host: '54.179.161.208',
+    port: '6378',
+    retry_strategy: function (options) {
+        if (options.error && options.error.code === 'ECONNREFUSED') {
+            // End reconnecting on a specific error and flush all commands with
+            // a individual error
+            return new Error('The server refused the connection');
+        }
+        if (options.total_retry_time > 1000 * 60 * 60) {
+            // End reconnecting after a specific timeout and flush all commands
+            // with a individual error
+            return new Error('Retry time exhausted');
+        }
+        if (options.attempt > 10) {
+            // End reconnecting with built in error
+            return undefined;
+        }
+        // reconnect after
+        return Math.min(options.attempt * 100, 3000);
+    }
+});
 
 let headers = {
     'Authorization': key,
@@ -97,20 +120,27 @@ app.get('/api/balance/:giro', function (req, response) {
 app.get('/api/check-giro/:giro', function (req, response) {
     let giro = req.params.giro;
     client.keys('key.wallet.acount.*.*'+giro, function (err, keys) {
-        var splitString = keys[0].split(".");
-        var phone = splitString[4];
-        var giro_account = splitString[5];
-        if (keys.length > 0) {
-            return response.status(200).json({
-                code: 200,
-                phone: phone,
-                giro: giro_account
+        if (!keys) {
+            return response.status(500).json({
+                code: 500,
+                message: 'Unknown error.'
             })
         } else {
-            return response.status(400).json({
-                code: 400,
-                message: 'Giro not found.'
-            })
+            var splitString = keys[0].split(".");
+            var phone = splitString[4];
+            var giro_account = splitString[5];
+            if (keys.length > 0) {
+                return response.status(200).json({
+                    code: 200,
+                    phone: phone,
+                    giro: giro_account
+                })
+            } else {
+                return response.status(400).json({
+                    code: 400,
+                    message: 'Giro not found.'
+                })
+            }
         }
     });
 })
