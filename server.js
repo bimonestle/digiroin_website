@@ -85,7 +85,7 @@ app.get('/api/balance/:giro', function (req, response) {
             })
         })
         .catch((err) => {
-            console.log(err)
+            // console.log(err)
             return response.status(500).json({
                 code: 500,
                 message: err.response.data
@@ -122,11 +122,24 @@ app.get('/api/check-phone/:giro', function (req, response) {
         var phone = splitString[4];
         var giro_account = splitString[5];
         if (keys.length > 0) {
-            return response.status(200).json({
-                code: 200,
-                phone: phone,
-                giro: giro_account
+            axios.post('http://18.136.26.4:3000/sms', {phone: phone, msg: 'Akun giro anda adalah '+giro_account})
+            .then(function (res) {
+                return response.status(201).json({
+                    code: 201,
+                    message: 'Success.'
+                })
             })
+            .catch(function (error) {
+                return response.status(500).json({
+                    code: 500,
+                    message: 'Unknown error.'
+                })
+            });
+            // return response.status(200).json({
+            //     code: 200,
+            //     phone: phone,
+            //     giro: giro_account
+            // })
         } else {
             return response.status(400).json({
                 code: 400,
