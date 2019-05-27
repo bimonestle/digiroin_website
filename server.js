@@ -97,10 +97,14 @@ app.get('/api/balance/:giro', function (req, response) {
 app.get('/api/check-giro/:giro', function (req, response) {
     let giro = req.params.giro;
     client.keys('key.wallet.acount.*.*'+giro, function (err, keys) {
+        var splitString = keys[0].split(".");
+        var phone = splitString[4];
+        var giro_account = splitString[5];
         if (keys.length > 0) {
             return response.status(200).json({
                 code: 200,
-                data: keys[0]
+                phone: phone,
+                giro: giro_account
             })
         } else {
             return response.status(400).json({
@@ -114,10 +118,14 @@ app.get('/api/check-giro/:giro', function (req, response) {
 app.get('/api/check-phone/:giro', function (req, response) {
     let giro = req.params.giro;
     client.keys('key.wallet.acount.*.'+giro+'.*', function (err, keys) {
+        var splitString = keys[0].split(".");
+        var phone = splitString[4];
+        var giro_account = splitString[5];
         if (keys.length > 0) {
             return response.status(200).json({
                 code: 200,
-                data: keys[0]
+                phone: phone,
+                giro: giro_account
             })
         } else {
             return response.status(400).json({
