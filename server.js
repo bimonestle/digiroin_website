@@ -120,7 +120,8 @@ app.get('/api/balance/:giro', function (req, response) {
 app.get('/api/check-giro/:giro', function (req, response) {
     let giro = req.params.giro;
     client.keys('key.wallet.acount.*.*'+giro, function (err, keys) {
-        if (!keys) {
+
+        if (err) {
             return response.status(500).json({
                 code: 500,
                 message: 'Unknown error.'
@@ -148,9 +149,9 @@ app.get('/api/check-giro/:giro', function (req, response) {
 app.get('/api/check-phone/:giro', function (req, response) {
     let giro = req.params.giro;
     client.keys('key.wallet.acount.*.'+giro+'.*', function (err, keys) {
-        var splitString = keys[0].split(".");
-        var phone = splitString[4];
-        var giro_account = splitString[5];
+        let splitString = keys[0].split(".");
+        let phone = splitString[4];
+        let giro_account = splitString[5];
         if (keys.length > 0) {
             axios.post('http://18.136.26.4:3000/sms', {phone: phone, msg: 'Akun giro anda adalah '+giro_account})
             .then(function (res) {
@@ -177,6 +178,69 @@ app.get('/api/check-phone/:giro', function (req, response) {
             })
         }
     });
+})
+
+app.get('/api/sms-balance/:giro', function(req, response) {
+    // check if giro account is exist
+    let giro = req.params.giro;
+    client.keys('key.wallet.acount.*.*.'+giro, function(err, keys){
+        let splitString = keys[0].split(".");
+        let phone = splitString[4];
+        let giro_account = splitString[5];
+        if(err){
+            return response.status(500).json({
+                code: 500,
+                message: 'Unknown error.'
+            })
+        } else {
+            if(keys.length > 0){
+                // check giro account balance
+                let headers = {
+                    'Authorization': key,
+                    'Content-Type': 'application/json' 
+                }
+    
+                let instance = axios.create({
+                    baseURL: baseURL,
+                    headers: headers
+                });
+
+                instance.get('api/balance/'+giro_account)
+                .then(function (res) {
+                    // send balance info to phone number associate with giro account.
+                    // axios.post('http://18.136.26.4:3000/sms', {phone: phone, msg: 'Saldo akun giro anda adalah Rp '+res.data.result})
+                    // .then(function (res) {
+                    //     return response.status(201).json({
+                    //         code: 201,
+                    //         message: 'Success, message sent.'
+                    //     })
+                    // })
+                    // .catch(function (error) {
+                    //     return response.status(500).json({
+                    //         code: 500,
+                    //         message: 'Unknown error.'
+                    //     })
+                    // });
+                    return response.status(200).json({
+                        code: 200,
+                        data: res.data
+                    })
+                })
+                .catch(function (error) {
+                    return response.status(error.response.status).json({
+                        code: error.response.status,
+                        message: error.response.data
+                    })
+                });
+            } else {
+                return response.status(400).json({
+                    code: 400,
+                    message: 'Giro number is not found.'
+                })
+            }
+        }
+    })
+
 })
 
 app.listen(80);
