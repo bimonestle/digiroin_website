@@ -200,7 +200,8 @@ document.getElementById('no-account').addEventListener('click', function () {
 document.getElementById('tryAgain').addEventListener('click', function () {
     var errorGiro = document.getElementById('error-checkGiro');
     if (attempts.length > 2) {
-        alert(attempts);
+        // alert(attempts);
+        alert("You've entered wrong giro number 3 times");
         errorGiro.style.display = 'block';
 
         // Erase don't have account
@@ -231,19 +232,31 @@ numbOnly(document.getElementById('input-giro'), function (value) {
     return /^\d*$/.test(value) // integer values (positive only)
 })
 
-// Search Giro Number
+// SEARCH GIRO NUMBER
 function searchGiro(inputSearch) {
-    if (inputSearch.value === "12345678901234" ) {
-        console.log('Your giro number is ' + inputSearch.value);
-    }
-    // else if (inputSearch.value.length < 14) {
-    //     alert('Insufficient');
-    // }
-    else {
+    var giro = inputSearch.value.slice(4);
+    var endPoint = "/api/check-giro/" + giro;
+    axios.get(endPoint, {
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
+
+    // If not registered, create this response
+    .then(function (response) {
+        console.log(response.data);
+        console.log('function searchGiro success');
+        console.log('Your giro number is ' + giro);
+    })
+
+    // If registeres already, create this response
+    .catch(function (error) {
+        console.log(error.response);
+        console.log('function searchGiro error');
         attempts.push('false');
         document.getElementById('error-checkGiro').style.display = "block";
         document.getElementById('checked-giro').innerHTML = inputSearch.value
-    }
+    })
 }
 
 // User clicks arrow
@@ -282,7 +295,30 @@ document.getElementById('input-phonenumber2').addEventListener('keyup', checkNum
 
 // SEND SMS
 function sms(inputPhone) {
+    console.log('function sms(inputPhone)');
     console.log('Sending SMS to ' + inputPhone.value);
+
+    var endPoint = "/api/check-phone/" + inputPhone.value;
+    axios.get(endPoint, {
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
+
+    // If not registered, create this response
+    .then(function (response) {
+        console.log(response.data);
+        console.log('function sms success');
+        console.log('Your giro number is ' + inputSearch.value);
+        document.getElementById('modal-sendSMS').style.display = 'block';
+    })
+
+    // If registeres already, create this response
+    .catch(function (error) {
+        console.log(error.response);
+        console.log('function sms error');
+        document.getElementById('modal-notYet').style.display = 'block';
+    })
 }
 document.getElementById('sendSMS').addEventListener('click', function () {
     sms(document.getElementById('input-phonenumber2'));
@@ -296,14 +332,15 @@ document.getElementById('input-phonenumber2').addEventListener('keyup', function
 // CHECK PHONE NUMBER REGISTER
 // AXIOS
 createBtn.addEventListener('click', function (event) {
-    var baseURLAuth = "http://13.229.138.171/new-giro";
+    // var baseURLAuth = "https://wallet.digiro.in/";
+    var endPoint = "api/new-account/";
     var phoneNumb = phoneInput.value;
     var modalSucc = document.getElementById('success-crAcc');
     var modalErr = document.getElementById('error-crAcc');
     var errResp = document.getElementById('registered-phonenumb');
     var giroNumb = document.getElementById('giro-numb');
 
-    axios.post(baseURLAuth, {phone: phoneNumb}, {
+    axios.post(endPoint, {phone: phoneNumb}, {
         headers: {
             "Content-Type": "application/json"
         },
@@ -311,25 +348,27 @@ createBtn.addEventListener('click', function (event) {
 
     // If not registered, create this response
     .then(function (response) {
-        // console.log(response.data);
-        console.log("9989" + response.data.account_number);
+        console.log(response.data);
+        console.log('Check Phone Success');
+        console.log("9989" + response.data.message.account_number);
         // document.getElementById('balance-response').innerHTML = "Your balance is Rp " + response.data.result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        giroNumb.innerHTML = "9989" + response.data.account_number;
+        giroNumb.innerHTML = "9989" + response.data.message.account_number;
         crAccModal.style.display = "none";
         modalSucc.style.display = "block";
         phoneInput.value = "";
-        createBtn.setAttribute('disabled');
+        createBtn.setAttribute('disabled', true);
         createBtn.classList.remove('legit');
     })
 
     // If registeres already, create this response
     .catch(function (error) {
-        // console.log(error.response.data);
+        console.log(error);
+        console.log('Check Phone Error');
         crAccModal.style.display = "none";
         modalErr.style.display = "block";
         errResp.innerHTML = phoneNumb + " is already registered.";
         phoneInput.value = "";
-        createBtn.setAttribute('disabled', null);
+        createBtn.setAttribute('disabled', true);
         createBtn.classList.remove('legit');
     })
 })

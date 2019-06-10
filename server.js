@@ -120,7 +120,7 @@ app.get('/api/balance/:giro', function (req, response) {
 app.get('/api/check-giro/:giro', function (req, response) {
     let giro = req.params.giro;
     client.keys('key.wallet.acount.*.*'+giro, function (err, keys) {
-        if (!keys) {
+        if (err) {
             return response.status(500).json({
                 code: 500,
                 message: 'Unknown error.'

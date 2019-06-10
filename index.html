@@ -710,7 +710,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                             <p id="registered-phonenumb" class="crAcc-title error"></p>
                         </div>
                         <div class="crAcc-footer wrapper3">
-                            <input type="button" value="Access Account" id="accessAcc" class="oneClickCreate accessAcc legit">
+                            <input type="button" value="Access Account" id="accessAcc" class="oneClickCreate accessAcc legit"L>
                         </div>
                     </div>
                 </div>
@@ -756,11 +756,49 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                         </div>
                         <div class="crAcc-footer forgot">
                             <input type="button" value="Send SMS" id="sendSMS" class="oneClickCreate sendSMS" disabled>
-                            <p class="notAccept tryAgain">Do not accept SMS yet? Try Again</p>
+                            <p class="alternative tryAgain">Do not accept SMS yet? Try Again</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- SEND SMS FORGOT GIRO -->
+            <div id="modal-sendSMS" class="modal-crAcc sendSMS" style="display:none;">
+                <div class="crAcc-wrapper">
+                    <div class="crAcc-content smsBox">
+                        <div class="crAcc-header sms">
+                            <p style="text-align: right;">
+                                <span id="closeCreate" class="close-crAcc icon-close" style="cursor: pointer"></span>
+                            </p>
+                            <p class="crAcc-title">Giro Number was Sent</p>
+                            <p class="crAcc-subtitle">Information about your giro account has been sent to your phone</p>
+                        </div>
+                        <div class="crAcc-footer sms">
+                            <p class="alternative tryAgain">Do not accept SMS yet? Try Again</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EMANG BELOM BIKIN GIRO ACCOUNT -->
+            <div id="modal-notYet" class="modal-crAcc notYet" style="display:none;">
+                <div class="crAcc-wrapper">
+                    <div class="crAcc-content notYetBox">
+                        <div class="crAcc-header notYet">
+                            <p style="text-align: right;">
+                                <span id="closeCreate" class="close-crAcc icon-close" style="cursor: pointer"></span>
+                            </p>
+                            <p class="crAcc-title">You Haven't Created a Giro Account</p>
+                            <p class="crAcc-subtitle">It seems to us that you haven't created a giro account</p>
+                        </div>
+                        <div class="crAcc-footer notYet">
+                            <input type="button" value="Create Now" id="createNewGiro" class="oneClickCreate legit">
+                            <p class="alternative createNow">Get to know us better. Keep in touch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- <div class="enterprise-box col-row area">
                 <div class="cta-box">
                     <div class="top-color"></div>
@@ -854,7 +892,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                                 </div>
                                 <div class="comparison-cell standard body">
                                     <p class="cell-title standard"></p>
-                                    <p class="cell-copy standard integration">Low <span id="uiLow" class="font-icon icon-information"></span></p>
+                                    <p class="cell-copy standard integration" onclick="webShare()">Low <span id="uiLow" class="font-icon icon-information"></span></p>
                                 </div>
                                 <div class="comparison-cell standard body">
                                     <p class="cell-title standard"></p>
@@ -946,7 +984,7 @@ Kemudian diikuti nomor Akun Giro (Contoh : 9989 2202XXXXXX) di kolom nomor reken
                                     </div>
                                     <div class="comparison-cell standard body">
                                         <p class="cell-title standard"></p>
-                                        <p class="cell-copy standard integration">Low <span id="uiLow" class="font-icon icon-information"></span></p>
+                                        <p class="cell-copy standard integration" onclick="webShare()">Low <span id="uiLow" class="font-icon icon-information"></span></p>
                                     </div>
                                 </div>
                                 <div class="table-row2 content wrapper2">

@@ -1483,8 +1483,13 @@ span.header {
 .crAcc-footer.forgot {
     text-align: unset;
 }
-.crAcc-footer .notAccept.tryAgain {
+.crAcc-footer .alternative {
     margin-top: 16px;
+    width: 75%;
+    margin-left: auto;
+    line-height: 22px;
+    text-align: right;
+    cursor: pointer;
 }
 .crAcc-footer.crAcc-title.success {
     text-align: center;
