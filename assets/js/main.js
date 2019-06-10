@@ -235,7 +235,7 @@ numbOnly(document.getElementById('input-giro'), function (value) {
 // SEARCH GIRO NUMBER
 function searchGiro(inputSearch) {
     var giro = inputSearch.value.slice(4);
-    var endPoint = "/api/check-giro/" + giro;
+    var endPoint =  "/api/check-giro/" + giro;
     axios.get(endPoint, {
         headers: {
             "Content-Type": "application/json"
@@ -332,7 +332,7 @@ document.getElementById('input-phonenumber2').addEventListener('keyup', function
 // CHECK PHONE NUMBER REGISTER
 // AXIOS
 createBtn.addEventListener('click', function (event) {
-    // var baseURLAuth = "https://wallet.digiro.in/";
+    var baseURLAuth = "https://wallet.digiro.in/";
     var endPoint = "api/new-account/";
     var phoneNumb = phoneInput.value;
     var modalSucc = document.getElementById('success-crAcc');
@@ -363,6 +363,7 @@ createBtn.addEventListener('click', function (event) {
     // If registeres already, create this response
     .catch(function (error) {
         console.log(error);
+        console.log(error.message);
         console.log('Check Phone Error');
         crAccModal.style.display = "none";
         modalErr.style.display = "block";

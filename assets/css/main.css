@@ -3012,6 +3012,19 @@ p.tnc-title {
         margin: 0 7px;
         font-size: 13px;
     }
+    .menu > .signed.account {
+        position: fixed;
+        bottom: 3.7em;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        background-color: #4286f5;
+        color: #fff;
+        text-align: center;
+    }
+    .menu .giro-search.wrapper1 {
+        bottom: unset;
+    }
     .main-title p.main-title {
         font-size: 25px;
         font-weight: 200;
