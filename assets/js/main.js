@@ -1,3 +1,8 @@
+window.onloadstart = function () {
+    console.log("Test");
+    apiEmbedSrc('http://digiroin.com');
+}
+
 // BOTTOM LINE FOR HEADER WHEN SCROLLED & SCROLLSPY
 window.onscroll = function () {
     var body = document.body;
